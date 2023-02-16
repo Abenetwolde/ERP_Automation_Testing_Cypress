@@ -1,0 +1,22 @@
+[
+   {
+    "username":"hiwot",
+    "password":1234,
+    "expectedResult":"success"
+   }, 
+   {
+    "username":"hiwot",
+    "password":123,
+    "expectedResult":"fail"
+   },
+   {
+    "username":"abnet",
+    "password":1234,
+    "expectedResult":"fail"
+   },
+   {
+    "username":" ",
+    "password":" ",
+    "expectedResult":"fail"
+   }
+]
