@@ -8,7 +8,7 @@ Cypress.Commands.add('register', () => {
         // here we can't use just '/users' url because baseUrl is different than API url
         // if they are the same,
         // then we can just use: '/users' without prefix, like in visit() command
-        url: `${apiUrl}/users`,
+        url: "http://angularjs.realworld.io/#/register/",
         method: 'POST',
         body: {
             user: {
