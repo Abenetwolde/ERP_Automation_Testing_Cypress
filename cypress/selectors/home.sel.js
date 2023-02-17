@@ -1,4 +1,6 @@
 module.exports = {
+    expectedMessage: 'p',
+    expectedMessageError: '.ui-growl-item',
     yourFeedTab: '[ng-class*=feed]',
     globalFeedTab: '[ng-class*=all]',
     articles: 'article-list [ng-repeat*="ctrl.list"] .article-preview',

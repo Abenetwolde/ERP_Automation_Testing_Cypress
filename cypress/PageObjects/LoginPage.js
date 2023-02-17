@@ -2,13 +2,14 @@ import login from '../selectors/login.sel'
 
 class Login {
 
-    txtLogin=login.emailField
+    txtUserName=login.userNameField
     txtPassword=login.passwordField 
     loginButton=login.signInButton
-    expected=login.errorMessages
+    expectedPass=login.expectedMessage
+    expectedError=login.expectedMessageError
 
  setUserName(username){
-    cy.get(this.txtLogin).type(username)
+    cy.get(this.txtUserName).type(username)
  }
 
  setPassword(password){
@@ -19,10 +20,20 @@ class Login {
  clickLogin(){
     cy.get(this.loginButton).should('have.text', 'Login').click()
  }
- 
- verifyLogin()
+
+ verifyLogin(username, password, expectedResult)
  {
-    cy.get(this.expected).should('be.visible')
+   if(username=="hiwot"&&password=="1234"){
+      cy.get(this.expectedPass).should('be.visible')
+   }
+   else{
+      cy.get(this.expectedError).should('be.visible')
+   }
+   
+   // cy.get(this.expected).should('be.visible')
+   // .should("eq",expected)
+
+
  }
 }
 export default Login;

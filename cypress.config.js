@@ -21,10 +21,12 @@ module.exports = defineConfig({
     viewportHeight: 768,
     viewportWidth: 1266,
     e2e: {
+        reporter: 'cypress-mochawesome-reporter',
     // We've imported your old cypress plugins here.
     // You may want to clean this up later by importing these.
         setupNodeEvents: function (on, config) {
-            return require('./cypress/plugins/index.js')(on, config)
+           require('./cypress/plugins/index.js')(on, config)
+           require('cypress-mochawesome-reporter/plugin')(on);
         },
         baseUrl: 'http://angularjs.realworld.io/#'
     }
