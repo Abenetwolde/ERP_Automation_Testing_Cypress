@@ -29,7 +29,7 @@ class Login {
    else{
       cy.get(this.expectedError).should('be.visible')
    }
-   
+   //.and('have.css', 'color', 'rgb(92, 184, 92)')
    // cy.get(this.expected).should('be.visible')
    // .should("eq",expected)
 
