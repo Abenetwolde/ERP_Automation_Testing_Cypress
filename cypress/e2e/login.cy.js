@@ -18,7 +18,7 @@ describe('Login', () => {
                     loginObject.setUserName(userdata.username)
                     loginObject.setPassword(userdata.password)
                     loginObject.clickLogin();
-                     loginObject.verifyLogin(userdata.username,userdata.password,userdata.expectedResult);  
+                    loginObject.verifyLogin(userdata.username,userdata.password,userdata.expectedResult);  
                     cy.clearCookies()
                    cy.clearLocalStorage()
                 })
