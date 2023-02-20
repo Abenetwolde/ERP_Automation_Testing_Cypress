@@ -11,32 +11,19 @@ describe('Login', () => {
         })
 
         it('loginTest', () => {
-            // cy.clearCookies()
-            // cy.clearLocalStorage()
             const loginObject= new Login()
             cy.fixture("loginTestData").then((data)=>{
-                data.forEach((userdata)=>{
+                data.login.forEach((userdata)=>{
                     cy.visit('https://172.21.35.248:8181/ERP-war/Login.xhtml?continue=https://172.21.35.248:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml')
                     loginObject.setUserName(userdata.username)
                     loginObject.setPassword(userdata.password)
                     loginObject.clickLogin();
-                    ///cy.get(logins.errorMessages).should('be.visible')
                      loginObject.verifyLogin(userdata.username,userdata.password,userdata.expectedResult);  
-                        cy.clearCookies()
+                    cy.clearCookies()
                    cy.clearLocalStorage()
                 })
             })
-        //    const loginObject= new Login()
-        //    loginObject.setUserName("hiwot")
-        //    loginObject.setPassword(1234)
-        //    loginObject.clickLogin();
-        //    ///cy.get(logins.errorMessages).should('be.visible')
-        //    loginObject.verifyLogin();
-            // cy.get(login.emailField).type('hiwot')
-            // cy.get(login.passwordField).type('1234')
-            // cy.get(login.signInButton).should('have.text', 'Login').click()
-            // cy.get(login.errorMessages).should('be.visible')
-            //     .and('contain', 'Online')
+
         })
 
         // it('can see error message when API responds with 500', () => {
