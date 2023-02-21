@@ -1,56 +1,57 @@
 {
     "login": [
       {
-        "color": "black",
-        "category": "hue",
-      
-        "code": {
-          "rgba": [255,255,255,1],
-          "hex": "#000"
+        "username": "hiwot",
+        "password": 1234,
+        "expectedResults": {
+          "expectedText": "hiwot",
+          "rgba": [255,255,255,1]
+  
         }
       },
       {
-        "color": "white",
-        "category": "value",
-        "code": {
-          "rgba": [0,0,0,1],
-          "hex": "#FFF"
+        "username": "hiwot",
+        "password": 12222,
+        "expectedResults": {
+          "expectedText": "The username or password you entered is incorrect",
+          "rgba": [255,255,255,1]
+  
         }
       },
       {
-        "color": "red",
-        "category": "hue",
-        "type": "primary",
-        "code": {
-          "rgba": [255,0,0,1],
-          "hex": "#FF0"
+        "username": "abnet",
+        "password": 1234,
+        "expectedResults": {
+          "expectedText": "The username or password you entered is incorrect",
+          "rgba": [255,255,255,1]
+  
         }
       },
       {
-        "color": "blue",
-        "category": "hue",
-        "type": "primary",
-        "code": {
-          "rgba": [0,0,255,1],
-          "hex": "#00F"
+        "username": "black",
+        "password": "hue",
+        "expectedResults": {
+          "expectedText": "The username or password you entered is incorrect",
+          "rgba": [255,255,255,1]
+  
         }
       },
       {
-        "color": "yellow",
-        "category": "hue",
-        "type": "primary",
-        "code": {
-          "rgba": [255,255,0,1],
-          "hex": "#FF0"
+        "username": "black",
+        "password": "hue",
+        "expectedResults": {
+          "expectedText": "hiwot",
+          "rgba": [255,255,255,1]
+  
         }
       },
       {
-        "color": "green",
-        "category": "hue",
-        "type": "secondary",
-        "code": {
-          "rgba": [0,255,0,1],
-          "hex": "#0F0"
+        "username": "black",
+        "password": "hue",
+        "expectedResults": {
+          "expectedText": "hiwot",
+          "rgba": [255,255,255,1]
+  
         }
       }
     ]
