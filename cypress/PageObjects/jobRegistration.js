@@ -56,7 +56,7 @@ class jobRegistaration {
     clickDropdownIconForjobCatagoery() {
         cy.get(this.dropdownIconForJobCatagory).click()
     }
-   selectJobCatagoeryIcon() {
+   selectJobCatagoery() {
         cy.get(this.selectJobCatagory).click()
     }
     selectRadioButton() {
@@ -97,4 +97,4 @@ class jobRegistaration {
 
     }
 }
-export default Login;
+export default jobRegistaration;
