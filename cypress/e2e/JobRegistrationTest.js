@@ -1,41 +1,41 @@
 
 import jobRegistaration from "../PageObjects/LoginPage.js"
-describe('Login', () => {
-    // context is the same as describe
-    context('login', () => {
-        beforeEach(() => {
-            // visit ('/login') -> will visit baseUrl + /login
-            // baseUrl is set in config - cypress.json file
-           // cy.visit('https://172.21.35.248:8181/ERP-war/Login.xhtml?continue=https://172.21.35.248:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml')
+describe('jobRegistaration Test', () => {
+    context('jobRegistaration Test', () => {
+        before(() => {
+               cy.AuthCommand().then((response) => {
+        cy.wrap(response.cookie).as(cookie)
+    })
         })
 
-        it('jobRegistaration Test', () => {
+       { cookie && it('Data driven jobRegistaration Test', () => {
             const jobRegistarationObject= new jobRegistaration()
             cy.fixture("jobRegistrationTestData").then((data)=>{
-                data.forEach((userdata)=>{
+                data.jobRegistrationTestData.forEach((jobdata)=>{
                     cy.visit('https://172.21.35.248:8181/ERP-war/erp/hrms/organization/jobRegistration.xhtml')
                     jobRegistarationObject.clickPluseIcon()
-                    loginObject.setJobCode(userdata.username)
-                    loginObject.setDepartment(userdata.password)
-                    loginObject.setJobTitle(userdata.password)
-                    loginObject.setRelevantExp(userdata.password)
-                    loginObject.setAltExp(userdata.password)
-                    loginObject.clickDropdownIconForJobGrade();
-                    loginObject.selectJobGrade();
-                    loginObject.clickDropdownIconForjobCatagoery();
-                    loginObject.selectJobCatagoery();
-                    loginObject.selectRadioButton();
-                    loginObject.clickDropdownIconForEducationLevel();
-                    loginObject.clickDropdownIconForQualification();
-                    loginObject.setExperince();
-                    loginObject.clickAddButton();
-                    loginObject.clickSubmitButton();
-                    loginObject.verifyJobRigistration(userdata.username,userdata.password,userdata.expectedResult);  
+                    jobRegistarationObject.setJobCode(jobdata.jobCode)
+                    jobRegistarationObject.setDepartment(jobdata.departement)
+                    jobRegistarationObject.setJobTitle(jobdata.jobTitle)
+                    jobRegistarationObject.setJobDiscription(jobdata.jobDiscription)
+                    jobRegistarationObject.setRelevantExp(jobdata.relevantExperince)
+                    jobRegistarationObject.setAltExp(jobdata.alternativeExperince)
+                    jobRegistarationObject.clickDropdownIconForJobGrade();
+                    jobRegistarationObject.selectJobGrade();
+                    jobRegistarationObject.clickDropdownIconForjobCatagoery();
+                    jobRegistarationObject.selectJobCatagoery();
+                    jobRegistarationObject.selectRadioButton();
+                    jobRegistarationObject.clickDropdownIconForEducationLevel();
+                    jobRegistarationObject.clickDropdownIconForQualification();
+                    jobRegistarationObject.setExperince(jobdata.Experience);
+                    jobRegistarationObject.clickAddButton();
+                    jobRegistarationObject.clickSubmitButton();
+                    jobRegistarationObject.verifyJobRigistration(jobdata.expectedResult);  
                  
                 })
             })
 
-        })
+        })}
 
      
     })
