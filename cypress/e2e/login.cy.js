@@ -1,5 +1,4 @@
-import logins from '../selectors/login.sel'
-import header from '../selectors/header.sel'
+
 import Login from "../PageObjects/LoginPage.js"
 describe('Login', () => {
     // context is the same as describe
@@ -13,14 +12,14 @@ describe('Login', () => {
         it('loginTest', () => {
             const loginObject= new Login()
             cy.fixture("loginTestData").then((data)=>{
-                data.login.forEach((userdata)=>{
+                data.forEach((userdata)=>{
                     cy.visit('https://172.21.35.248:8181/ERP-war/Login.xhtml?continue=https://172.21.35.248:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml')
                     loginObject.setUserName(userdata.username)
                     loginObject.setPassword(userdata.password)
                     loginObject.clickLogin();
                     loginObject.verifyLogin(userdata.username,userdata.password,userdata.expectedResult);  
                     cy.clearCookies()
-                   cy.clearLocalStorage()
+                    cy.clearLocalStorage()
                 })
             })
 

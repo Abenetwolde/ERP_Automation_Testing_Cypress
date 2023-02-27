@@ -1,0 +1,22 @@
+module.exports=  {
+    pluseIcon : '#frmTop\:btnNew > span.ui-button-icon-left.ui-icon.ui-c.ui-icon-plus',
+    jobCode : '#frmJobRegistration\:txtJobCode',
+    departement  : '#frmJobRegistration\:txtDepartment',
+    jobTitle : '#frmJobRegistration\:txtJobTitle',
+    jobDiscription : '#frmJobRegistration\:txtJobDes',
+    relevantExperince : '#frmJobRegistration\:txtRelevantExperience',
+    alternativeExperince :'#frmJobRegistration\:txtRemark', 
+    dropdownIconForJobGrade : '#frmJobRegistration\:somJobGrade > div.ui-selectonemenu-trigger.ui-state-default.ui-corner-right',
+    selectJobGrade : '#frmJobRegistration\:somJobGrade_panel > div > ul > li:nth-child(2)',
+    dropdownIconForJobCatagory :'#frmJobRegistration\:somCatagory > div.ui-selectonemenu-trigger.ui-state-default.ui-corner-right',
+    selectJobCatagory : '#frmJobRegistration\:somCatagory_panel > div > ul > li:nth-child(4)',
+    radioButton : '#frmJobRegistration\:somType > tbody > tr > td:nth-child(2) > label',
+    dropdownIconForEducationLevel : '#frmJobRegistration\:somEdulevel > div.ui-selectonemenu-trigger.ui-state-default.ui-corner-right',
+    selectEducationLevel : '#frmJobRegistration\:somEdulevel_panel > div > ul > li:nth-child(3)',
+    dropdownIconForqualificatio : '#frmJobRegistration\:somEducType > div.ui-selectonemenu-trigger.ui-state-default.ui-corner-right',
+    selectQualification : '#frmJobRegistration\:somEducType > div.ui-selectonemenu-trigger.ui-state-default.ui-corner-right',
+    Experience  :'#frmJobRegistration\:txtNoMinExp',
+    addButton :'#frmJobRegistration\:btnEduQualAdd > span',
+    saveButton :'#frmJobRegistration\:btnEduQualAdd > span',
+    successContainer:'#frmTop\:j_idt61 > div > a:nth-child(4) > i'
+}
