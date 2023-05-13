@@ -1,0 +1,48 @@
+{
+   "loginTestData": [
+     {
+       "username": "hiwot",
+       "password": 1234,
+       "expectedResults": {
+         "expectedText": "hiwot",
+         "status": "online"
+ 
+       }
+     },
+     {
+       "username": "hiwot",
+       "password": 12222,
+       "expectedResults": {
+         "expectedText": "The username or password you entered is incorrect",
+         "status": ""
+ 
+       }
+     },
+     {
+       "username": "abnet",
+       "password": 1234,
+       "expectedResults": {
+         "expectedText": "The username or password you entered is incorrect",
+         "status": ""
+ 
+       }
+     },
+     {
+       "username": "a",
+       "password": 1234,
+       "expectedResults": {
+         "expectedText": "The username or password you entered is incorrect",
+         "status": ""
+ 
+       }
+     }
+   
+     
+   ]
+ }
+
+
+
+
+
+

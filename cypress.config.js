@@ -1,0 +1,35 @@
+/* eslint-disable global-require */
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { defineConfig } = require('cypress')
+
+module.exports = defineConfig({
+    numTestsKeptInMemory: 15,
+    defaultCommandTimeout: 15000,
+    env: {
+        baseUrl: 'https://172.21.35.248:8181',
+        docUrl: 'https://172.21.35.239:8181/ERP-war/erp/hrms/documentProvidingService/documentRequest.xhtml',
+        loginUrl: 'https://172.21.35.248:8181/ERP-war/Login.xhtml?continue=https://172.21.35.248:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml',
+        oldApiUrl: 'https://conduit.productionready.io/api',
+        device: 'desktop',
+        email: 'test@test.com',
+        password: 'Cypress123'
+    },
+    retries: {
+        runMode: 1,
+        openMode: 0
+    },
+    userAgent:
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36',
+    viewportHeight: 768,
+    viewportWidth: 1266,
+    e2e: {
+        reporter: 'cypress-mochawesome-reporter',
+    // We've imported your old cypress plugins here.
+    // You may want to clean this up later by importing these.
+        setupNodeEvents: function (on, config) {
+           require('./cypress/plugins/index.js')(on, config)
+           require('cypress-mochawesome-reporter/plugin')(on);
+        },
+        baseUrl: 'https://172.21.35.248:8181/#'
+    }
+})
