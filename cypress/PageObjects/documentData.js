@@ -31,7 +31,9 @@ class Document {
     cy.get(this.documentType).click()
  }
  clickselectDocument(){
-    cy.contains(this.selectDocument,'Experience').click()}
+   //  cy.contains(this.selectDocument,'Experience').click()
+   cy.get('li[data-label="Experience"]').click()
+   }
 
  clickRequestDate(){
     cy.get(this.requestDate).click()
