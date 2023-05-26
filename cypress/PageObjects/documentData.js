@@ -1,6 +1,34 @@
 import document from '../selectors/document.sel'
 
 class Document {
+   // {
+   //    "username": "hiwot",
+   //    "password": 12222,
+   //    "expectedResults": {
+   //      "expectedText": "The username or password you entered is incorrect",
+   //      "status": ""
+
+   //    }
+   //  },
+   //  {
+   //    "username": "abnet",
+   //    "password": 1234,
+   //    "expectedResults": {
+   //      "expectedText": "The username or password you entered is incorrect",
+   //      "status": ""
+
+   //    }
+   //  },
+   //  {
+   //    "username": "a",
+   //    "password": 1234,
+   //    "expectedResults": {
+   //      "expectedText": "The username or password you entered is incorrect",
+   //      "status": ""
+
+   //    }
+   //  }
+  
     pluse=document.pluseIcon
     empName=document.employeeName
     selectEmpName=document.selectEmployeeName
@@ -19,10 +47,16 @@ class Document {
  clickPluseIcon(){
     cy.get(this.pluse).click()
  }
+ clickEmpNameTextFeild(){
+   cy.get(this.empName).click()
+}
 
  setEmpName(employeeName){
     cy.get(this.empName).type(employeeName)
  }
+ clickenter(){
+   cy.get(this.empName ).type('{enter}')
+}
  clickEmpName(){
     cy.get(this.selectEmpName).click()
  }
