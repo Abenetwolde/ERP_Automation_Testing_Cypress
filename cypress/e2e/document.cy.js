@@ -13,7 +13,7 @@ describe('documentRequest', () => {
                     loginObject.setPassword(1234)
                     loginObject.clickLogin();
                     docObject.clickPluseIcon()
-                    docObject.setEmpName(`docData.employeeName{enter}`)
+                    docObject.setEmpName(`Almaz {enter}`)
                     // docObject.clickEmpName()
                     docObject.clickDocType()
                     docObject.clickselectDocument()
