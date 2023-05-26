@@ -24,8 +24,8 @@ describe('documentRequest', () => {
                     docObject.setComment(docData.CommentGiven)
                     docObject.setComment(docData.CommentGiven)
                     docObject.verifyDocumentRegister(docData.expectedResult);  
-                    // cy.clearCookies()
-                    // cy.clearLocalStorage()
+                    cy.clearCookies()
+                    cy.clearLocalStorage()
                 })
             })
 
