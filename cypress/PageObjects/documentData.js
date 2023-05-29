@@ -94,15 +94,10 @@ class Document {
 
  verifyDocumentRegister(expectedResult)
  {
-//      const check =cy.get(this.expectedPass).should('be.visible').should('have.text', expectedResult)
-//    if(check){
-      cy.get(this.expectedPass).should('be.visible').should('have.text', expectedResult)
+//  
+      cy.get(this.successContainer).should('have.text', expectedResult)
 //    }
-//    else{
-//       cy.get(this.errorIcon).should('be.visible').and()
-//       cy.screenshot()
-//    }
-
+//    
 
  }
 }

@@ -10,9 +10,11 @@ describe('jobRegistaration Test', () => {
 
  it('Data driven jobRegistaration Test', () => {
             const jobRegistarationObject= new jobRegistaration()
+            const JobUrl = Cypress.env('JobUrl')
             cy.fixture("jobRegistrationTestData").then((data)=>{
                 data.jobRegistrationTestData.forEach((jobdata)=>{
-                    cy.visit('https://172.21.35.248:8181/ERP-war/Login.xhtml?continue=https://172.21.35.248:8181/ERP-war/erp/hrms/organization/jobRegistration.xhtml')
+                    cy.visit(`${JobUrl}`)
+
                     const loginObject= new Login()
                    
                     loginObject.setUserName("hiwot")
