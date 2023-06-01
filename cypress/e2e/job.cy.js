@@ -2,11 +2,24 @@ import Login from "../PageObjects/LoginPage.js"
 import jobRegistaration from "../PageObjects/jobRegistration.js"
 describe('jobRegistaration Test', () => {
     context('jobRegistaration Test', () => {
-    //     before(() => {
+        before(() => {
+            cy.get('body').then(($body) => {
+                if ($body.text().includes('hiwot')) {
+                  return;
+                } else {
+                  // User is not logged in, redirect to login page
+                  cy.visit('/login');
+         
+                  const loginObject= new Login()
+                  loginObject.setUserName("hiwot")
+                  loginObject.setPassword(1234)
+                  loginObject.clickLogin();
+                }
+              });
     //            cy.AuthCommand().then((response) => {
     //            cy.wrap(response.cookie).as(cookie)
     // })
-    //     })
+        })
 
  it('Data driven jobRegistaration Test', () => {
             const jobRegistarationObject= new jobRegistaration()
@@ -15,11 +28,6 @@ describe('jobRegistaration Test', () => {
                 data.jobRegistrationTestData.forEach((jobdata)=>{
                     cy.visit(`${JobUrl}`)
 
-                    const loginObject= new Login()
-                   
-                    loginObject.setUserName("hiwot")
-                    loginObject.setPassword(1234)
-                    loginObject.clickLogin();
                     // loginObject.verifyLogin(userdata.username,userdata.password,userdata.expectedResults.expectedText);  
                     jobRegistarationObject.clickPluseIcon()
                     jobRegistarationObject.setJobCode(jobdata.jobCode)

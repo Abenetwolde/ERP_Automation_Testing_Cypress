@@ -69,20 +69,21 @@ class Document {
    cy.get('li[data-label="Experience"]').click()
    }
 
- clickRequestDate(){
-    cy.get(this.requestDate).click()
+ setRequestDate(requestDate1){
+    cy.get(this.requestDate).type(requestDate1)
  }
- clickSelectRequestDate(){
-    cy.get(this.selectRequestDate).click()
- }
+//  clickSelectRequestDate(){
+//     cy.get(this.selectRequestDate).click()
+//  }
 
- clickPreparedOn(){
-    cy.get(this.preparedOn).click()
- }
+setPreparedOn(requestDate){
+    cy.get(this.preparedOn).type(requestDate)
+   }
+ 
 
- clickSelectRequestDate(){
-    cy.get(this.selectDate).click()
- }
+//  clickSelectRequestDate(){
+//     cy.get(this.selectDate).click()
+//  }
 
  setComment(commentGiven){
     cy.get(this.commentGiven).type(commentGiven)
