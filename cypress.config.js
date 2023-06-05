@@ -9,7 +9,7 @@ module.exports = defineConfig({
         baseUrl: 'https://172.21.35.248:8181',
         docUrl: 'https://172.21.35.239:8181/ERP-war/erp/hrms/documentProvidingService/documentRequest.xhtml',
         loginUrl: 'https://172.21.35.239:8181/ERP-war/erp/hrms/documentProvidingService/documentRequest.xhtml',
-        JobUrl: 'https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.248:8181/ERP-war/erp/hrms/organization/jobRegistration.xhtml',
+        JobUrl: 'https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/organization/jobRegistration.xhtml',
         device: 'desktop',
         email: 'test@test.com',
         password: 'Cypress123'

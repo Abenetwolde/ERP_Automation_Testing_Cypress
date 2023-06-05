@@ -36,7 +36,7 @@ class jobRegistaration {
     setJobTitle(jobtitle) {
         cy.get(this.jobtitle).type(jobtitle)
     }
-   
+
     setJobDiscrption(jobDiscrption) {
         cy.get(this.jobDiscription).type(jobDiscrption)
     }
@@ -46,16 +46,22 @@ class jobRegistaration {
     setAltExp(altExp) {
         cy.get(this.alternativeExperince).type(altExp)
     }
+    //     clickDropdownIconForJobGrade() {
+    //         cy.get(this.dropdownIconForJobGrade).click()
+    //     }
+       selectJobGrade() {
+            cy.get('li[data-label="D2"]').click()
+        }
     clickDropdownIconForJobGrade() {
         cy.get(this.dropdownIconForJobGrade).click()
     }
-   selectJobGrade() {
-        cy.get(this.selectJobGrade).click()
-    }
+    // selectJobGrade() {
+    //     cy.get('li[data-label="D2"]').click()
+    // }
     clickDropdownIconForjobCatagoery() {
         cy.get(this.dropdownIconForJobCatagory).click()
     }
-   selectJobCatagoery() {
+    selectJobCatagoery() {
         cy.get(this.selectJobCatagory).click()
     }
     selectRadioButton() {
@@ -64,13 +70,13 @@ class jobRegistaration {
     clickDropdownIconForEducationLevel() {
         cy.get(this.dropdownIconForEducationLevel).click()
     }
-   selectEducationLevel() {
-        cy.contains(this.selectEducationLevel,'6th Grade Complete').click()
-}
+    selectEducationLevel() {
+        cy.contains(this.selectEducationLevel, '6th Grade Complete').click()
+    }
     clickDropdownIconForQualification() {
         cy.get(this.dropdownIconForqualificatio).click()
     }
-   selectQualification() {
+    selectQualification() {
         cy.get(this.selectQualification).click()
     }
     setExperince(altExp) {
@@ -85,10 +91,10 @@ class jobRegistaration {
     }
 
     verifyJobRigistration(expectedResult) {
-     
-            cy.get(this.successContainer).should('be.visible').should("eq",expectedResult)
-    
-  
+
+        cy.get(this.successContainer).should('be.visible').should("eq", expectedResult)
+
+
         //.and('have.css', 'color', 'rgb(92, 184, 92)')
         // cy.get(this.expected).should('be.visible')
         // .should("eq",expected)

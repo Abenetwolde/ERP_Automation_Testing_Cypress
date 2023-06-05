@@ -6,7 +6,7 @@ module.exports=  {
     jobDiscription : '[id="frmJobRegistration:txtJobDes"]',
     relevantExperince : '[id="frmJobRegistration:txtJobTitle"]',
     alternativeExperince :'[id="frmJobRegistration:txtJobTitle"]',
-    dropdownIconForJobGrade : '[id="frmJobRegistration:somJobGrade"]',
+    // dropdownIconForJobGrade : '[id="frmJobRegistration:somJobGrade"]',
     dropdownIconForJobCatagory:'[id="frmJobRegistration:somCatagory_label"]',
     selectJobGrade : '.ui-selectonemenu-item .ui-selectonemenu-list-item .ui-corner-all .ui-state-highlight',
     selectJobCatagory : '#frmJobRegistration\:somCatagory_panel > div > ul > li:nth-child(4)',
