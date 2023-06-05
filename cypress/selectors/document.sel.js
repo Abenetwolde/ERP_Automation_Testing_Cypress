@@ -10,6 +10,6 @@ module.exports=  {
     selectDate : '[id="btn25"]',
     commentGiven :'[id="frmDocumentRequest:SomeComment"]',
     saveButton :'[id="frmDocumentRequest:btnSave"]',
-    successContainer:'[id="frmDocumentRequest:growl_container"]',
+    successContainer:'.ui-growl-title',
     errorIcon:'[id="frmDocumentRequest:growl_container"]'
 }

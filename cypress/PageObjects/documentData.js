@@ -72,6 +72,9 @@ class Document {
  setRequestDate(requestDate1){
     cy.get(this.requestDate).type(requestDate1)
  }
+ clickenterRequestDate(){
+   cy.get(this.requestDate ).type('{enter}')
+}
 //  clickSelectRequestDate(){
 //     cy.get(this.selectRequestDate).click()
 //  }
