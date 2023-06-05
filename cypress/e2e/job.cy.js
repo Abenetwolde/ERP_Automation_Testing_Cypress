@@ -2,25 +2,21 @@ import Login from "../PageObjects/LoginPage.js"
 import jobRegistaration from "../PageObjects/jobRegistration.js"
 describe('jobRegistaration Test', () => {
     context('jobRegistaration Test', () => {
-        before(() => {
-            cy.get('body').then(($body) => {
-                if ($body.text().includes('hiwot')) {
-                  return;
-                } else {
-                  // User is not logged in, redirect to login page
-                  cy.visit('/login');
-         
-                  const loginObject= new Login()
-                  loginObject.setUserName("hiwot")
-                  loginObject.setPassword(1234)
-                  loginObject.clickLogin();
-                }
-              });
-    //            cy.AuthCommand().then((response) => {
-    //            cy.wrap(response.cookie).as(cookie)
-    // })
-        })
-
+      before(() => {
+        cy.get('body').then(($body) => {
+          if ($body.text().includes('hiwot')) {
+            return;
+          } else {
+            const logUrl = Cypress.env('loginUrl')
+            const loginObject = new Login()
+            cy.visit(`${logUrl}`)
+            loginObject.setUserName("hiwot")
+            loginObject.setPassword(1234)
+            loginObject.clickLogin();
+          }
+        });
+          
+      })
  it('Data driven jobRegistaration Test', () => {
             const jobRegistarationObject= new jobRegistaration()
             const JobUrl = Cypress.env('JobUrl')
