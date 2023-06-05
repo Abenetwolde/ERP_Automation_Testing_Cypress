@@ -38,8 +38,8 @@ describe('jobRegistaration Test', () => {
           jobRegistarationObject.setAltExp(jobdata.alternativeExperince)
           cy.wait(500)
           jobRegistarationObject.clickDropdownIconForJobGrade();
-          cy.wait(5000)
-          jobRegistarationObject.selectJobGrade();
+          cy.wait(500)
+          jobRegistarationObject.selectJobGrades();
           // jobRegistarationObject.clickDropdownIconForjobCatagoery();
           // jobRegistarationObject.selectJobCatagoery();
           // jobRegistarationObject.selectRadioButton();

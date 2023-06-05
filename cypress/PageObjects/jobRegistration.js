@@ -49,8 +49,8 @@ class jobRegistaration {
     //     clickDropdownIconForJobGrade() {
     //         cy.get(this.dropdownIconForJobGrade).click()
     //     }
-       selectJobGrade() {
-            cy.get('li[data-label="D2"]').click()
+       selectJobGrades() {
+            cy.get('li[data-label="D2"]').contains('D2').click()
         }
     clickDropdownIconForJobGrade() {
         cy.get(this.dropdownIconForJobGrade).click()
@@ -74,7 +74,7 @@ class jobRegistaration {
         cy.contains(this.selectEducationLevel, '6th Grade Complete').click()
     }
     clickDropdownIconForQualification() {
-        cy.get(this.dropdownIconForqualificatio).click()
+        cy.get(this.dropdownIconForqualification).click()
     }
     selectQualification() {
         cy.get(this.selectQualification).click()
