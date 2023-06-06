@@ -18,5 +18,5 @@ module.exports=  {
     Experience  :'[id="frmJobRegistration:txtNoMinExp"]',
     addButton :'span.ui-button-text.ui-c',
     saveButton :'span.ui-button-text.ui-c',
-    successContainer:'#frmTop\:j_idt61 > div > a:nth-child(4) > i'
+    successContainer:'[id="frmJobRegistration:growl_container"]'
 }

@@ -20,6 +20,7 @@ class jobRegistaration {
     Experience = jobRegistartion.Experience
     addButton = jobRegistartion.addButton
     saveButton = jobRegistartion.saveButton
+    successContainer = jobRegistartion.successContainer
 
     clickPluseIcon() {
         cy.get(this.pluseIcon).click()
