@@ -17,9 +17,9 @@ class jobRegistaration {
     selectEducationLevel = jobRegistartion.selectEducationLevel
     dropdownIconForqualification = jobRegistartion.dropdownIconForqualification
     selectQualification = jobRegistartion.Experience
-    Experience = jobRegistartion.addButton
-    addButton = jobRegistartion.saveButton
-    saveButton = jobRegistartion.successContainer
+    Experience = jobRegistartion.Experience
+    addButton = jobRegistartion.addButton
+    saveButton = jobRegistartion.saveButton
 
     clickPluseIcon() {
         cy.get(this.pluseIcon).click()
@@ -40,10 +40,10 @@ class jobRegistaration {
     setJobDiscrption(jobDiscrption) {
         cy.get(this.jobDiscription).type(jobDiscrption)
     }
-    setRelevantExp(relevantExp) {
+    setRelevantExps(relevantExp) {
         cy.get(this.relevantExperince).type(relevantExp)
     }
-    setAltExp(altExp) {
+    setAltExps(altExp) {
         cy.get(this.alternativeExperince).type(altExp)
     }
     clickDropdownIconForJobGrade() {
@@ -61,11 +61,11 @@ class jobRegistaration {
     selectRadioButton() {
         cy.get(this.radioButton).click()
     }
-    clickDropdownIconForEducationLevel() {
+    clickDropdownIconForEducationLevels() {
         cy.get(this.dropdownIconForEducationLevel).click()
     }
-    selectEducationLevel() {
-        cy.contains(this.selectEducationLevel, '6th Grade Complete').click()
+    selectEducationLevels() {
+        cy.get('li[data-label="6th Grade Complete"]').contains('6th Grade Complete').click()
     }
     clickDropdownIconForQualification() {
         cy.get(this.dropdownIconForqualification).click()
@@ -73,15 +73,15 @@ class jobRegistaration {
     selectQualifications() {
         cy.get('li[data-label="Accounting"]').contains('Accounting').click()
     }
-    setExperince(altExp) {
+    setExperinces(altExp) {
         cy.get(this.Experience).type(altExp)
     }
 
     clickAddButton() {
-        cy.get(this.addButton).click()
+        cy.get(this.addButton).contains('Add').click()
     }
     clickSubmitButton() {
-        cy.get(this.saveButton).click()
+        cy.get(this.saveButton).contains('save').click()
     }
 
     verifyJobRigistration(expectedResult) {

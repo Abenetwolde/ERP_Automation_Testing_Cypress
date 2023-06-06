@@ -33,9 +33,9 @@ describe('jobRegistaration Test', () => {
           cy.wait(500)
           jobRegistarationObject.setJobDiscrption(jobdata.jobDiscription)
           cy.wait(500)
-          jobRegistarationObject.setRelevantExp(jobdata.relevantExperince)
+          jobRegistarationObject.setRelevantExps(jobdata.relevantExperince)
           cy.wait(500)
-          jobRegistarationObject.setAltExp(jobdata.alternativeExperince)
+          jobRegistarationObject.setAltExps(jobdata.alternativeExperince)
           cy.wait(500)
           jobRegistarationObject.clickDropdownIconForJobGrade();
           cy.wait(500)
@@ -46,13 +46,16 @@ describe('jobRegistaration Test', () => {
           jobRegistarationObject.selectJobCatagoery();
           cy.wait(500)
           // jobRegistarationObject.selectRadioButton();
-          // jobRegistarationObject.clickDropdownIconForEducationLevel();
-          //  jobRegistarationObject.selectEducationLevel();
+          jobRegistarationObject.clickDropdownIconForEducationLevels();
+           cy.wait(500)
+          jobRegistarationObject.selectEducationLevels();
+          cy.wait(500)
           jobRegistarationObject.clickDropdownIconForQualification();
           cy.wait(500)
           jobRegistarationObject.selectQualifications();
           cy.wait(500)
-          jobRegistarationObject.setExperince(jobdata.Experience);
+          jobRegistarationObject.setExperinces(jobdata.Experience);
+          cy.wait(500)
           jobRegistarationObject.clickAddButton();
           jobRegistarationObject.clickSubmitButton();
           jobRegistarationObject.verifyJobRigistration(jobdata.expectedResult);

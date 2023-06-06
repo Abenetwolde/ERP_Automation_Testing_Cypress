@@ -4,8 +4,8 @@ module.exports=  {
     departement  : '[id="frmJobRegistration:txtDepartment"]',
     jobTitle : '[id="frmJobRegistration:txtJobTitle"]',
     jobDiscription : '[id="frmJobRegistration:txtJobDes"]',
-    relevantExperince : '[id="frmJobRegistration:txtJobTitle"]',
-    alternativeExperince :'[id="frmJobRegistration:txtJobTitle"]',
+    relevantExperince : '[id="frmJobRegistration:txtRelevantExperience"]',
+    alternativeExperince :'[id="frmJobRegistration:txtRemark"]',
     dropdownIconForJobGrade : '[id="frmJobRegistration:somJobGrade"]',
     dropdownIconForJobCatagory:'[id="frmJobRegistration:somCatagory_label"]',
     selectJobGrade : '.ui-selectonemenu-item .ui-selectonemenu-list-item .ui-corner-all .ui-state-highlight',
@@ -15,8 +15,8 @@ module.exports=  {
     selectEducationLevel : '"//[@id=\"frmJobRegistration:somEdulevel_panel\"]/div/ul/li[16]"',
     dropdownIconForqualification : '[id="frmJobRegistration:somEducType_label"]',
     selectQualification : '#frmJobRegistration\:somEducType > div.ui-selectonemenu-trigger.ui-state-default.ui-corner-right',
-    Experience  :'#frmJobRegistration\:txtNoMinExp',
-    addButton :'#frmJobRegistration\:btnEduQualAdd > span',
-    saveButton :'#frmJobRegistration\:btnEduQualAdd > span',
+    Experience  :'[id="frmJobRegistration:txtNoMinExp"]',
+    addButton :'span.ui-button-text.ui-c',
+    saveButton :'span.ui-button-text.ui-c',
     successContainer:'#frmTop\:j_idt61 > div > a:nth-child(4) > i'
 }
