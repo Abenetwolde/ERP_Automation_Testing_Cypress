@@ -40,12 +40,18 @@ describe('jobRegistaration Test', () => {
           jobRegistarationObject.clickDropdownIconForJobGrade();
           cy.wait(500)
           jobRegistarationObject.selectJobGrades();
-          // jobRegistarationObject.clickDropdownIconForjobCatagoery();
-          // jobRegistarationObject.selectJobCatagoery();
+          cy.wait(500)
+          jobRegistarationObject.clickDropdownIconForjobCatagoery();
+          cy.wait(500)
+          jobRegistarationObject.selectJobCatagoery();
+          cy.wait(500)
           // jobRegistarationObject.selectRadioButton();
           // jobRegistarationObject.clickDropdownIconForEducationLevel();
           //  jobRegistarationObject.selectEducationLevel();
           jobRegistarationObject.clickDropdownIconForQualification();
+          cy.wait(500)
+          jobRegistarationObject.selectQualifications();
+          cy.wait(500)
           jobRegistarationObject.setExperince(jobdata.Experience);
           jobRegistarationObject.clickAddButton();
           jobRegistarationObject.clickSubmitButton();

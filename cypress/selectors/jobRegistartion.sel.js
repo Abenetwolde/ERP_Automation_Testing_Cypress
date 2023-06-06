@@ -13,7 +13,7 @@ module.exports=  {
     radioButton : '#frmJobRegistration\:somType > tbody > tr > td:nth-child(2) > label',
     dropdownIconForEducationLevel : '[id="frmJobRegistration:somEdulevel_label"]',
     selectEducationLevel : '"//[@id=\"frmJobRegistration:somEdulevel_panel\"]/div/ul/li[16]"',
-    dropdownIconForqualificatio : '#frmJobRegistration\:somEducType > div.ui-selectonemenu-trigger.ui-state-default.ui-corner-right',
+    dropdownIconForqualification : '[id="frmJobRegistration:somEducType_label"]',
     selectQualification : '#frmJobRegistration\:somEducType > div.ui-selectonemenu-trigger.ui-state-default.ui-corner-right',
     Experience  :'#frmJobRegistration\:txtNoMinExp',
     addButton :'#frmJobRegistration\:btnEduQualAdd > span',

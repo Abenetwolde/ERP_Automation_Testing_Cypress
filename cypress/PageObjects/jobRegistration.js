@@ -15,7 +15,7 @@ class jobRegistaration {
     radioButton = jobRegistartion.radioButton
     dropdownIconForEducationLevel = jobRegistartion.dropdownIconForEducationLevel
     selectEducationLevel = jobRegistartion.selectEducationLevel
-    dropdownIconForqualification = jobRegistartion.selectQualification
+    dropdownIconForqualification = jobRegistartion.dropdownIconForqualification
     selectQualification = jobRegistartion.Experience
     Experience = jobRegistartion.addButton
     addButton = jobRegistartion.saveButton
@@ -46,23 +46,17 @@ class jobRegistaration {
     setAltExp(altExp) {
         cy.get(this.alternativeExperince).type(altExp)
     }
-    //     clickDropdownIconForJobGrade() {
-    //         cy.get(this.dropdownIconForJobGrade).click()
-    //     }
-       selectJobGrades() {
-            cy.get('li[data-label="D2"]').contains('D2').click()
-        }
     clickDropdownIconForJobGrade() {
         cy.get(this.dropdownIconForJobGrade).click()
     }
-    // selectJobGrade() {
-    //     cy.get('li[data-label="D2"]').click()
-    // }
+     selectJobGrades() {
+            cy.get('li[data-label="D2"]').contains('D2').click()
+        }
     clickDropdownIconForjobCatagoery() {
         cy.get(this.dropdownIconForJobCatagory).click()
     }
     selectJobCatagoery() {
-        cy.get(this.selectJobCatagory).click()
+        cy.get('li[data-label="Professionals"]').contains('Professionals').click()
     }
     selectRadioButton() {
         cy.get(this.radioButton).click()
@@ -76,8 +70,8 @@ class jobRegistaration {
     clickDropdownIconForQualification() {
         cy.get(this.dropdownIconForqualification).click()
     }
-    selectQualification() {
-        cy.get(this.selectQualification).click()
+    selectQualifications() {
+        cy.get('li[data-label="Accounting"]').contains('Accounting').click()
     }
     setExperince(altExp) {
         cy.get(this.Experience).type(altExp)
