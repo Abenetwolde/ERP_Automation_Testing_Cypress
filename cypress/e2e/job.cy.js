@@ -61,6 +61,8 @@ describe('jobRegistaration Test', () => {
           jobRegistarationObject.clickSubmitButton();
           cy.wait(1000)
           jobRegistarationObject.verifyJobRigistration(jobdata.expectedResult);
+          cy.wait(500)
+          cy.reload()
 
         })
       })
