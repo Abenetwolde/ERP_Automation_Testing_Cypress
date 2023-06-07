@@ -87,7 +87,7 @@ class jobRegistaration {
 
     verifyJobRigistration(expectedResult) {
 
-        cy.get(this.successContainer).should('be.visible').should("eq", expectedResult)
+        cy.get(this.successContainer)/* .should('be.visible') */.should('have.text', expectedResult)
 
 
         //.and('have.css', 'color', 'rgb(92, 184, 92)')

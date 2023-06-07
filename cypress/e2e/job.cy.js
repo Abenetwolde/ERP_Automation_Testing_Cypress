@@ -24,7 +24,7 @@ describe('jobRegistaration Test', () => {
         data.jobRegistrationTestData.forEach((jobdata) => {
           // cy.visit(`${JobUrl}`)
           jobRegistarationObject.clickPluseIcon()
-          cy.wait(500)
+          cy.wait(1000)
           jobRegistarationObject.setJobCode(jobdata.jobCode)
           cy.wait(500)
           jobRegistarationObject.setDepartment(jobdata.departement)
@@ -57,7 +57,9 @@ describe('jobRegistaration Test', () => {
           jobRegistarationObject.setExperinces(jobdata.Experience);
           cy.wait(500)
           jobRegistarationObject.clickAddButton();
+          cy.wait(500)
           jobRegistarationObject.clickSubmitButton();
+          cy.wait(1000)
           jobRegistarationObject.verifyJobRigistration(jobdata.expectedResult);
 
         })
