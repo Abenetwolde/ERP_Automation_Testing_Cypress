@@ -1,34 +1,6 @@
 import document from '../selectors/document.sel'
 
 class Document {
-   // {
-   //    "username": "hiwot",
-   //    "password": 12222,
-   //    "expectedResults": {
-   //      "expectedText": "The username or password you entered is incorrect",
-   //      "status": ""
-
-   //    }
-   //  },
-   //  {
-   //    "username": "abnet",
-   //    "password": 1234,
-   //    "expectedResults": {
-   //      "expectedText": "The username or password you entered is incorrect",
-   //      "status": ""
-
-   //    }
-   //  },
-   //  {
-   //    "username": "a",
-   //    "password": 1234,
-   //    "expectedResults": {
-   //      "expectedText": "The username or password you entered is incorrect",
-   //      "status": ""
-
-   //    }
-   //  }
-  
     pluse=document.pluseIcon
     empName=document.employeeName
     selectEmpName=document.selectEmployeeName
@@ -75,19 +47,11 @@ class Document {
  clickenterRequestDate(){
    cy.get(this.requestDate ).type('{enter}')
 }
-//  clickSelectRequestDate(){
-//     cy.get(this.selectRequestDate).click()
-//  }
 
 setPreparedOn(requestDate){
     cy.get(this.preparedOn).type(requestDate)
    }
  
-
-//  clickSelectRequestDate(){
-//     cy.get(this.selectDate).click()
-//  }
-
  setComment(commentGiven){
     cy.get(this.commentGiven).type(commentGiven)
  }
@@ -98,11 +62,8 @@ setPreparedOn(requestDate){
 
  verifyDocumentRegister(expectedResult)
  {
-//  
       cy.get(this.successContainer).should('have.text', expectedResult)
-//    }
-//    
-
+      
  }
 }
 export default Document;

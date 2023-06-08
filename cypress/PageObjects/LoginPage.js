@@ -15,8 +15,6 @@ class Login {
  setPassword(password){
     cy.get(this.txtPassword).type(password)
  }
-
-
  clickLogin(){
     cy.get(this.loginButton).should('have.text', 'Login').click()
  }

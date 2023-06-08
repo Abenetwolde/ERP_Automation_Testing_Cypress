@@ -1,7 +1,6 @@
 import jobRegistartion from '../selectors/login.sel'
 
 class jobRegistaration {
-
     pluseIcon = jobRegistartion.pluseIcon
     jobCode = jobRegistartion.jobCode
     departement = jobRegistartion.departement
@@ -90,10 +89,6 @@ class jobRegistaration {
             cy.get(this.successContainer).should('be.visible').should("eq",expectedResult)
     
   
-        //.and('have.css', 'color', 'rgb(92, 184, 92)')
-        // cy.get(this.expected).should('be.visible')
-        // .should("eq",expected)
-
 
     }
 }

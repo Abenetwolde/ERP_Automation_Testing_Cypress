@@ -21,16 +21,12 @@ class jobRegistaration {
     addButton = jobRegistartion.addButton
     saveButton = jobRegistartion.saveButton
     successContainer = jobRegistartion.successContainer
-
     clickPluseIcon() {
         cy.get(this.pluseIcon).click()
     }
-
     setJobCode(jobcode) {
         cy.get(this.jobCode).type(jobcode)
     }
-
-
     setDepartment(departement) {
         cy.get(this.departement).type(departement)
     }
