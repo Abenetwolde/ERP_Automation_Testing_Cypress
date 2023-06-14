@@ -5,6 +5,7 @@ const { defineConfig } = require('cypress')
 module.exports = defineConfig({
     numTestsKeptInMemory: 15,
     defaultCommandTimeout: 15000,
+    projectId:"5w29b1",
     env: {
         baseUrl: 'https://172.21.35.248:8181',
         docUrl: 'https://172.21.35.239:8181/ERP-war/erp/hrms/documentProvidingService/documentRequest.xhtml',
