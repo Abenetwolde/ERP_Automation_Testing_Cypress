@@ -15,17 +15,25 @@ describe('documentRequest', () => {
         loginObject.clickLogin();
       }
     });
-    //     cy.getCookie('JSESSIONID').then((cookie) => {
-    //         if (cookie === null) {
-    //             const loginUrl = Cypress.env('loginUrl')
-    //             const loginObject= new Login()
-    //             cy.visit("https://172.21.35.239:8181/ERP-war/Login.xhtml")
-    //             loginObject.setUserName("hiwot")
-    //             loginObject.setPassword(1234)
-    //             loginObject.clickLogin()
-    //           }
+/* describe('Performance testing with Cypress and Lighthouse', () => {
+  // Define an array of URLs to test
+  const urlsToTest = ['https://example.com/page1', 'https://example.com/page2', 'https://example.com/page3'];
 
-    //   });   
+  // Loop over the URLs and run a performance test on each one
+  urlsToTest.forEach((url) => {
+    it(`should run performance tests on ${url}`, () => {
+      cy.visit(url);
+
+      cy.lighthouse({
+        performance: 50,
+        accessibility: 50,
+        'best-practices': 50,
+        seo: 50,
+        pwa: 50,
+      });
+    });
+  });
+}); */   
   })
 
   it('DataDrivendDcumentRequestTest', () => {
