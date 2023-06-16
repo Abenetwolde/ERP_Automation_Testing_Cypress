@@ -8,10 +8,11 @@
     "cy:run:mob": "cypress run --browser=chrome --env device=mob",
     "cy:run:web": "cypress run --env device=web",
     "cy:ci": "cypress run --env device=web --record --parallel --browser chrome --headless",
-    "cy:dashboard":"cypress run --record --key ab04ef27-09df-4882-bf93-db487cff6033"
+    "cy:dashboard": "cypress run --record --key ab04ef27-09df-4882-bf93-db487cff6033"
   },
   "devDependencies": {
-    "cypress": "^12.4.1",
+    "@cypress-audit/lighthouse": "^1.4.2",
+    "cypress": "^12.14.0",
     "cypress-mochawesome-reporter": "^3.3.0",
     "cypress-xpath": "^2.0.1",
     "eslint": "^7.23.0"

@@ -1,3 +1,4 @@
+const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
 function setViewPortsAndUserAgent(device) {
     if (device === 'mob' || device === 'mobile') {
         return {
@@ -23,3 +24,13 @@ module.exports = (on, config) => {
 
     return config
 }
+module.exports = (on, config) => {
+    on('before:browser:launch', (browser = {}, launchOptions) => {
+      prepareAudit(launchOptions);
+    });
+  
+    on('task', {
+      lighthouse: lighthouse(),
+    });
+  };
+  

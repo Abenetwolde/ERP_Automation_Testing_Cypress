@@ -17,6 +17,7 @@
 
 import 'cypress-xpath'
 import 'cypress-mochawesome-reporter/register';
+import '@cypress-audit/lighthouse/commands';
 // ignore all console errors in app
 // eslint-disable-next-line no-unused-vars
 Cypress.on('uncaught:exception', (err, runnable) => false)
