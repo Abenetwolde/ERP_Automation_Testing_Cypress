@@ -21,15 +21,15 @@ describe('jobRegistaration Test', () => {
       const jobRegistarationObject = new jobRegistaration()
       // const JobUrl = Cypress.env('JobUrl')
       cy.fixture("jobRegistrationTestData").then((data) => {
-        data.jobRegistrationTestData.forEach((jobdata) => {
+        data.jobRegistrationTestData.map((jobdata,i) => {
           // cy.visit(`${JobUrl}`)
           jobRegistarationObject.clickPluseIcon()
           cy.wait(1000)
-          jobRegistarationObject.setJobCode(jobdata.jobCode)
+          jobRegistarationObject.setJobCode(i!==0?jobdata.jobCode:jobdata.jobCode+`${Cypress._.random(1, 100)}`)
           cy.wait(500)
           jobRegistarationObject.setDepartment(jobdata.departement)
           cy.wait(500)
-          jobRegistarationObject.setJobTitle(jobdata.jobTitle)
+          jobRegistarationObject.setJobTitle(i!==0?jobdata.jobTitle:jobdata.jobTitle+`${Cypress._.random(1, 100)}`)
           cy.wait(500)
           jobRegistarationObject.setJobDiscrption(jobdata.jobDiscription)
           cy.wait(500)
