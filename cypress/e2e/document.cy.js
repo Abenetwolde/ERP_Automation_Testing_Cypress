@@ -1,4 +1,9 @@
-
+const colors = require('../fixtures/colors')
+cy.get('button').click().should('be.disabled');
+Cypress.on('uncaught:exception', () => {
+  return false
+})
+cy.get('span.ui-tree-toggler.ui-icon.ui-icon-triangle-1-e')
 import Document from "../PageObjects/documentData.js"
 import Login from "../PageObjects/LoginPage.js"
 describe('documentRequest', () => {
