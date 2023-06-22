@@ -1,5 +1,5 @@
-import Login from "../PageObjects/LoginPage.js"
-import jobRegistaration from "../PageObjects/jobRegistration.js"
+import Login from "../../PageObjects/LoginPage.js"
+import jobRegistaration from "../../PageObjects/jobRegistration.js"
 describe('jobRegistaration Test', () => {
   context('jobRegistaration Test', () => {
     before(() => {
