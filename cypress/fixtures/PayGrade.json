@@ -7,7 +7,7 @@
       {
         "testName":"Successfuly Test Data",
         "salaryGrade": "E4",
-        "salaryStep": "9 ",
+        "salaryStep": "4",
         "salary": "5000",
         "expectedResult":"Success"
       
