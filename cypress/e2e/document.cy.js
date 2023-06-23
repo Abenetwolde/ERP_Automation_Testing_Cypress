@@ -1,5 +1,5 @@
 const colors = require('../fixtures/colors')
-cy.get('button').click().should('be.disabled');
+
 Cypress.on('uncaught:exception', () => {
   return false
 })
