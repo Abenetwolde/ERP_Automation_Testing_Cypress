@@ -1,36 +1,27 @@
 {
-    "jobRegistrationTestData": [
+    "payGradeData": [
       {
-        "jobCode": "Sq1",
-        "departement": "Computer Scince ",
-        "jobTitle": "SAQ",
-        "jobDiscription": "BSC in software Engineering",
-        "relevantExperince": 3,
-        "alternativeExperince": 2,
-        "Experience":3,
-        "expectedResult":"Successfuly Saved"
+        "testName":"Successfuly Test Data",
+        "salaryGrade": "E4",
+        "salaryStep": "9 ",
+        "salary": "5000",
+        "expectedResult":"Success"
       
       },
       {
-        "jobCode": "",
-        "departement": "Computer Scince ",
-        "jobTitle": "SAQ",
-        "jobDiscription": "BSC in software Engineering",
-        "relevantExperince": 3,
-        "alternativeExperince": 2,
-        "Experience":3,
-        "expectedResult":"Successfuly Saved"
+        "testName":"Successfuly Test Data",
+        "salaryGrade": "E4",
+        "salaryStep": "9 ",
+        "salary": "5000",
+        "expectedResult":"Success"
       
       },
       {
-        "jobCode": "Sq1",
-        "departement": "Computer Scince ",
-        "jobTitle": "SAQ",
-        "jobDiscription": "BSC in software Engineering",
-        "relevantExperince": 3,
-        "alternativeExperince": 2,
-        "Experience":3,
-        "expectedResult":"Successfuly Saved"
+        "testName":"Successfuly Test Data",
+        "salaryGrade": "E4",
+        "salaryStep": "9 ",
+        "salary": "5000",
+        "expectedResult":"Success"
       
       }
   
