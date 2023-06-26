@@ -1,0 +1,20 @@
+{
+
+    "url":"https://172.21.35.239:8181/ERP-war/erp/hrms/planning/needRequest.xhtml",
+      "needRequest": [
+        
+        {
+          "testName":"Successfuly Add Test",
+          "salaryGrade": "E4",
+          "salaryStep": 6,
+          "salary": 8000,
+          "expectedResult":{
+            "mainText":"Error!",
+            "subText":"Duplicate entry salary step"
+          }
+  
+        
+        }
+     
+      ]
+    }
