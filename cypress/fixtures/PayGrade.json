@@ -2,32 +2,18 @@
 
   "url":"https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/organization/payGrade.xhtml",
     "payGradeData": [
-     
-
-      {
-        "testName":"Successfuly Test Data",
-        "salaryGrade": "E4",
-        "salaryStep": "4",
-        "salary": "5000",
-        "expectedResult":"Success"
       
-      },
       {
         "testName":"Successfuly Test Data",
         "salaryGrade": "E4",
-        "salaryStep": "9 ",
-        "salary": "5000",
-        "expectedResult":"Success"
-      
-      },
-      {
-        "testName":"Successfuly Test Data",
-        "salaryGrade": "E4",
-        "salaryStep": "9 ",
-        "salary": "5000",
-        "expectedResult":"Success"
+        "salaryStep": "6",
+        "salary": "8000",
+        "expectedResult":{
+          "mainText":"Error!",
+          "subText":"Duplicate entry salary step"
+        }
       
       }
-  
+   
     ]
   }
