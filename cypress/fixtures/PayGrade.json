@@ -4,14 +4,15 @@
     "payGradeData": [
       
       {
-        "testName":"Successfuly Test Data",
+        "testName":"Successfuly Add Test",
         "salaryGrade": "E4",
-        "salaryStep": "6",
-        "salary": "8000",
+        "salaryStep": 6,
+        "salary": 8000,
         "expectedResult":{
           "mainText":"Error!",
           "subText":"Duplicate entry salary step"
         }
+
       
       }
    
