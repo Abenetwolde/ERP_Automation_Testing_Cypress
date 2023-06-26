@@ -50,8 +50,9 @@ describe('PayGradeTest', () => {
             cy.get('li[data-label="2015/2016"]').eq(0).click({force: true});
             cy.get('[id="frmNeedRequest:btnTree"]').click()
 
-            
-
+            frmNeedRequest:sonJob
+            frmNeedRequest:sonJob
+            frmNeedRequest:txtNoOfPosition
             
 
 

@@ -4,17 +4,53 @@
       "needRequest": [
         
         {
-          "testName":"Successfuly Add Test",
-          "salaryGrade": "E4",
-          "salaryStep": 6,
-          "salary": 8000,
+          "testName":"Test 1",
+          "year": "2014/2015",
+          "NoofEmpNeeded": 6,
+          "How_to_be_filled: ": 8000,
+          "When_to_be_filled":"",
+          "reasonforRequest:":"",
+          "NoofPosition":1,
+          "PreparedOn":"",
           "expectedResult":{
-            "mainText":"Error!",
-            "subText":"Duplicate entry salary step"
+            "mainText":"Test 1",
+            "subText":""
           }
   
         
-        }
+        },
+        {
+            "testName":"Test 2",
+            "year": "2014/2015",
+            "NoofEmpNeeded": 6,
+            "How_to_be_filled: ": 8000,
+            "When_to_be_filled":"",
+            "reasonforRequest:":"",
+            "NoofPosition":1,
+            "PreparedOn":"",
+            "expectedResult":{
+              "mainText":"Error!",
+              "subText":"Duplicate entry salary step"
+            }
+    
+          
+          },
+          {
+            "testName":"Test 3",
+            "year": "2014/2015",
+            "NoofEmpNeeded": 6,
+            "How_to_be_filled: ": 8000,
+            "When_to_be_filled":"",
+            "reasonforRequest:":"",
+            "NoofPosition":1,
+            "PreparedOn":"",
+            "expectedResult":{
+              "mainText":"Error!",
+              "subText":"Duplicate entry salary step"
+            }
+    
+          
+          }
      
       ]
     }
