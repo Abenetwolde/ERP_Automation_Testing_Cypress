@@ -58,8 +58,8 @@ describe('PayGradeTest', () => {
             cy.wait(500)
             cy.get('[id="frmNeedRequest:sonJob"]').click()
             cy.wait(500)
-            cy.get('[data-label="Administrative Assistant II"] ').click({force: true})
-            cy.get('[id="frmNeedRequest:txtNoOfPosition"]').type(2)
+            cy.get('[data-label="Administrative Assistant II"] ').eq(0).click({force: true})
+            cy.get('[id="frmNeedRequest:txtNoOfPosition"]').clear().type(2).trigger('change')
             cy.wait(500)
             cy.get('[id="frmNeedRequest:txtHowtobefilled"]').click()
             cy.wait(500)
@@ -75,13 +75,7 @@ describe('PayGradeTest', () => {
             cy.wait(500)
             cy.get('[id="frmNeedRequest:btnAdd"]').click()
             cy.wait(500)
-            // frmNeedRequest:sonJob
-            // frmNeedRequest:sonJob
-            // frmNeedRequest:txtNoOfPosition
-            
-
-
-            //  cy.get(`li[data-label=${data.salaryStep}]`).click();
+        
         })
     })
 }
