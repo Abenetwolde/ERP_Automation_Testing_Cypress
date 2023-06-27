@@ -47,12 +47,37 @@ describe('PayGradeTest', () => {
             cy.get('[id="frmSample:j_idt76"]').click()
             
             cy.get('[id="frmNeedRequest:somYear"]').click()
+            cy.wait(500)
             cy.get('li[data-label="2015/2016"]').eq(0).click({force: true});
+            cy.wait(500)
             cy.get('[id="frmNeedRequest:btnTree"]').click()
-
-            frmNeedRequest:sonJob
-            frmNeedRequest:sonJob
-            frmNeedRequest:txtNoOfPosition
+            cy.wait(500)
+            cy.contains('span.ui-treenode-label.ui-corner-all', '1--INSA').click()
+            cy.wait(500)
+            cy.get('a.ui-dialog-titlebar-close span.ui-icon').click()
+            cy.wait(500)
+            cy.get('[id="frmNeedRequest:sonJob"]').click()
+            cy.wait(500)
+            cy.get('[data-label="Administrative Assistant II"] ').click({force: true})
+            cy.get('[id="frmNeedRequest:txtNoOfPosition"]').type(2)
+            cy.wait(500)
+            cy.get('[id="frmNeedRequest:txtHowtobefilled"]').click()
+            cy.wait(500)
+            cy.get('[data-label="Internal Recruitment"]').click()
+            cy.wait(500)
+            cy.get('[id="frmNeedRequest:txtWhentobefilled"]').click()
+            cy.wait(500)
+            cy.get('[data-label="January"]').click()
+            cy.wait(500)
+            cy.get('[id="frmNeedRequest:txtReasonForRequest"]').type("reason for requist")
+            cy.wait(500)
+            cy.get('[id="frmNeedRequest:txtPosition"]').type(1)
+            cy.wait(500)
+            cy.get('[id="frmNeedRequest:btnAdd"]').click()
+            cy.wait(500)
+            // frmNeedRequest:sonJob
+            // frmNeedRequest:sonJob
+            // frmNeedRequest:txtNoOfPosition
             
 
 
