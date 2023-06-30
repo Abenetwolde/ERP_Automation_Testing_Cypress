@@ -21,7 +21,7 @@ describe('SeveranceLiability testing ', () => {
 
 
     testData.SeveranceLiability.forEach((data, i) => {
-        it(`test datat ${data.testName}`, () => {
+        it(` ${data.testName}`, () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
             cy.get('[id="frmLeaveBalance:txtYear"]').click()
             cy.get('[data-label="2015-2016"]').click()
@@ -36,7 +36,8 @@ describe('SeveranceLiability testing ', () => {
             //     }
             //   })
             if (data.testId == 2) {
-                cy.get('tr.ui-widget-content.ui-datatable-empty-message td[colspan="7"]').should('contain', 'No records found.')
+                cy.get('tr.ui-widget-content.ui-datatable-empty-message td[colspan="7"]').should('contain', 'No records found.') 
+                cy.reload()
             }
             data.testId == 1 && cy.get('[id="frmLeaveBalance:tblAllBalance_data"] tr').then(($rows) => {
                 const rowCount = $rows.length
@@ -54,9 +55,16 @@ describe('SeveranceLiability testing ', () => {
                 }
             })
             if (data.testId == 3){
+                cy.reload()
+                cy.get('[id="frmLeaveBalance:txtYear"]').click()
+                cy.get('[data-label="2015-2016"]').click()
                 cy.get('[id="frmLeaveBalance:tblAllBalance_rppDD"]').select("5")
-                cy.wait(3000)
-                cy.get('tr[data-ri="4"] td').contains(5)
+            
+                cy.get('tr[data-ri="4"]')
+  .find('td')
+  .first()
+  .should('have.text', '5');
+                // cy.get('tr[data-ri="4"] td').contains(5)
             }
               
         })
