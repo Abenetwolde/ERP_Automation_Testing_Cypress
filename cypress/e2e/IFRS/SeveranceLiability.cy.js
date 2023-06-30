@@ -4,39 +4,25 @@ const testData = require('../../fixtures/SeveranceLiability.json');
 console.log(testData.url)
 describe('SeveranceLiability testing ', () => {
     beforeEach(() => {
-    
-        // cy.getCookie('session_id').then((cookie) => {
-        //     if (!cookie) {
-        //         const loginObject = new Login()
-        //                 cy.visit(`${testData.url}`)
-        //                 loginObject.setUserName("hiwot")
-        //                 loginObject.setPassword(1234)
-        //                 loginObject.clickLogin();
-        //     }
-        //     else{
-        //         cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
-        //     }},
-           
-        // )
-        // cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
-        cy.get('body').then(($body) => {
-            if ($body.text().includes('hiwot')) {
-                return;
-            } else {
+      cy.session("JSESSIONID", () => {
+            // Check if the "JSESSIONID" cookie is present
+            cy.getCookie("JSESSIONID").then((cookie) => {
+              // If the cookie is not present, log in
+              if (!cookie) {
                 const loginObject = new Login()
-                cy.visit(`${testData.url}`)
-                loginObject.setUserName("hiwot")
-                loginObject.setPassword(1234)
-                loginObject.clickLogin();
-            }
-        });
-
+                        cy.visit(`${testData.url}`)
+                        loginObject.setUserName("hiwot")
+                        loginObject.setPassword(1234)
+                        loginObject.clickLogin();
+              }
+            });
+          });
     })
 
 
     testData.SeveranceLiability.forEach((data, i) => {
         it(`test datat ${data.testName}`, () => {
-            // cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
+            cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
             cy.get('[id="frmLeaveBalance:txtYear"]').click()
             cy.get('[data-label="2015-2016"]').click()
             cy.get('[id="frmLeaveBalance:tblAllBalance:j_idt77:filter"]').type(data.employid)
