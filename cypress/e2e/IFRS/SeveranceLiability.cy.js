@@ -1,5 +1,5 @@
 import Login from "../../PageObjects/LoginPage.js"
-const testData = require('../../fixtures/SeveranceLiability.json');
+const testData = require('../../fixtures/IFRS/SeveranceLiability.json');
 
 console.log(testData.url)
 describe('SeveranceLiability testing ', () => {

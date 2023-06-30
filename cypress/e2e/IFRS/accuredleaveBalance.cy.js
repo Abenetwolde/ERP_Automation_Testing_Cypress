@@ -1,5 +1,5 @@
 import Login from "../../PageObjects/LoginPage.js"
-const testData = require('../../fixtures/accuredleaveBalance.json');
+const testData = require('../../fixtures/IFRS/accuredleaveBalance.json');
 
 console.log(testData.url)
 describe('accuredleaveBalance testing ', () => {

@@ -20,7 +20,7 @@ describe('jobRegistaration Test', () => {
     it('Data driven jobRegistaration Test', () => {
       const jobRegistarationObject = new jobRegistaration()
       // const JobUrl = Cypress.env('JobUrl')
-      cy.fixture("jobRegistrationTestData").then((data) => {
+      cy.fixture("OrganizationInformation/jobRegistrationTestData").then((data) => {
         data.jobRegistrationTestData.map((jobdata,i) => {
           // cy.visit(`${JobUrl}`)
           jobRegistarationObject.clickPluseIcon()

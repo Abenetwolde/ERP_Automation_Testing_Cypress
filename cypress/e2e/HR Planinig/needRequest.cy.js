@@ -1,5 +1,5 @@
 import Login from "../../PageObjects/LoginPage.js"
-const testData = require('../../fixtures/needRequest.json');
+const testData = require('../../fixtures/HrPlaining/needRequest.json');
 
 console.log(testData.url)
 describe('PayGradeTest', () => {
