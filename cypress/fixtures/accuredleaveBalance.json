@@ -1,0 +1,26 @@
+{
+
+    "url":"https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/accrued_leave_balance.xhtml",
+      "SeveranceLiability": [
+        
+     
+        {
+            "testId":1,
+          "testName":"should show No records found if the element is not found on the table",
+          "employid": "2",
+          "expectedResult":{
+            "mainText":"No records found."  
+          }       
+        },
+        {
+            "testId":2,
+          "testName":"Pagination Test",
+          "employid": "2",
+          "expectedResult":{
+            "mainText":"No records found."  
+          }       
+        }
+     
+     
+      ]
+    }
