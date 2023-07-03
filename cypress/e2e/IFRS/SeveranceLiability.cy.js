@@ -1,4 +1,6 @@
 import Login from "../../PageObjects/LoginPage.js"
+{/* <reference path="./support/auth.cmd.js"/> */}
+import "../../support/auth.js"
 const testData = require('../../fixtures/IFRS/SeveranceLiability.json');
 
 console.log(testData.url)
@@ -7,13 +9,13 @@ describe('SeveranceLiability testing ', () => {
       cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
             cy.getCookie("JSESSIONID").then((cookie) => {
+
+            
+
               // If the cookie is not present, log in
               if (!cookie) {
-                const loginObject = new Login()
-                        cy.visit(`${testData.url}`)
-                        loginObject.setUserName("hiwot")
-                        loginObject.setPassword(1234)
-                        loginObject.clickLogin();
+                cy.loginCommand('hiwot', 1234);
+                //reusable login command
               }
             });
           });

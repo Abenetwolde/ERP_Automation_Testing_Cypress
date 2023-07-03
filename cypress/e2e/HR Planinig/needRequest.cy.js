@@ -26,6 +26,7 @@ describe('PayGradeTest', () => {
                         loginObject.setPassword(1234)
                         loginObject.clickLogin();
               }
+              else return;
             });
           });
         // cy.fixture('PayGrade').then(data => {
