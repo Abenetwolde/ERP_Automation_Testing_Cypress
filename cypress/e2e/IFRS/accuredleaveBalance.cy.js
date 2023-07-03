@@ -9,12 +9,20 @@ describe('accuredleaveBalance testing ', () => {
             cy.getCookie("JSESSIONID").then((cookie) => {
                 // If the cookie is not present, log in
                 if (!cookie) {
-                    const loginObject = new Login()
-                    cy.visit(`${testData.url}`)
-                    loginObject.setUserName("hiwot")
-                    loginObject.setPassword(1234)
-                    loginObject.clickLogin();
-                }
+                    cy.session("JSESSIONID", () => {
+                        // Check if the "JSESSIONID" cookie is present
+                        cy.getCookie("JSESSIONID").then((cookie) => {
+                          // If the cookie is not present, log in
+                          if (!cookie) {
+                            cy.loginCommand(testData.url,'hiwot', 1234);
+                            //reusable login command
+                          }}
+                //     const loginObject = new Login()
+                //     cy.visit(`${testData.url}`)
+                //     loginObject.setUserName("hiwot")
+                //     loginObject.setPassword(1234)
+                //     loginObject.clickLogin();
+                // }
             });
         });
     })
