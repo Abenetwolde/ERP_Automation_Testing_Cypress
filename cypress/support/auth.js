@@ -1,9 +1,13 @@
 import Login from "../PageObjects/LoginPage";
 
-Cypress.Commands.add('loginCommand', (username, password) => {
+Cypress.Commands.add('loginCommand', (url ,username, password) => {
     const loginObject = new Login()
-    cy.visit("https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
+    cy.visit(url)
+    cy.wait(1000)
     loginObject.setUserName(username)
+    cy.wait(1000)
     loginObject.setPassword(password)
+    cy.wait(1000)
     loginObject.clickLogin();
+    cy.visit(url)
 });

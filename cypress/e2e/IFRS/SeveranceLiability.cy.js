@@ -9,15 +9,13 @@ describe('SeveranceLiability testing ', () => {
       cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
             cy.getCookie("JSESSIONID").then((cookie) => {
-
-            
-
               // If the cookie is not present, log in
               if (!cookie) {
-                cy.loginCommand('hiwot', 1234);
+                cy.loginCommand(testData.url,'hiwot', 1234);
                 //reusable login command
               }
-            });
+              else cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
+            })
           });
     })
 
