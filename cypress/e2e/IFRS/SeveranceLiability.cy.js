@@ -1,5 +1,4 @@
 import Login from "../../PageObjects/LoginPage.js"
-
 import "../../support/auth.js"
 const testData = require('../../fixtures/IFRS/SeveranceLiability.json');
 
