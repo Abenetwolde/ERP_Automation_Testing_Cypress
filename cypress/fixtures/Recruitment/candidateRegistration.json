@@ -1,7 +1,7 @@
 {
 
-    "url":"https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml",
-      "SeveranceLiability": [
+    "url":"https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/candidateRegistration.xhtml",
+      "candidateRegistration": [
         
         {
             "testId":1,
@@ -9,22 +9,6 @@
           "employid": "fc",
           "expectedResult":{
             "mainText":"fc"  
-          }       
-        },
-        {
-            "testId":2,
-          "testName":"should show No records found if the element is not found on the table",
-          "employid": "2",
-          "expectedResult":{
-            "mainText":"No records found."  
-          }       
-        },
-        {
-            "testId":3,
-          "testName":"Pagination Test",
-          "employid": "2",
-          "expectedResult":{
-            "mainText":"No records found."  
           }       
         }
      
