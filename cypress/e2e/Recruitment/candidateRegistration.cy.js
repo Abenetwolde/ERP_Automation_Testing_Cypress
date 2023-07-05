@@ -1,5 +1,6 @@
 import Login from "../../PageObjects/LoginPage.js"
 import "../../support/auth.js"
+import { Validator } from "../../Helpers/Validator.js";
 const testData = require('../../fixtures/Recruitment/candidateRegistration.json');
 
 console.log(testData.url)
@@ -18,7 +19,24 @@ describe('SeveranceLiability testing ', () => {
         });
     })
 
+    // function validate(id){
+    //     switch(id){
+    //         case "1":
+    //             cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', data.expectedResult.mainText).should('contain', data.expectedResult.subText)
+    //             //do somth
+    //             break;
+    //             case 2:
+    //                 //do somth
+    //                 break;
+    //                 case 3:
+    //                     //do somth
+    //                     break;
+    //                     case 4:
+    //                         //do somth
+    //                         break;
 
+    //     }
+    // }
     testData.candidateRegistration.forEach((data, i) => {
         it(` ${data.testName}`, () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/candidateRegistration.xhtml")
@@ -33,38 +51,27 @@ describe('SeveranceLiability testing ', () => {
             // select job title 
             cy.get('[data-label="Administrative Assistant I"]').click({force: true})
             // type first name 
-            cy.get('[id="frmCandidate:txtFirstName"]').type("Abnet ")
+            cy.get('[id="frmCandidate:txtFirstName"]').type(data.firstName)
             // type middle name 
-            cy.get('[id="frmCandidate:txtMiddleName"]').type("wolde")
+            cy.get('[id="frmCandidate:txtMiddleName"]').type(data.middleName)
             // type last name 
-            cy.get('[id="frmCandidate:txtLastName"]').type("ndaw")
+            cy.get('[id="frmCandidate:txtLastName"]').type(data.lastName)
             // click Nationality dropdown 
             cy.get('[id="frmCandidate:txtNationality_label"]').click()
             // select Nationality 
             cy.get('[data-label="Ethiopian"]').click()
             // type last name 
-            cy.get('[id="frmCandidate:txtDateOfBirth"]').type("12/09/1025")
+            cy.get('[id="frmCandidate:txtDateOfBirth"]').type(data.dateOfBirth)
               // type phone number 
-            cy.get('[id="frmCandidate:txtMobileNo"]').type("+251947081180")
+            cy.get('[id="frmCandidate:txtMobileNo"]').type(data.MoblePhone)
             // click save button
             cy.get('[id="frmCandidate:btnSave"]').click()
-
+            cy.wait(2000)
+               
             ////validate tests
-            switch(data.id){
-                case 1:
-                    //do somth
-                    break;
-                    case 2:
-                        //do somth
-                        break;
-                        case 3:
-                            //do somth
-                            break;
-                            case 4:
-                                //do somth
-                                break;
-
-            }
+            Validator(data.id)
+        
+      
 
      
         })
