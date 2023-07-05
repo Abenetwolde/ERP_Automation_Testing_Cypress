@@ -14,7 +14,7 @@ describe('SeveranceLiability testing ', () => {
                     cy.loginCommand(testData.url, 'hiwot', 1234);
                     //reusable login command
                 }
-                else cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
+
             })
         });
     })
@@ -49,7 +49,7 @@ describe('SeveranceLiability testing ', () => {
             // click job title dropdown 
             cy.get('[id="frmCandidate:somJobTypes"]').click()
             // select job title 
-            cy.get('[data-label="Administrative Assistant I"]').click({force: true})
+            cy.get('[data-label="Administrative Assistant I"]').click({ force: true })
             // type first name 
             cy.get('[id="frmCandidate:txtFirstName"]').type(data.firstName)
             // type middle name 
@@ -60,20 +60,27 @@ describe('SeveranceLiability testing ', () => {
             cy.get('[id="frmCandidate:txtNationality_label"]').click()
             // select Nationality 
             cy.get('[data-label="Ethiopian"]').click()
-            // type last name 
+            // click Address Button
+            {
+                data.testId === 2 && 
+                cy.get('[id=frmCandidate:btnResidentialAddress "]').click()
+                // select Address 
+                cy.get('[id=frmCandidate:addressTree:60:nodetxt"]').click()
+            }
+            // type Phone number}
             cy.get('[id="frmCandidate:txtDateOfBirth"]').type(data.dateOfBirth)
-              // type phone number 
+            // type phone number 
             cy.get('[id="frmCandidate:txtMobileNo"]').type(data.MoblePhone)
             // click save button
             cy.get('[id="frmCandidate:btnSave"]').click()
             cy.wait(2000)
-               
-            ////validate tests
-            Validator(data.id)
-        
-      
 
-     
+            ////validate tests
+            Validator(data)
+
+
+
+
         })
     })
 
