@@ -19,24 +19,7 @@ describe('SeveranceLiability testing ', () => {
         });
     })
 
-    // function validate(id){
-    //     switch(id){
-    //         case "1":
-    //             cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', data.expectedResult.mainText).should('contain', data.expectedResult.subText)
-    //             //do somth
-    //             break;
-    //             case 2:
-    //                 //do somth
-    //                 break;
-    //                 case 3:
-    //                     //do somth
-    //                     break;
-    //                     case 4:
-    //                         //do somth
-    //                         break;
-
-    //     }
-    // }
+ 
     testData.candidateRegistration.forEach((data, i) => {
         it(` ${data.testName}`, () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/candidateRegistration.xhtml")
