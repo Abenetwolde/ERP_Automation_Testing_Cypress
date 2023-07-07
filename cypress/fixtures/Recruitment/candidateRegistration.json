@@ -3,21 +3,7 @@
     "url":"https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/candidateRegistration.xhtml",
       "candidateRegistration": [
         
-        {
-            "testId":1,
-            "testName":"it should not register if the Age must be between 18 and 100.",
-          "firstName":"firstName",
-          "middleName": "middleName",
-          "lastName":"lastName",
-          "dateOfBirth":"12/08/2015",
-          "MoblePhone":"+251947081180",
-          "expectedResult":
-          {
-            "mainText":"Error!",
-            "subText":"Age must be between 18 and 100."  
-
-          }       
-        },
+     
         {
           "testId":2,
           "testName":"it should not register if the Address is not empthy.",

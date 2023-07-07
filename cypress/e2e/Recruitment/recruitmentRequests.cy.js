@@ -28,7 +28,7 @@ describe('SeveranceLiability testing ', () => {
             // enter request id  
             cy.get('[id="frmRecruitment:txtRequester_input"]').type(123)
             cy.wait(1000)
-            cy.get('tbody tr').first().click({ force: true })
+            cy.get('tbody tr').first().click()
             // click job title dropdown 
             cy.get('[id="frmRecruitment:txtJob"]').click()
                // select job title 

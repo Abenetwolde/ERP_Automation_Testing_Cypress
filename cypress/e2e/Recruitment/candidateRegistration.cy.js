@@ -42,16 +42,16 @@ describe('SeveranceLiability testing ', () => {
             // click Nationality dropdown 
             cy.get('[id="frmCandidate:txtNationality_label"]').click()
             // select Nationality 
-            cy.get('[data-label="Ethiopian"]').click()
+            cy.get('[data-label="Ethiopian"]').click({force: true})
             // click Address Button
           
             {
                 data.testId == 2 && 
-                cy.get('[id="frmCandidate:btnResidentialAddress "]').click()
+                cy.get('[id="frmCandidate:btnResidentialAddress"]').click()
                 // select Address 
-                cy.get('[id="frmCandidate:addressTree:60:nodetxt"]').click({force: true})
-                //close icon
-                cy.get('span.ui-icon.ui-icon-closethick').click({force: true})
+                cy.get('[id="frmCandidate:addressTree:60:nodetxt"]').click({multiple: true })
+                cy.get('a.ui-dialog-titlebar-icon.ui-dialog-titlebar-close.ui-corner-all[role="button"]')
+                .click({multiple: true }/* {force: true} */)
             }
             // // type Phone number}
             cy.get('[id="frmCandidate:txtDateOfBirth"]').type(data.dateOfBirth)
