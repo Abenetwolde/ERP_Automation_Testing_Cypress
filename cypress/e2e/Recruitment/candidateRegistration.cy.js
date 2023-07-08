@@ -43,9 +43,10 @@ describe('SeveranceLiability testing ', () => {
             cy.get('[id="frmCandidate:txtNationality_label"]').click()
             // select Nationality 
             cy.get('[data-label="Ethiopian"]').click({force: true})
-            // click Address Button
-          
-           if(data.testId == 1)  {
+            
+            
+          // allow to select address if there test id is match
+           if(data.testId == 1 || 4)  {
               
                 cy.get('[id="frmCandidate:btnResidentialAddress"]').click()
                 // select Address 
