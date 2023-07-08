@@ -43,7 +43,7 @@
       "expectedResult":
       {
         "mainText":"Error!",
-        "subText":"Address can't be empty."  
+        "subText":"Address can't be empty"  
 
       }       
     }
