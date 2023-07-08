@@ -46,12 +46,14 @@ describe('SeveranceLiability testing ', () => {
             // click Address Button
           
             {
-                data.testId == 2 && 
+                data.testId == 1 && 
                 cy.get('[id="frmCandidate:btnResidentialAddress"]').click()
                 // select Address 
+                cy.wait(5000)
                 cy.get('[id="frmCandidate:addressTree:60:nodetxt"]').click({multiple: true })
-                cy.get('a.ui-dialog-titlebar-icon.ui-dialog-titlebar-close.ui-corner-all[role="button"]')
-                .click({multiple: true }/* {force: true} */)
+                cy.wait(5000)
+                cy.get('a.ui-dialog-titlebar-icon.ui-dialog-titlebar-close.ui-corner-all[role="button"] span.ui-icon.ui-icon-closethick').eq(0)
+                .click(/* {multiple: true }/* */ {force: true} )
             }
             // // type Phone number}
             cy.get('[id="frmCandidate:txtDateOfBirth"]').type(data.dateOfBirth)
