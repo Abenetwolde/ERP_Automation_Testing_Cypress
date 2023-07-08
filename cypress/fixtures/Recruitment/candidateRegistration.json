@@ -45,8 +45,25 @@
         "mainText":"Error!",
         "subText":"Address can't be empty"  
 
-      }       
+      } 
+          
+    },
+    {
+      "testId":4,
+      "testName":"it should not register with duplicate data",
+    "firstName":"firstName",
+    "middleName": "middleName",
+    "lastName":"lastName",
+    "dateOfBirth":"12/08/1990",
+    "MoblePhone":"+251947081180",
+    "expectedResult":
+    {
+      "mainText":"Error!"
+       
+
     }
+  }
+    
      
       ]
     }

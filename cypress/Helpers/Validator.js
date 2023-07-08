@@ -10,5 +10,8 @@ module.exports.Validator = function (data) {
         case 3:
             cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', data.expectedResult.mainText).should('contain', data.expectedResult.subText)
             break;
+        case 4:
+            cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', data.expectedResult.mainText)
+            break;
     }
 }
