@@ -46,7 +46,7 @@ describe('SeveranceLiability testing ', () => {
             
             
           // allow to select address if there test id is match
-           if(data.testId == 1 || 4)  {
+           if(data.testId == 1 )  {
               
                 cy.get('[id="frmCandidate:btnResidentialAddress"]').click()
                 // select Address 
