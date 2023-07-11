@@ -4,20 +4,67 @@
       "needRequest": [
         
         {
-          "testName":"Test 1",
+          "testId":1,
+          "testName":"HR Need Request saved sucessfully ",
           "year": "2014/2015",
           "NoofEmpNeeded": 6,
           "How_to_be_filled: ": 8000,
           "When_to_be_filled":"",
-          "reasonforRequest:":"",
+          "reasonforRequest:":"reasonforRequest",
           "NoofPosition":1,
-          "PreparedOn":"",
+          "PreparedOn":"12/01/2015",
           "expectedResult":{
-            "mainText":"Test 1",
+            "mainText":"Success!",
             "subText":""
           }
   
         
+        },
+        {
+          "testId":2,
+          "testName":"Test if number Position Requested shouldn't Exceed Total Number Of Position",
+          "year": "2014/2015",
+          "NoofEmpNeeded": 6,
+          "How_to_be_filled: ": 8000,
+          "When_to_be_filled":"",
+          "reasonforRequest:":"reasonforRequest",
+          "NoofPosition":7,
+          "PreparedOn":"12/01/2015",
+          "expectedResult":{
+            "mainText":"Error!",
+            "subText":"number Position Requested shouldn't Exceed Total Number Of Position"
+          }
+        },
+        {
+          "testId":3,
+          "testName":"Test if number Position Requested shouldn't be Negative Number",
+          "year": "2014/2015",
+          "NoofEmpNeeded": 6,
+          "How_to_be_filled: ": 8000,
+          "When_to_be_filled":"",
+          "reasonforRequest:":"reasonforRequest",
+          "NoofPosition":-3,
+          "PreparedOn":"12/01/2015",
+          "expectedResult":{
+            "mainText":"Error!",
+            "subText":""
+          }
+        },
+        {
+          "testId":4,
+          "testName":"Test if number Position Requested shouldn't Exceed Total Number Of Position",
+          "year": "2014/2015",
+          "NoofEmpNeeded": 6,
+          "How_to_be_filled: ": 8000,
+          "When_to_be_filled":"",
+          "reasonforRequest:":"reasonforRequest",
+          "NoofPosition":1,
+          "PreparedOn":"12/01/2015",
+          "expectedResult":{
+            "mainText":"Error!",
+            "subText":""
+          }
         }
+        
       ]
     }

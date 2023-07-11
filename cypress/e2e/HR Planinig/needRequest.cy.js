@@ -1,3 +1,4 @@
+import { Validator } from "../../Helpers/Validator.js";
 import Login from "../../PageObjects/LoginPage.js"
 const testData = require('../../fixtures/HrPlaining/needRequest.json');
 
@@ -64,7 +65,7 @@ describe('PayGradeTest', () => {
            // cy.wait(500)
             cy.get('[id="frmNeedRequest:somYear"]').click()
             cy.wait(500)
-            cy.get('li[data-label="2015/2016"]').eq(0).click({force: true});
+            cy.get(`li[data-label="${data.year}"]`).eq(0).click({force: true});
             cy.wait(500)
             cy.get('[id="frmNeedRequest:btnTree"]').click()
             cy.wait(500)
@@ -78,7 +79,7 @@ describe('PayGradeTest', () => {
             cy.wait(500)
             cy.get('[name="frmNeedRequest:txtNoOfPosition"]').click()
             cy.wait(500)
-            cy.get('[name="frmNeedRequest:txtNoOfPosition"]').clear().type(2)
+            cy.get('[name="frmNeedRequest:txtNoOfPosition"]').clear().type(data.NoofEmpNeeded)
             cy.wait(500)
             cy.get('[id="frmNeedRequest:txtHowtobefilled"]').click()
             //cy.wait(500)
@@ -88,18 +89,20 @@ describe('PayGradeTest', () => {
             //cy.wait(500)
             cy.get('[data-label="January"]').click()
             //cy.wait(500)
-            cy.get('[id="frmNeedRequest:txtReasonForRequest"]').type("reason for requist")
+            cy.get('[id="frmNeedRequest:txtReasonForRequest"]').type(`${data.reasonforRequest}`)
             //cy.wait(500)
-            cy.get('[id="frmNeedRequest:txtPosition"]').type(1)
+            cy.get('[id="frmNeedRequest:txtPosition"]').type(data.NoofPosition)
             //cy.wait(500)
             cy.get('[id="frmNeedRequest:btnAdd"]').click()
-
-             cy.get('[id="frmNeedRequest:txtxreqdate"]').type("12/08/2016")
+           if(data.testId==2){
+            Validator(data)
+           }
+            cy.get('[id="frmNeedRequest:txtxreqdate"]').type(data.PreparedOn)
 
             cy.get('[id="frmNeedRequest:btnSave"]').click()
             
-            //cy.wait(500)
-            cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")
+            Validator(data)
+            // cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")
         })
     })
 }
