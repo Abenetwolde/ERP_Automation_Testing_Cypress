@@ -1,7 +1,7 @@
 import { Validator } from "../../Helpers/Validator.js";
 import Login from "../../PageObjects/LoginPage.js"
 import "../../support/auth.js"
-const testData = require('../../fixtures/HrPlaining/annualRecruitmentAndPromotion.json');
+const testData = require('../../fixtures/HrPlaining/demandAndSupplyAnalysis.json');
 
 console.log(testData.url)
 describe('PayGradeTest', () => {
@@ -20,26 +20,28 @@ describe('PayGradeTest', () => {
     })
 
    
-    testData.annualRecruitmentAndPromotion.forEach((data, i) => {
+    testData.demandAndSupplyAnalysis.forEach((data, i) => {
         it(`test data ${data.testName}`, () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/planning/demandAndSupplyAnalysis.xhtml")
+            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/planning/annualRecruitmentAndPromotion.xhtml")
             cy.wait(500)
             // click the Year dropdown
-            cy.get('[id="frmNeedRequest:txtYear_label"]').click()
+            cy.get('[id="frmAnnualPlan:somYear_label"]').click()
             cy.wait(500)
             // select year
             cy.get(`li[data-label="${data.year}"]`).eq(0).click({force: true});
             cy.wait(500)
             // clickDepartment dropdown
-             cy.get('[id="frmNeedRequest:txtDirectorate_label"]').click()
+             cy.get('[id="frmAnnualPlan:txtDirectorate_label"]').click()
              cy.wait(500)
             // Select Department
              cy.get(`li[data-label="${data.Department}"]`).eq(0).click({force: true});
              cy.wait(500)
+             // type txtRemark
+             cy.get('[id="frmAnnualPlan:txtRemark"]').type(`"${data.remark}"`)
              // type Prepard on
-             cy.get('[id="frmNeedRequest:txtxreqdate"]').type(data.PreparedOn)
+             cy.get('[id="frmAnnualPlan:txtxreqdate"]').type(data.PreparedOn)
              cy.wait(500)
-             cy.get('[id="frmNeedRequest:btnSave"]').click()
+             cy.get('[id="frmAnnualPlan:btnSave"]').click()
              Validator(data)
             
         })
