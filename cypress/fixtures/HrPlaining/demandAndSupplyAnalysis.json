@@ -6,8 +6,8 @@
         {
           "testId":1,
           "testName":"demand And Supply Analysis saved sucessfully ",
-          "year": "2014/2015",
-          "Department": "INSA",
+          "year": "2015/2016",
+          "Department": "Hidase Project",
           "PreparedOn":"12/01/2012",
           "expectedResult":{
             "mainText":"Success!",
@@ -15,7 +15,41 @@
           }
   
         
+        },
+        {
+          "testId":2,
+          "testName":"is should not save with out add Data ",
+          "year": "2015/2016",
+          "Department": "Hidase Project",
+          "PreparedOn":"12/01/2012",
+          "expectedResult":{
+            "mainText":"Error!",
+            "subText":"No Data To be Saved"
+          }
+        },
+        {
+          "testId":3,
+          "testName":"is should not save with invalid PreparedOn data ",
+          "year": "2015/2016",
+          "Department": "Hidase Project",
+          "PreparedOn":"12/01/2016",
+          "expectedResult":{
+            "mainText":"Error!",
+            "subText":""
+          }
+        },
+        {
+          "testId":4,
+          "testName":"is should not save with Duplication ",
+          "year": "2015/2016",
+          "Department": "Hidase Project",
+          "PreparedOn":"12/01/2016",
+          "expectedResult":{
+            "mainText":"Error!",
+            "subText":""
+          }
         }
+       
        
         
       ]

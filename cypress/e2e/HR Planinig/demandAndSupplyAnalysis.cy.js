@@ -26,14 +26,19 @@ describe('PayGradeTest', () => {
             cy.wait(500)
             // click the Year dropdown
             cy.get('[id="frmNeedRequest:txtYear_label"]').click()
+            cy.wait(500)
             // select year
             cy.get(`li[data-label="${data.year}"]`).eq(0).click({force: true});
+            cy.wait(500)
             // clickDepartment dropdown
              cy.get('[id="frmNeedRequest:txtDirectorate_label"]').click()
+             cy.wait(500)
             // Select Department
-            //  cy.get(`li[data-label="${data.Department}"]`).eq(0).click({force: true});
+             cy.get(`li[data-label="${data.Department}"]`).eq(0).click({force: true});
+             cy.wait(500)
              // type Prepard on
              cy.get('[id="frmNeedRequest:txtxreqdate"]').type(data.PreparedOn)
+             cy.wait(500)
              cy.get('[id="frmNeedRequest:btnSave"]').click()
              Validator(data)
             
