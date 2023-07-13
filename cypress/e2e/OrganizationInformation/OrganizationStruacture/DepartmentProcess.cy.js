@@ -3,35 +3,6 @@ import { ErrorInputValidator } from "../../../Helpers/ErrorInputValidator.js";
 import { Validator } from "../../../Helpers/Validator.js";
 import "../../../support/auth.js"
 const testData = require('../../../fixtures/OrganizationInformation/OrganizationStruacture/DepartmentProcess.json');
-/*    {
-            "testId":2,
-          "testName":"should not update DepartmentProcess data",
-          "updateData": "1212/1223/20315",
-          "expectedResult":{
-            "mainText":"Error",
-            "subText" :""
-          }       
-        },
-        {
-            "testId":3,
-          "testName":"Seccesfuly save DepartmentProcess",
-          "departmentName ": "New",
-          "expectedResult":{
-            "mainText":"Success!",
-            "subText" :"" 
-          }       
-        },
-      
-        {
-            "testId":5,
-          "testName":"it should not save with invalid departmentName ",
-          "departmentName ": "New12",
-          "expectedResult":{
-            "mainText":"Error!",
-            "subText" :"" 
-          }       
-        }
-      */
 
 
 console.log(testData.url)
