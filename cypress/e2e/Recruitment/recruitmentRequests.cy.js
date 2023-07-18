@@ -26,20 +26,27 @@ describe('SeveranceLiability testing ', () => {
             // click the plus icon
             cy.get('[id="frmSample:btnNew"]').click()
             // enter request id  
-            cy.get('[id="frmRecruitment:txtRequester_input"]').type(123)
+            cy.get('[id="frmRecruitment:txtRequester_input"]').type(`${data.Requester_id}`)
             cy.wait(1000)
-            cy.get('tbody tr').first().click()
+            cy.get(`[data-item-value="${data.Requester_id}"]`).click()
+            cy.wait(500)
+            cy.get('[id="frmRecruitment:txtJob"]').click({force: true})
+            // cy.get('tbody tr').first().click()
+          
             // click job title dropdown 
             cy.get('[id="frmRecruitment:txtJob"]').click()
                // select job title 
-            cy.get('[data-label="Administrative Assistant II"]').click({ force: true })
-            // validate the table  
-            cy.get('table[role="grid"] tbody tr').should('have.length', 2)
+            cy.get(`[data-label="${data.jobTitle}"]`).click({ force: true })
+            //type Number of employees requested
+            cy.get('[id="frmRecruitment:txtNoOfEmployee"]').type(data.txtNoOfEmployee)
+            // save Data
+             cy.get('[id="frmRecruitment:btnSave"]').click()
+            // cy.get('table[role="grid"] tbody tr').should('have.length', 2)
 
-            // type middle name 
-            cy.get('[id="frmRecruitment:txtNoOfEmployee"]').type(1)
-            // save button
-            cy.get('[id="frmRecruitment:btnSave"]').click()
+            // // type middle name 
+            // cy.get('[id="frmRecruitment:txtNoOfEmployee"]').type(1)
+            // // save button
+            // cy.get('[id="frmRecruitment:btnSave"]').click()
             // cy.get('[id="frmCandidate:txtLastName"]').type(data.lastName)
             // // click Nationality dropdown 
             // cy.get('[id="frmCandidate:txtNationality_label"]').click()
