@@ -1,10 +1,11 @@
 import Login from "../../PageObjects/LoginPage.js"
 import "../../support/auth.js"
 import { Validator } from "../../Helpers/Validator.js";
+import { ErrorInputValidator } from "../../Helpers/ErrorInputValidator.js";
 const testData = require('../../fixtures/Recruitment/recruitmentRequests.json');
 
 console.log(testData.url)
-describe('SeveranceLiability testing ', () => {
+describe('recruitmentRequests testing ', () => {
     beforeEach(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
@@ -38,7 +39,8 @@ describe('SeveranceLiability testing ', () => {
                // select job title 
             cy.get(`[data-label="${data.jobTitle}"]`).click({ force: true })
             //type Number of employees requested
-            cy.get('[id="frmRecruitment:txtNoOfEmployee"]').type(data.txtNoOfEmployee)
+          if(data.testId!==2){cy.get('[id="frmRecruitment:txtNoOfEmployee"]').type(data.txtNoOfEmployee)}  
+            cy.wait(500)
             // save Data
              cy.get('[id="frmRecruitment:btnSave"]').click()
             // cy.get('table[role="grid"] tbody tr').should('have.length', 2)
@@ -71,7 +73,13 @@ describe('SeveranceLiability testing ', () => {
             // cy.wait(2000)
 
             // ////validate tests
-            Validator(data)
+            if(data.testType=="validator")
+            {
+                Validator(data)
+            }else{
+                ErrorInputValidator(data)
+            }
+            
 
 
 

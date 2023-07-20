@@ -5,6 +5,7 @@
         
         {
             "testId":1,
+            "testType":"validator",
             "testName":"recruitmentRequests saved sucessfuly.",
           "Requester_id":"123",
           "jobTitle": "Developer",
@@ -18,16 +19,15 @@
         },
         {
           "testId":2,
-          "testName":"it should not register if the Address is not empthy.",
-        "firstName":"firstName",
-        "middleName": "middleName",
-        "lastName":"lastName",
-        "dateOfBirth":"12/08/1990",
-        "MoblePhone":"+251947081180",
+          "testType":"requird",
+          "testName":"recruitmentRequests saved sucessfuly.",
+        "Requester_id":"123",
+        "jobTitle": "Developer",
+       
         "expectedResult":
         {
-          "mainText":"Error!",
-          "subText":"Address can't be empty."  
+          "mainText":"Enter number of employees"
+          
 
         }       
       }
