@@ -32,9 +32,9 @@
             "testId":1,
             "testType":"validator",
             "testName":"recruitmentApprove saved sucessfuly.",
-          "Requester_id":"123",
-          "jobTitle": "Developer",
-          "txtNoOfEmployee":12,
+          "vacancy_num":"234",
+          "NoOfEmployeesApproved": "4",
+          "Decision":12,
           "expectedResult":
           {
             "mainText":"Success!"

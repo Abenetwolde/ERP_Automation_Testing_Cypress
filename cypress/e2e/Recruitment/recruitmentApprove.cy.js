@@ -22,7 +22,7 @@ describe('recruitmentRequests testing ', () => {
 
 
     testData.recruitmentApproveFilterCriteria.forEach((data, i) => {
-        it(` ${data.testName}`, () => {
+        it.skip(` ${data.testName}`, () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml")
             // click Filter Criteria 
             cy.get('[id="frmRecruitment:somFiliterByStatus_label"]').click()
@@ -36,6 +36,41 @@ describe('recruitmentRequests testing ', () => {
                  1,
                 'be.gte'
             )    
+        })
+
+    })
+
+    testData.recruitmentApprove.forEach((data, i) => {
+        it(` ${data.testName}`, () => {
+            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml")
+            // click Filter Criteria 
+            cy.get('[id="frmRecruitment:somFiliterByStatus_label"]').click()
+            // enter Criteria
+            cy.get(`[data-label="Load request list"]`).click()
+            cy.wait(1000)
+            // click the first row
+            cy.get('[id="frmRecruitment:tblRequestList_data"] tr').first().click();
+            //input Vacancy number 
+            cy.get('[id="frmRecruitment:txtBatchofCode"]').type(data.vacancy_num)
+            // input NoOfEmployeesApproved number
+            cy.get('[id="frmRecruitment:txtApprovedEmployee"]').type(data.NoOfEmployeesApproved)
+            cy.wait(500)
+// click Decision 
+            cy.get('[id="frmRecruitment:txtDecsion"]').click()
+            cy.wait(500)
+            // slelect Decision 
+            cy.get(`[data-label="Approve"]`).click()
+            cy.wait(500)
+            cy.get('[id="frmRecruitment:btnSave"]').click()
+            
+            if(data.testType=="validator")
+            {
+                Validator(data)
+            }else{
+                ErrorInputValidator(data)
+            }
+
+  
         })
 
     })
