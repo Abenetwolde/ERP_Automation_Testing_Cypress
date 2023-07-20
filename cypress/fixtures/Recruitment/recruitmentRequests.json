@@ -20,17 +20,42 @@
         {
           "testId":2,
           "testType":"requird",
-          "testName":"recruitmentRequests saved sucessfuly.",
+          "testName":"recruitmentRequests not saved if the require inputs are not fill or nagative",
         "Requester_id":"123",
         "jobTitle": "Developer",
        
         "expectedResult":
         {
           "mainText":"Enter number of employees"
-          
-
         }       
-      }
+      },
+      {
+        "testId":3,
+        "testType":"validator",
+        "testName":"it should not save if Number of employee should be less than or equal to12",
+      "Requester_id":"123",
+      "jobTitle": "Developer",
+      "txtNoOfEmployee":14,
+      "expectedResult":
+      {
+        "mainText":"Error!",
+        "subText":"Number of employee should be less than or equal to12"
+      }       
+    },
+    {
+      "testId":4,
+      "testType":"validator",
+      "testName":"it should not save with duplicated data",
+    "Requester_id":"123",
+    "jobTitle": "Developer",
+    "txtNoOfEmployee":11,
+    "expectedResult":
+    {
+      "mainText":"Error!"
+      
+    }       
+  }
+  
      
       ]
     }
