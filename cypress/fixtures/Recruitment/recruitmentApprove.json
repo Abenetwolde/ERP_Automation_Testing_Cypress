@@ -1,0 +1,25 @@
+{
+
+    "url":"https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml",
+    "mainUrl":"https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml",
+      "recruitmentApprove": [
+        
+        {
+            "testId":1,
+            "testType":"validator",
+            "testName":"recruitmentApprove saved sucessfuly.",
+          "Requester_id":"123",
+          "jobTitle": "Developer",
+          "txtNoOfEmployee":12,
+          "expectedResult":
+          {
+            "mainText":"Success!"
+            
+
+          }       
+        }
+   
+  
+     
+      ]
+    }

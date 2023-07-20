@@ -43,36 +43,7 @@ describe('recruitmentRequests testing ', () => {
             cy.wait(500)
             // save Data
              cy.get('[id="frmRecruitment:btnSave"]').click()
-            // cy.get('table[role="grid"] tbody tr').should('have.length', 2)
-
-            // // type middle name 
-            // cy.get('[id="frmRecruitment:txtNoOfEmployee"]').type(1)
-            // // save button
-            // cy.get('[id="frmRecruitment:btnSave"]').click()
-            // cy.get('[id="frmCandidate:txtLastName"]').type(data.lastName)
-            // // click Nationality dropdown 
-            // cy.get('[id="frmCandidate:txtNationality_label"]').click()
-            // // select Nationality 
-            // cy.get('[data-label="Ethiopian"]').click()
-            // // click Address Button
-
-            // {
-            //     data.testId == 2 && 
-            //     cy.get('[id="frmCandidate:btnResidentialAddress "]').click()
-            //     // select Address 
-            //     cy.get('[id="frmCandidate:addressTree:60:nodetxt"]').click({force: true})
-            //     //close icon
-            //     cy.get('span.ui-icon.ui-icon-closethick').click({force: true})
-            // }
-            // // // type Phone number}
-            // cy.get('[id="frmCandidate:txtDateOfBirth"]').type(data.dateOfBirth)
-            // // type phone number 
-            // cy.get('[id="frmCandidate:txtMobileNo"]').type(data.MoblePhone)
-            // // click save button
-            // cy.get('[id="frmCandidate:btnSave"]').click()
-            // cy.wait(2000)
-
-            // ////validate tests
+         
             if(data.testType=="validator")
             {
                 Validator(data)
