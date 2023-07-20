@@ -2,6 +2,30 @@
 
     "url":"https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml",
     "mainUrl":"https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml",
+    "recruitmentApproveFilterCriteria": [
+        
+        {
+            "testId":1,
+            "testType":"validator",
+            "testName":"Test Load request list Filter Criteria Work.",
+          "filterCriteria":"Load request list"
+          
+        },
+        {
+            "testId":2,
+            "testType":"validator",
+            "testName":"Test Load approved list Filter Criteria Work.",
+          "filterCriteria":"Load approved list"
+        },
+        {
+            "testId":3,
+            "testType":"validator",
+            "testName":"Test Load request list Filter Criteria Work.",
+          "filterCriteria":"Load rejected list"
+        }
+      ],
+
+
       "recruitmentApprove": [
         
         {
@@ -18,8 +42,7 @@
 
           }       
         }
-   
-  
-     
       ]
+
+
     }

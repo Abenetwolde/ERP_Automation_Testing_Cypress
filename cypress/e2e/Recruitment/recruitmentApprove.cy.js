@@ -1,6 +1,6 @@
 import Login from "../../PageObjects/LoginPage.js"
 import "../../support/auth.js"
-import { Validator } from "../../Helpers/Validator.js";
+import { TableValidator, Validator } from "../../Helpers/Validator.js";
 import { ErrorInputValidator } from "../../Helpers/ErrorInputValidator.js";
 const testData = require('../../fixtures/Recruitment/recruitmentApprove.json');
 
@@ -21,7 +21,7 @@ describe('recruitmentRequests testing ', () => {
     })
 
 
-    testData.recruitmentApprove.forEach((data, i) => {
+    testData.recruitmentApproveFilterCriteria.forEach((data, i) => {
         it(` ${data.testName}`, () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml")
             // click Filter Criteria 
@@ -29,32 +29,14 @@ describe('recruitmentRequests testing ', () => {
             // enter Criteria
             cy.get(`[data-label="Load request list"]`).click()
             cy.wait(1000)
-            cy.get('[id="frmRecruitment:tblRequestList_data"] tr').its('length').should('be.gte', 1);
-           
 
-        //     cy.wait(500)
-        //     cy.get('[id="frmRecruitment:txtJob"]').click({force: true})
-        //     // cy.get('tbody tr').first().click()
-          
-        //     // click job title dropdown 
-        //     cy.get('[id="frmRecruitment:txtJob"]').click()
-        //        // select job title 
-        //     cy.get(`[data-label="${data.jobTitle}"]`).click({ force: true })
-        //     //type Number of employees requested
-        //   if(data.testId!==2){cy.get('[id="frmRecruitment:txtNoOfEmployee"]').type(data.txtNoOfEmployee)}  
-        //     cy.wait(500)
-        //     // save Data
-        //      cy.get('[id="frmRecruitment:btnSave"]').click()
-         
-        //     if(data.testType=="validator")
-        //     {
-        //         Validator(data)
-        //     }else{
-        //         ErrorInputValidator(data)
-        //     }           
-
-        // })
-    })
+            // validate the number of row of the table 
+            TableValidator(
+                '[id="frmRecruitment:tblRequestList_data"] tr',
+                 1,
+                'be.gte'
+            )    
+        })
 
     })
 })
