@@ -1,0 +1,29 @@
+{
+
+    "url":"https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/assessmentWeight.xhtml",
+      "assessmentWeight": [
+        
+        {
+            "testId":1,
+            "testType":"validator",
+            "testName":"assessmentWeight updated Successfully",
+            "updateData":"12",
+          "expectedResult":
+          {
+            "mainText":"Success!"
+          }       
+        },
+        {
+          "testId":2,
+          "testType":"requird",
+          "testName":"assessmentWeight not Updated with negative data",
+          "updateData":"-12", 
+        "expectedResult":
+        {
+          "mainText":"Enter number of employees"
+        }       
+      }
+   
+     
+      ]
+    }
