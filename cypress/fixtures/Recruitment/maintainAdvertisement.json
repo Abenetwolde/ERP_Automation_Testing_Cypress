@@ -1,0 +1,33 @@
+{
+
+    "url":"https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/maintainAdvertisement.xhtml",
+      "maintainAdvertisement": [
+        
+        {
+            "testId":1,
+            "testName":"update seccessfully",
+            "mediaType":"TV",
+            "testType":"validator",
+            "occurrenceText":"12",
+          "expectedResult":
+          {
+            "mainText":"Success!"
+          }       
+        },
+        {
+            "testId":2,
+            "testName":"it should not update when It is already exist",
+            "mediaType":"TV",
+            "testType":"validator",
+            "occurrenceText":"12",
+          "expectedResult":
+          {
+            "mainText":"Error!",
+            "subText":"It is already exist!"
+          }       
+        }
+  
+  
+     
+      ]
+    }
