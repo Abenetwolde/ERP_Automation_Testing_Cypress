@@ -51,18 +51,20 @@ describe('recruitmentRequests testing ', () => {
             // click the first row
             cy.get('[id="frmRecruitment:tblRequestList_data"] tr').first().click();
             //input Vacancy number 
+            cy.wait(500)
             cy.get('[id="frmRecruitment:txtBatchofCode"]').type(data.vacancy_num)
             // input NoOfEmployeesApproved number
+            cy.wait(500)
             cy.get('[id="frmRecruitment:txtApprovedEmployee"]').type(data.NoOfEmployeesApproved)
             cy.wait(500)
 // click Decision 
             cy.get('[id="frmRecruitment:txtDecsion"]').click()
             cy.wait(500)
             // slelect Decision 
-            cy.get(`[data-label="Approve"]`).click()
+            cy.get(`[data-label="${data.Decision}"]`).click()
             cy.wait(500)
             cy.get('[id="frmRecruitment:btnSave"]').click()
-            
+            cy.wait(500)
             if(data.testType=="validator")
             {
                 Validator(data)

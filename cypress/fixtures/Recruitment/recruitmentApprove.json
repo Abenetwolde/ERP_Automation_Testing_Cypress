@@ -31,17 +31,57 @@
         {
             "testId":1,
             "testType":"validator",
-            "testName":"recruitmentApprove saved sucessfuly.",
+            "testName":"recruitment Approve sucessfuly.",
           "vacancy_num":"234",
           "NoOfEmployeesApproved": "4",
-          "Decision":12,
+          "Decision":"Approve",
           "expectedResult":
           {
             "mainText":"Success!"
             
 
           }       
-        }
+        },
+        {
+          "testId":2,
+          "testType":"validator",
+          "testName":"recruitmentApprove not save if  approved employees less than or equal.",
+        "vacancy_num":"231224",
+        "NoOfEmployeesApproved": "12224",
+        "Decision":"Approve",
+        "expectedResult":
+        {
+          "mainText":"Error!",
+          "subText":"Please insert No. of approved employees less than or equal to 12"
+          
+
+        }       
+      },
+      {
+        "testId":3,
+        "testType":"validator",
+        "testName":"recruitmentApprove Reject sucessfuly.",
+      "vacancy_num":"2134",
+      "NoOfEmployeesApproved": "1",
+      "Decision":"Reject",
+      "expectedResult":
+      {
+        "mainText":"Success!",
+        "subText":"Successfully submitted"
+      }       
+    },
+    {
+      "testId":4,
+      "testType":"validator",
+      "testName":"recruitmentApprove not save Reject employees less than or equal to 12.",
+    "vacancy_num":"2134",
+    "NoOfEmployeesApproved": "1",
+    "Decision":"Reject",
+    "expectedResult":
+    {
+      "mainText":"Error!"
+    }       
+  }
       ]
 
 
