@@ -18,7 +18,7 @@ describe('OrganizationStruacture Test', () => {
             });
         })
        
-        it.skip('the Departement/process, Adress, Staff Plan should not be inactive if not select the project ', () => {
+        it('the Departement/process, Adress, Staff Plan should not be inactive if not select the project ', () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
             cy.get('li a[href="#tabWorkUnit"]')
                 .trigger('mouseover')
@@ -36,7 +36,7 @@ describe('OrganizationStruacture Test', () => {
                 .should('have.class', 'disabled')
            
         })
-        it.skip('the Departement/process, Adress, Staff Plan should be visible by selecting one project ', () => {
+        it('the Departement/process, Adress, Staff Plan should be visible by selecting one project ', () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
             cy.get('span.ui-treenode-label.ui-corner-all').contains('INSA=>1').click()
             cy.get(' a[href="#tabWorkUnit"]').should('have.attr', 'data-toggle');
