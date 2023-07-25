@@ -3,7 +3,7 @@ import { ErrorInputValidator } from "../../../Helpers/ErrorInputValidator.js";
 import { Validator } from "../../../Helpers/Validator.js";
 import "../../../support/auth.js"
 const testData = require('../../../fixtures/OrganizationInformation/OrganizationStruacture/DepartmentProcess.json');
-
+import { generateRandomString } from "../../../Helpers/RandomString.js";
 
 console.log(testData.url)
 describe('SeveranceLiability testing ', () => {
@@ -16,7 +16,7 @@ describe('SeveranceLiability testing ', () => {
                     cy.loginCommand(testData.url, 'hiwot', 1234);
                     //reusable login command
                 }
-                //   else cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
+            
             })
         });
     })
@@ -50,7 +50,7 @@ describe('SeveranceLiability testing ', () => {
                     cy.get('[id="frmOrganizationStructure:btnNew"]').click()
                     //clear and type department Name
                     cy.wait(500)
-                    cy.get('[id="frmOrganizationStructure:txtWorkUnitName"]').type("datadepartmentName")
+                    cy.get('[id="frmOrganizationStructure:txtWorkUnitName"]').type(generateRandomString(5))
                     //click save button
                     cy.get('[id="frmOrganizationStructure:btnSave"]').click()
                     break;
@@ -62,6 +62,16 @@ describe('SeveranceLiability testing ', () => {
                         //click save button
                         cy.get('[id="frmOrganizationStructure:btnSave"]').click()
                         break;
+                        case 5:
+                            //click New Button
+                            cy.wait(500)
+                            cy.get('[id="frmOrganizationStructure:btnNew"]').click()
+                            //clear and type department Name
+                            cy.wait(500)
+                            cy.get('[id="frmOrganizationStructure:txtWorkUnitName"]').type("Ac")
+                            //click save button
+                            cy.get('[id="frmOrganizationStructure:btnSave"]').click()
+                            break;
             }
 
             ///test the the case
