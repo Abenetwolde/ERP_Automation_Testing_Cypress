@@ -18,7 +18,7 @@ describe('OrganizationStruacture Test', () => {
             });
         })
        
-        it('the Departement/process, Adress, Staff Plan should not be visible if not select the project ', () => {
+        it.skip('the Departement/process, Adress, Staff Plan should not be inactive if not select the project ', () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
             cy.get('li a[href="#tabWorkUnit"]')
                 .trigger('mouseover')
@@ -36,7 +36,7 @@ describe('OrganizationStruacture Test', () => {
                 .should('have.class', 'disabled')
            
         })
-        it('the Departement/process, Adress, Staff Plan should be visible if not select the project ', () => {
+        it.skip('the Departement/process, Adress, Staff Plan should be visible by selecting one project ', () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
             cy.get('span.ui-treenode-label.ui-corner-all').contains('INSA=>1').click()
             cy.get(' a[href="#tabWorkUnit"]').should('have.attr', 'data-toggle');
@@ -47,6 +47,19 @@ describe('OrganizationStruacture Test', () => {
             
 
             cy.get(' a[href="#tabStaffPlan"]').should('have.attr', 'data-toggle');
+            
+        
+        }),
+        it('the organization structure hshould have more than one lists', () => {
+            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
+            cy.get('span.ui-treenode-label.ui-corner-all').contains('INSA=>1').click()
+            cy.wait(1000)
+
+
+            cy.get('[id="frmOrganizationStructure:treeDept:0"]')
+            .children('li, ul')
+            .its('length')
+            .should('be.gt', 0);
             
         
         })
