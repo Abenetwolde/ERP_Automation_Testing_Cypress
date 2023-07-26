@@ -5,17 +5,17 @@ const testData = require('../../fixtures/IFRS/SeveranceLiability.json');
 console.log(testData.url)
 describe('SeveranceLiability testing ', () => {
     beforeEach(() => {
-      cy.session("JSESSIONID", () => {
+        cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
             cy.getCookie("JSESSIONID").then((cookie) => {
-              // If the cookie is not present, log in
-              if (!cookie) {
-                cy.loginCommand(testData.url,'hiwot', 1234);
-                //reusable login command
-              }
-              else cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
+                // If the cookie is not present, log in
+                if (!cookie) {
+                    cy.loginCommand(testData.url, 'hiwot', 1234);
+                    //reusable login command
+                }
+                else cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/SeveranceLiability.xhtml")
             })
-          });
+        });
     })
 
 
@@ -35,7 +35,7 @@ describe('SeveranceLiability testing ', () => {
             //     }
             //   })
             if (data.testId == 2) {
-                cy.get('tr.ui-widget-content.ui-datatable-empty-message td[colspan="7"]').should('contain', 'No records found.') 
+                cy.get('tr.ui-widget-content.ui-datatable-empty-message td[colspan="7"]').should('contain', 'No records found.')
                 cy.reload()
             }
             data.testId == 1 && cy.get('[id="frmLeaveBalance:tblAllBalance_data"] tr').then(($rows) => {
@@ -53,19 +53,19 @@ describe('SeveranceLiability testing ', () => {
                         })
                 }
             })
-            if (data.testId == 3){
+            if (data.testId == 3) {
                 cy.reload()
                 cy.get('[id="frmLeaveBalance:txtYear"]').click()
                 cy.get('[data-label="2015-2016"]').click()
                 cy.get('[id="frmLeaveBalance:tblAllBalance_rppDD"]').select("5")
-            
+
                 cy.get('tr[data-ri="4"]')
-  .find('td')
-  .first()
-  .should('have.text', '5');
+                    .find('td')
+                    .first()
+                    .should('have.text', '5');
                 // cy.get('tr[data-ri="4"] td').contains(5)
             }
-              
+
         })
 
 
@@ -73,7 +73,7 @@ describe('SeveranceLiability testing ', () => {
 
 
     })
-    
+
 
 })
 
