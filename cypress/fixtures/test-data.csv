@@ -1,6 +1,6 @@
-"testId","testType","testName","updateData","updatedEstablishOn","expectedResult.mainText","expectedResult.subText"
-1,"validate","should update DepartmentProcess data","INSA","12/09/2015","Success!",
-2,"requird","should not update DepartmentProcess with invalid data","INSA1",,"INSA1: Value should be a Text",
-3,"validate","Seccesfuly save DepartmentProcess",,,"Success!","Successfully Saved."
-4,"requird","it should not save with invalid departmentName ",,,"Please Insert Work Unit Name",
-5,"validate","it should not save with duplicated data ",,,"Error!",
+testId,testType,testName,updateData,updatedEstablishOn,expectedResult.mainText,expectedResult.subText,,testGroup
+1,validate,should update DepartmentProcess data,INSA,12/9/2015,Success!,,,
+2,requird,should not update DepartmentProcess with invalid data,INSA1,,INSA1: Value should be a Text,,,
+3,validate,Seccesfuly save DepartmentProcess,,,Success!,Successfully Saved.,,
+4,requird,it should not save with invalid departmentName ,,,Please Insert Work Unit Name,,,
+5,validate,it should not save with duplicated data ,,,Error!,,,

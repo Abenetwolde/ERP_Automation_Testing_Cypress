@@ -7,6 +7,7 @@ import { generateRandomString } from "../../../Helpers/RandomString.js";
 
 console.log(testData.url)
 describe('SeveranceLiability testing ', () => {
+    let csvData
     beforeEach(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
@@ -16,13 +17,20 @@ describe('SeveranceLiability testing ', () => {
                     cy.loginCommand(testData.url, 'hiwot', 1234);
                     //reusable login command
                 }
-            
+
             })
         });
     })
+    before(() => {
+        cy.task('readCSV', 'cypress/fixtures/test-data.csv').then((data) => {
+          // Filter test data based on test group
+          csvData = data.filter((test) => test.testGroup === 'DepartmentProcess');
+        });
+      });
+    
 
 
-    testData.DepartmentProcess.forEach((data, i) => {
+      csvData.forEach((data, i) => {
         it(` ${data.testName}`, () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
             // click Insa 
@@ -35,7 +43,7 @@ describe('SeveranceLiability testing ', () => {
                 case 1:
                     // cy.get('[id="frmOrganizationStructure:txtWorkUnitName"]').clear({force:true}).type(data.updateData)
                     //clear and type establish on
-                    cy.get('[id="frmOrganizationStructure:txtEstablishedOn"]').clear({force:true}).type(data.updatedEstablishOn)
+                    cy.get('[id="frmOrganizationStructure:txtEstablishedOn"]').clear({ force: true }).type(data.updatedEstablishOn)
                     //click update button
                     cy.get('[id="frmOrganizationStructure:btnSave"]').click()
                     break;
@@ -54,24 +62,24 @@ describe('SeveranceLiability testing ', () => {
                     //click save button
                     cy.get('[id="frmOrganizationStructure:btnSave"]').click()
                     break;
-                    case 4:
-                        //click New Button
-                        cy.get('[id="frmOrganizationStructure:btnNew"]').click()
-                        //clear and type department Name
-                        cy.get('[id="frmOrganizationStructure:txtWorkUnitName"]').type("new1")
-                        //click save button
-                        cy.get('[id="frmOrganizationStructure:btnSave"]').click()
-                        break;
-                        case 5:
-                            //click New Button
-                            cy.wait(500)
-                            cy.get('[id="frmOrganizationStructure:btnNew"]').click()
-                            //clear and type department Name
-                            cy.wait(500)
-                            cy.get('[id="frmOrganizationStructure:txtWorkUnitName"]').type("Ac")
-                            //click save button
-                            cy.get('[id="frmOrganizationStructure:btnSave"]').click()
-                            break;
+                case 4:
+                    //click New Button
+                    cy.get('[id="frmOrganizationStructure:btnNew"]').click()
+                    //clear and type department Name
+                    cy.get('[id="frmOrganizationStructure:txtWorkUnitName"]').type("new1")
+                    //click save button
+                    cy.get('[id="frmOrganizationStructure:btnSave"]').click()
+                    break;
+                case 5:
+                    //click New Button
+                    cy.wait(500)
+                    cy.get('[id="frmOrganizationStructure:btnNew"]').click()
+                    //clear and type department Name
+                    cy.wait(500)
+                    cy.get('[id="frmOrganizationStructure:txtWorkUnitName"]').type("Ac")
+                    //click save button
+                    cy.get('[id="frmOrganizationStructure:btnSave"]').click()
+                    break;
             }
 
             ///test the the case
