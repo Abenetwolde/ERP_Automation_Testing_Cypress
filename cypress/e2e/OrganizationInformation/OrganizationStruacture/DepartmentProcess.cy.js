@@ -7,7 +7,6 @@ import { generateRandomString } from "../../../Helpers/RandomString.js";
 
 console.log(testData.url)
 describe('SeveranceLiability testing ', () => {
-    let csvData
     beforeEach(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
@@ -21,16 +20,9 @@ describe('SeveranceLiability testing ', () => {
             })
         });
     })
-    before(() => {
-        cy.task('readCSV', 'cypress/fixtures/test-data.csv').then((data) => {
-          // Filter test data based on test group
-          csvData = data.filter((test) => test.testGroup === 'DepartmentProcess');
-        });
-      });
-    
 
 
-      csvData.forEach((data, i) => {
+    testData.DepartmentProcess.forEach((data, i) => {
         it(` ${data.testName}`, () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
             // click Insa 

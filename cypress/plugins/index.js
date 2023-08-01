@@ -1,7 +1,4 @@
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
-const fs = require('fs');
-const parse = require('csv-parse');
-
 function setViewPortsAndUserAgent(device) {
     if (device === 'mob' || device === 'mobile') {
         return {
@@ -29,15 +26,11 @@ module.exports = (on, config) => {
 }
 module.exports = (on, config) => {
     on('before:browser:launch', (browser = {}, launchOptions) => {
-        prepareAudit(launchOptions);
+      prepareAudit(launchOptions);
     });
-
+  
     on('task', {
-        readCSV(filename) {
-            const content = fs.readFileSync(filename, 'utf8');
-            return parse(content, { columns: true });
-        },
-        lighthouse: lighthouse(),
-
+      lighthouse: lighthouse(),
     });
-};
+  };
+  
