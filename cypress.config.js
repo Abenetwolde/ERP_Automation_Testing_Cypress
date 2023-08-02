@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { defineConfig } = require('cypress')
+
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
 module.exports = defineConfig({
     numTestsKeptInMemory: 15,
@@ -39,7 +40,6 @@ module.exports = defineConfig({
             //     // pa11y: pa11y(console.log.bind(console)),
             // })
         },
-  
         baseUrl: "https://172.21.35.239:8181/ERP-war", // this is your app
       
     }

@@ -1,4 +1,5 @@
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
+const csv = require('fast-csv');
 function setViewPortsAndUserAgent(device) {
     if (device === 'mob' || device === 'mobile') {
         return {
@@ -17,6 +18,20 @@ function setViewPortsAndUserAgent(device) {
 
     throw new Error('device not supported - [please set device to mob or web]')
 }
+module.exports = (on, config) => {
+    on('task', {
+      readCSV(filename) {
+        return new Promise((resolve, reject) => {
+          const rows = [];
+          fs.createReadStream(filename)
+            .pipe(csv.parse({ headers: true }))
+            .on('error', (error) => reject(error))
+            .on('data', (row) => rows.push(row))
+            .on('end', () => resolve(rows));
+        });
+      },
+    });
+  };
 module.exports = (on, config) => {
     const viewportConfig = setViewPortsAndUserAgent(config.env.device)
 

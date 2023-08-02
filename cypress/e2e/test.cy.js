@@ -1,7 +1,7 @@
 const fs = require('fs');
 const csv = require('fast-csv');
 // const csv = require('csvtojson');
-// const neatCSV = require('neat-csv');
+ const neatCSV = require('neat-csv');
 // const { data } = require('cypress/types/jquery');
 
 describe('Login Regression Test', () => {
