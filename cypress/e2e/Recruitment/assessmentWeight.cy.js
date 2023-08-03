@@ -29,17 +29,28 @@ describe('recruitmentRequests testing ', () => {
             // enter request id  
             cy.get(`[data-label="vac-IT-0001"]`).click({ force: true })
             cy.wait(500)
-            cy.get('[id="frmExamPercentage:txtWrittenPercentage"]').clear().type(data.updateData)
-            // cy.get('tbody tr').first().click()
-          
+            //type Written Exam
+            cy.get('[id="frmExamPercentage:txtWrittenPercentage"]').clear().type(data.WrittenExam)
+            // type InterviewPercentage 
+            cy.get('[id="frmExamPercentage:txtInterviewPercentage"]').clear().type(data.InterviewPercentage)
+            // type CgpaPercentage
+            cy.get('[id="frmExamPercentage:txtCgpaPercentage"]').clear().type(data.CgpaPercentage)
+            // type ExperiencePercentage
+            cy.get('[id="frmExamPercentage:txtExperiencePercentage"]').clear().type(data.ExperiencePercentage)
+            // type PracticalPercentage
+            cy.get('[id="frmExamPercentage:txtPracticalPercentage"]').clear().type(data.PracticalPercentage)
+            // type OtherPercentage
+            cy.get('[id="frmExamPercentage:txtOtherPercentage"]').clear().type(data.OtherPercentage)
+            // type txtpreparedOn
+
+            cy.get('[id="frmExamPercentage:txtpreparedOn"]').clear().type(data.txtpreparedOn)
             cy.get('[id="frmExamPercentage:btnSave"]').click()
-            if(data.testType=="validator")
-            {
+            if (data.testType == "validator") {
                 Validator(data)
-            }else{
-                cy.get('span.ui-message-error-detail').contains("have.text","Validation failed") 
+            } else {
+                cy.get('span.ui-message-error-detail').contains("have.text", "Validation failed")
             }
-            
+
 
 
 

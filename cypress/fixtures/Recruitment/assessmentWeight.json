@@ -7,7 +7,13 @@
             "testId":1,
             "testType":"validator",
             "testName":"assessmentWeight updated Successfully",
-            "updateData":"12",
+            "WrittenExam":"50",
+            "InterviewPercentage":"10",
+            "CgpaPercentage":"10",
+            "ExperiencePercentage":"10",
+            "PracticalPercentage":"10",
+            "OtherPercentage":"10",
+            "txtpreparedOn":"8/3/2023",
           "expectedResult":
           {
             "mainText":"Success!"
