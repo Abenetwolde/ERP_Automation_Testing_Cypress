@@ -21,15 +21,47 @@
         },
         {
           "testId":2,
-          "testType":"requird",
-          "testName":"assessmentWeight not Updated with negative data",
-          "updateData":"-12", 
+          "testType":"validator",
+          "testName":"The sum of the weights should be 100",
+          "WrittenExam":"50",
+          "InterviewPercentage":"20",
+          "CgpaPercentage":"10",
+          "ExperiencePercentage":"10",
+          "PracticalPercentage":"10",
+          "OtherPercentage":"10",
+          "txtpreparedOn":"8/3/2023",
         "expectedResult":
         {
-          "mainText":"Enter number of employees"
+          "mainText":"Error!",
+          "subText":"The sum of the weights should be 100"
         }       
-      }
-   
+      },
+        {
+          "testId":3,
+          "testType":"requird",
+          "testName":"assessmentWeight not Updated with negative data",
+          "WrittenExam":"-50",
+          "InterviewPercentage":"20",
+          "CgpaPercentage":"10",
+          "ExperiencePercentage":"10",
+          "PracticalPercentage":"10",
+          "OtherPercentage":"10",
+          "txtpreparedOn":"8/3/2023"
+            
+      },
+      {
+        "testId":4,
+        "testType":"requird",
+        "testName":"input fields are not exceed more than 100",
+        "WrittenExam":"500",
+        "InterviewPercentage":"20",
+        "CgpaPercentage":"10",
+        "ExperiencePercentage":"10",
+        "PracticalPercentage":"10",
+        "OtherPercentage":"10",
+        "txtpreparedOn":"8/3/2023"
+          
+    }
      
       ]
     }

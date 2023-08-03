@@ -48,7 +48,7 @@ describe('recruitmentRequests testing ', () => {
             if (data.testType == "validator") {
                 Validator(data)
             } else {
-                cy.get('span.ui-message-error-detail').contains("have.text", "Validation failed")
+                cy.get('span.ui-message-error-detail').contains("Validation failed")
             }
 
 
