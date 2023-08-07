@@ -1,7 +1,7 @@
 /* eslint-disable global-require */
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { defineConfig } = require('cypress')
-const xlsx=require("node-xlsx")
+const xlsx=require("node-xlsx").default
 const fs = require('fs');
 const path = require('path');
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");

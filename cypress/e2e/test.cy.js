@@ -3,12 +3,12 @@
 // // const csv = require('csvtojson');
 //  const neatCSV = require('neat-csv');
 // const { data } = require('cypress/types/jquery');
-
+let testData = [];
 describe('Login Regression Test', () => {
   // Read test data from CSV file
-  let testData = [];
+ 
 before(() => {
-  cy.parsXlsx('cypress/fixtures/ab.xlsx').then(jsonData=>{
+  cy.parseXlsx('cypress/fixtures/ab.xlsx').then(jsonData=>{
    const row=Cypress.$(jsonData[0].data).length 
     cy.log(row)
     })
@@ -24,7 +24,7 @@ before(() => {
   //   const csvData = fs.readFileSync('cypress/fixtures/test-data.csv');
   //   testData = await neatCsv(csvData);
   // });
-  console.log(testData);
+  // console.log(testData);
   // Iterate over test data
   testData.forEach((test) => {
     it(`should login with username: ${test.username} and password: ${test.password}`, () => {
