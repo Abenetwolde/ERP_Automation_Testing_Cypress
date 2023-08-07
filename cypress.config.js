@@ -1,7 +1,9 @@
 /* eslint-disable global-require */
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { defineConfig } = require('cypress')
-
+const xlsx=require("node-xlsx")
+const fs = require('fs');
+const path = require('path');
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
 module.exports = defineConfig({
     numTestsKeptInMemory: 15,
@@ -39,6 +41,16 @@ module.exports = defineConfig({
             //     lighthouse: lighthouse(),
             //     // pa11y: pa11y(console.log.bind(console)),
             // })
+             on("task", { parseXlsx({filePath}){
+                return new Promise((resolve, reject)=>{
+                    try {
+                     const jsonData=xlsx.parse(fs.readFileSync(filePath))   
+                     resolve(jsonData)
+                    } catch (error) {
+                        reject(jsonData)
+                    }
+                })
+             }})
         },
         baseUrl: "https://172.21.35.239:8181/ERP-war", // this is your app
       
