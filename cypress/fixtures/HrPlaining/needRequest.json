@@ -52,7 +52,7 @@
         },
         {
           "testId":4,
-          "testName":"Test if number Position Requested shouldn't Exceed Total Number Of Position",
+          "testName":"Test with duplicated data",
           "year": "2014/2015",
           "NoofEmpNeeded": 6,
           "How_to_be_filled: ": 8000,
