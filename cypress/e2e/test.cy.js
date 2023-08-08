@@ -30,19 +30,33 @@ beforeEach(() => {
   //  testData.forEach((test) => {
     it("`should login with username: ${test.username} and password: ${test.password}`", () => {
       // Visit login page
-      // cy.parseXlsx('cypress/fixtures/ab.xlsx').then(jsonData=>{
-      //   const row=Cypress.$(jsonData[0].data).length 
-      //   console.log(row)
-      //  cy.log(row)
+      cy.parseXlsx('cypress/fixtures/ab.xlsx').then(jsonData=>{
+        const headers = jsonData[0].data[0];
+  
+        // Convert the data into an array of objects
+        const data = jsonData[0].data.slice(1).map(row => {
+          const rowData = {};
+          headers.forEach((header, index) => {
+            rowData[header] = row[index];
+          });
+          return rowData;
+        });
+        
+        const length=Cypress.$(jsonData[0].data).length 
+        data.forEach(row => {
+          cy.visit("https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
+          cy.get('[id="loginform:login-username"]').type(row.username)
+          cy.wait(2000)
+          cy.get('[id="loginform:login-password"]').type(row.password)
+          cy.wait(2000)
+          cy.get('[id="loginform:j_idt11"]').click()
+        });
+        console.log(length)
+    
       console.log(testData)
-      cy.visit("https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
-        cy.get('[id="loginform:login-username"]').type(test.username)
-        cy.wait(2000)
-        cy.get('[id="loginform:login-password"]').type(test.password)
-        cy.wait(2000)
-        cy.get('[id="loginform:j_idt11"]').click()
+   
 
       cy.url().should('include', '/dashboard');
     });
   });
-// })
+})
