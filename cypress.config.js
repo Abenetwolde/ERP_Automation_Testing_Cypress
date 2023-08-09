@@ -9,6 +9,7 @@ module.exports = defineConfig({
     numTestsKeptInMemory: 15,
     defaultCommandTimeout: 15000,
     projectId: "5w29b1",
+    
     env: {
         baseUrl: 'https://172.21.35.248:8181',
         docUrl: 'https://172.21.35.239:8181/ERP-war/erp/hrms/documentProvidingService/documentRequest.xhtml',
@@ -27,7 +28,9 @@ module.exports = defineConfig({
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36',
     viewportHeight: 768,
     viewportWidth: 1266,
+    
     e2e: {
+        testFiles: '**/*.feature',
         reporter: 'cypress-mochawesome-reporter',
         // We've imported your old cypress plugins here.
         // You may want to clean this up later by importing these.
@@ -56,3 +59,8 @@ module.exports = defineConfig({
       
     }
 })
+module.exports = {
+    testFiles: '**/*.feature',
+    ignoreTestFiles: '*.js',
+    // pluginsFile: 'cypress/plugins/index.js',
+  };

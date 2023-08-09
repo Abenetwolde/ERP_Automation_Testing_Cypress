@@ -1,4 +1,5 @@
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
+const cucumber = require('cypress-cucumber-preprocessor').default;
 const csv = require('fast-csv');
 function setViewPortsAndUserAgent(device) {
     if (device === 'mob' || device === 'mobile') {
@@ -48,4 +49,6 @@ module.exports = (on, config) => {
       lighthouse: lighthouse(),
     });
   };
-  
+  module.exports = (on, config) => {
+    on('file:preprocessor', cucumber());
+  };
