@@ -1,0 +1,43 @@
+{
+
+    "url":"https://172.21.35.239:8181/ERP-war/erp/hrms/promotion/promotionCriteria.xhtml",
+      "Promotion_Criteria": [
+        
+        {
+          "testId":1,
+          "testName":"Promotion Criteria Saved Sucessfully ",
+          "PromotionCriteria": "Performance",
+          "Weight": "10",
+          "expectedResult":{
+            "mainText":"Success!",
+            "subText":""
+          }
+  
+        
+        },
+        {
+          "testId":2,
+          "testName":"It Should Not Save Null Data ",
+          "PromotionCriteria": "Performance",
+          "Weight": "",
+          "expectedResult":{
+            "mainText":"Error!",
+            "subText":"Please fill some data"
+          }
+        },
+        {
+          "testId":3,
+          "testName":"It should not save invalid data ",
+          "PromotionCriteria": "Performance",
+          "Weight": "#",
+          "expectedResult":{
+            "mainText":"Error!",
+            "subText":"Invalid data"
+          }
+        }
+       
+       
+       
+        
+      ]
+    }
