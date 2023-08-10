@@ -30,8 +30,9 @@ module.exports = defineConfig({
     viewportWidth: 1266,
     
     e2e: {
-        testFiles: '**/*.feature',
+        specPattern: '**/*.{cy.js,js,feature}',
         reporter: 'cypress-mochawesome-reporter',
+        experimentalRunAllSpecs:true,
         // We've imported your old cypress plugins here.
         // You may want to clean this up later by importing these.
         setupNodeEvents: function (on, config) {
@@ -59,8 +60,3 @@ module.exports = defineConfig({
       
     }
 })
-module.exports = {
-    testFiles: '**/*.feature',
-    ignoreTestFiles: '*.js',
-    // pluginsFile: 'cypress/plugins/index.js',
-  };

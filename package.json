@@ -17,7 +17,9 @@
     "cypress-xpath": "^2.0.1",
     "eslint": "^7.23.0"
   },
+
   "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^18.0.4",
     "csv-parse": "^5.4.0",
     "csvtojson": "^2.0.10",
     "cypress-cucumber-preprocessor": "^4.3.1",
@@ -28,5 +30,10 @@
     "node-xlsx": "^0.23.0",
     "npm": "^9.8.1",
     "papaparse": "^5.4.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e"
   }
+
 }
