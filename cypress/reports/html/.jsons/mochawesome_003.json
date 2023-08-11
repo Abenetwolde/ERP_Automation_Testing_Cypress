@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-08-11T09:41:08.653Z",
+    "end": "2023-08-11T09:42:04.328Z",
+    "duration": 55675,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "88450b28-7da1-4c56-8892-eb32de014439",
+      "title": "",
+      "fullFile": "cypress\\e2e\\document.cy.js",
+      "file": "cypress\\e2e\\document.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "91577b4d-cf4f-449d-b565-d6aea7b62d63",
+          "title": "documentRequest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "DataDrivendDcumentRequestTest",
+              "fullTitle": "documentRequest DataDrivendDcumentRequestTest",
+              "timedOut": null,
+              "duration": 15211,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress\\\\e2e\\\\document.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\document.cy.js\\\\documentRequest -- DataDrivendDcumentRequestTest (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"\\\\document.cy.js\\\\documentRequest -- DataDrivendDcumentRequestTest (failed) (attempt 2).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "var docUrl = Cypress.env('docUrl');\ncy.fixture(\"documentData\").then(function (data) {\n  data.documentData.forEach(function (docData) {\n    var docObject = new _documentData[\"default\"]();\n    /* eslint-disable */ /* eslint-disable-line */\n    oo_al(docObject.clickPluseIcon(), \"194bd75c_0\");\n    cy.wait(2000);\n    docObject.clickEmpNameTextFeild();\n    cy.wait(2000);\n    docObject.setEmpName(docData.employeeName);\n    cy.wait(5000);\n    docObject.clickenter();\n    // docObject.clickEmpName()\n    docObject.clickDocType();\n    cy.wait(2000);\n    docObject.clickselectDocument();\n    cy.wait(2000);\n    docObject.setRequestDate(docData.requestDate);\n    cy.wait(2000);\n    docObject.setPreparedOn(docData.preparedOn);\n    cy.wait(500);\n    docObject.setComment(docData.CommentGiven);\n    cy.wait(2000);\n    docObject.clickSave();\n    docObject.verifyDocumentRegister(docData.expectedResult);\n    cy.reload();\n    // cy.clearCookies()\n    // cy.clearLocalStorage()\n  });\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[id=\"frmSample:j_idt77\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 15000ms: Expected to find element: `[id=\"frmSample:j_idt77\"]`, but never found it.\n    at Document.clickPluseIcon (cypress/PageObjects/documentData.js:20:7)\n    at eval (cypress/e2e/document.cy.js:74:69)\n    at Context.eval (cypress/e2e/document.cy.js:72:24)",
+                "diff": null
+              },
+              "uuid": "a449cd87-b911-49a9-9c96-9f90d0e79682",
+              "parentUUID": "91577b4d-cf4f-449d-b565-d6aea7b62d63",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a449cd87-b911-49a9-9c96-9f90d0e79682"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 15211,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
