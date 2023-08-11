@@ -17,6 +17,7 @@
 
 import 'cypress-xpath'
 import 'cypress-mochawesome-reporter/register';
+import "@badeball/cypress-cucumber-preprocessor"
 import '@cypress-audit/lighthouse/commands';
 import './commands'
 // ignore all console errors in app

@@ -30,6 +30,7 @@ module.exports = defineConfig({
     viewportWidth: 1266,
     
     e2e: {
+    
         specPattern: '**/*.{cy.js,js,feature}',
         reporter: 'cypress-mochawesome-reporter',
         experimentalRunAllSpecs:true,
