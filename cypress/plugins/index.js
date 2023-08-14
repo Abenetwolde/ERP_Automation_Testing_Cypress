@@ -1,5 +1,8 @@
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
-const cucumber = require('cypress-cucumber-preprocessor').default;
+// const cucumber = require('cypress-cucumber-preprocessor').default;
+const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
+const preprocessor = require('@badeball/cypress-cucumber-preprocessor');
+const createEsbuildPlugin = require('@badeball/cypress-cucumber-preprocessor/esbuild');
 const csv = require('fast-csv');
 function setViewPortsAndUserAgent(device) {
     if (device === 'mob' || device === 'mobile') {
@@ -49,6 +52,20 @@ module.exports = (on, config) => {
       lighthouse: lighthouse(),
     });
   };
+  // module.exports = (on, config) => {
+  //   on('file:preprocessor', cucumber());
+  // };
+  async function setupNodeEvents(on, config) {
+    await preprocessor.addCucumberPreprocessorPlugin(on, config);
+    on(
+      'file:preprocessor',
+      createBundler({
+        plugins: [createEsbuildPlugin.default(config)],
+      })
+    );
+    return config;
+  }
+  
   module.exports = (on, config) => {
-    on('file:preprocessor', cucumber());
+    setupNodeEvents(on, config);
   };
