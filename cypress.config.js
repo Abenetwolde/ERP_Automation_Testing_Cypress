@@ -5,6 +5,7 @@ const xlsx=require("node-xlsx").default
 const fs = require('fs');
 const path = require('path');
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
+const cucumber = require('cypress-cucumber-preprocessor').default;
 module.exports = defineConfig({
     numTestsKeptInMemory: 15,
     defaultCommandTimeout: 15000,
@@ -31,7 +32,7 @@ module.exports = defineConfig({
     
     e2e: {
     
-        specPattern: '**/*.{cy.js,js,feature}',
+        specPattern: 'cypress/e2e/*.feature',
         reporter: 'cypress-mochawesome-reporter',
         experimentalRunAllSpecs:true,
         // We've imported your old cypress plugins here.
@@ -46,6 +47,8 @@ module.exports = defineConfig({
             //     lighthouse: lighthouse(),
             //     // pa11y: pa11y(console.log.bind(console)),
             // })
+                 on('file:preprocessor', cucumber())
+
              on("task", { parseXlsx({filePath}){
                 return new Promise((resolve, reject)=>{
                     try {

@@ -55,17 +55,17 @@ module.exports = (on, config) => {
   // module.exports = (on, config) => {
   //   on('file:preprocessor', cucumber());
   // };
-  async function setupNodeEvents(on, config) {
-    await preprocessor.addCucumberPreprocessorPlugin(on, config);
-    on(
-      'file:preprocessor',
-      createBundler({
-        plugins: [createEsbuildPlugin.default(config)],
-      })
-    );
-    return config;
-  }
+  // async function setupNodeEvents(on, config) {
+  //   await preprocessor.addCucumberPreprocessorPlugin(on, config);
+  //   on(
+  //     'file:preprocessor',
+  //     createBundler({
+  //       plugins: [createEsbuildPlugin.default(config)],
+  //     })
+  //   );
+  //   return config;
+  // }
   
-  module.exports = (on, config) => {
-    setupNodeEvents(on, config);
-  };
+  // module.exports = (on, config) => {
+  //   setupNodeEvents(on, config);
+  // };
