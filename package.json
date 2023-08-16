@@ -35,6 +35,6 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
-    "stepDefinitions": "cypress/e2e/erp"
+    "stepDefinitions": "cypress/e2e"
   }
 }

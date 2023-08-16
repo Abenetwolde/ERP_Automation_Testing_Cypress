@@ -32,7 +32,7 @@ module.exports = defineConfig({
     
     e2e: {
     
-        specPattern: 'cypress/e2e/*.feature',
+        specPattern: "cypress/e2e/**/*.{feature,cy.js,js}",
         reporter: 'cypress-mochawesome-reporter',
         experimentalRunAllSpecs:true,
         // We've imported your old cypress plugins here.
