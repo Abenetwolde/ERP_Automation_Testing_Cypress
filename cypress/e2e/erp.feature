@@ -1,25 +1,15 @@
 Feature: Login
 
-  Scenario: Successful login
+  Scenario Outline: "<testName>""
     Given I am on the login page
-    When I enter valid credentials
+    When I enter "<username>" as the username
+    And I enter "<password>" as the password
     And I click the login button
-    Then I should be redirected to the home page
+    Then <result>
 
-  Scenario: Unsuccessful login due to incorrect password
-    Given I am on the login page
-    When I enter an incorrect password
-    And I click the login button
-    Then I should see an error message
-
-  Scenario: Unsuccessful login due to incorrect username
-    Given I am on the login page
-    When I enter an incorrect username
-    And I click the login button
-    Then I should see an error message
-
-  Scenario: Unsuccessful login due to empty fields
-    Given I am on the login page
-    When I leave the username and password fields empty
-    And I click the login button
-    Then I should see an error message
+    Examples:
+      | testName               | username      | password         | result                                     |
+      | Login with valid credentials | hiwot         | 1234             | I should be redirected to the home page    |
+      | Login with incorrect password| valid-username| incorrect-password| I should see an error message              |
+      | Login with incorrect username| hdf           | 122              | I should see an error message              |
+      | Login with empty fields      |               |                  | I should see an error message              |
