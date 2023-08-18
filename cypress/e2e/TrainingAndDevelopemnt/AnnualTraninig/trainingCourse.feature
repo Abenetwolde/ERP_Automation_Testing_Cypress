@@ -1,13 +1,9 @@
 Feature: Job Registration
     Background:
-        Given I am on the job registration page
+        Given I am on TrainingAndDevelopemnt/AnnualTraninig trainingCourse page
     Scenario: Register for a job while logged in
-        Given I am logged in
-        When I fill in the job registration form
-        And I submit the job registration form
-        Then I should see a confirmation message
-    Scenario: Register for a job while not logged in
-        Given I am not logged in
-        When I fill in the job registration form
-        And I submit the job registration form
-        Then I should be redirected to the login page
+        When I Click the plus Icon 
+        And I Select Course Category From Dropdown 
+        And I Fill Course Name 
+        When I Click the save Button 
+        Then I should see a success Message
