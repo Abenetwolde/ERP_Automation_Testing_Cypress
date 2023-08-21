@@ -53,8 +53,7 @@ import { Given, When, Then, And} from "cypress-cucumber-preprocessor/steps";
 //   cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "The username or password you entered is incorrect.The username or password you entered is incorrect.")
 // });
 Given('I am on the login page', () => {
-  cy.visit("/");
-
+  cy.visit("https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml");
  });
  When('I enter valid credentials', () => {
   cy.get('[id="loginform:login-username"]').type('hiwot');
