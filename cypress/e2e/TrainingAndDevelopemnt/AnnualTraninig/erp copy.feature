@@ -1,9 +1,10 @@
 Feature: Login
 
-  Scenario Outline: "<testName>""
+
+  Scenario Outline: <testName>
     Given I am on the login page
-    When I enter "<username>" as the username
-    And I enter "<password>" as the password
+    When I enter <username> as the username
+    And I enter <password> as the password
     And I click the login button
     Then <result>
 
