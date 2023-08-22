@@ -15,11 +15,9 @@
 
 // Import commands.js using ES2015 syntax:
 
-import 'cypress-xpath'
-import 'cypress-mochawesome-reporter/register';
-import "@badeball/cypress-cucumber-preprocessor"
+import '@shelex/cypress-allure-plugin';
 import '@cypress-audit/lighthouse/commands';
 import './commands'
 // ignore all console errors in app
 // eslint-disable-next-line no-unused-vars
-Cypress.on('uncaught:exception', (err, runnable) => false)
+// Cypress.on('uncaught:exception', (err, runnable) => false)

@@ -1,0 +1,16 @@
+// "dependencies": {
+//     "@badeball/cypress-cucumber-preprocessor": "^18.0.4",
+//     "csv-parse": "^5.4.0",
+//     "csvtojson": "^2.0.10",
+//     "cypress-cucumber-preprocessor": "^4.3.1",
+//     "fast-csv": "^4.3.6",
+//     "i": "^0.3.7",
+//     "json2csv": "^6.0.0-alpha.2",
+//     "neat-csv": "^5.2.0",
+//     "node-xlsx": "^0.23.0",
+//     "npm": "^9.8.1",
+//     "papaparse": "^5.4.1",
+//     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
+//     "@shelex/cypress-allure-plugin": "^2.34.0",
+//     "esbuild": "^0.16.4"
+//   },
