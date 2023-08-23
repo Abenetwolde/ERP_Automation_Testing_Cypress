@@ -1,9 +1,15 @@
 const { lighthouse, prepareAudit } = require("@cypress-audit/lighthouse");
-// const cucumber = require('cypress-cucumber-preprocessor').default;
+const cucumber = require('cypress-cucumber-preprocessor').default;
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
 const preprocessor = require('@badeball/cypress-cucumber-preprocessor');
 const createEsbuildPlugin = require('@badeball/cypress-cucumber-preprocessor/esbuild');
 const csv = require('fast-csv');
+const esbuild = require('esbuild');
+const createBundler = require('@bahmutov/cypress-esbuild-preprocessor');
+const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-preprocessor');
+const nodePolyfills = require('@esbuild-plugins/node-modules-polyfill').NodeModulesPolyfillPlugin;
+const { createEsbuildPlugin } = require('@badeball/cypress-cucumber-preprocessor/esbuild');
+const cucumber = require('cypress-cucumber-preprocessor').default;
 function setViewPortsAndUserAgent(device) {
     if (device === 'mob' || device === 'mobile') {
         return {
@@ -22,6 +28,15 @@ function setViewPortsAndUserAgent(device) {
 
     throw new Error('device not supported - [please set device to mob or web]')
 }
+module.exports = (on, config) => {
+  on('file:preprocessor', cucumber());
+};
+// module.exports = (on, config) => {
+//   on('file:preprocessor', createBundler({
+//     plugins: [createEsbuildPlugin(config), nodePolyfills()],
+//   }));
+//   addCucumberPreprocessorPlugin(on, config);
+// };
 module.exports = (on, config) => {
     on('task', {
       readCSV(filename) {
@@ -52,6 +67,20 @@ module.exports = (on, config) => {
       lighthouse: lighthouse(),
     });
   };
+  
+
+  // module.exports = (on, config) => {
+  //   on('file:preprocessor', async (file) => {
+  //     // Add your esbuild configuration here
+  //     await esbuild.build({
+  //       // ...
+  //       platform: 'node',
+  //       // ...
+  //     });
+  
+  //     return file.filePath;
+  //   });
+  // };
   // module.exports = (on, config) => {
   //   on('file:preprocessor', cucumber());
   // };
