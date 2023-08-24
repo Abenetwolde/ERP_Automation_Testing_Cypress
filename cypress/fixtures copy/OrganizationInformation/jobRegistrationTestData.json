@@ -1,0 +1,38 @@
+{
+  "jobRegistrationTestData": [
+    {
+      "jobCode": "Sq15113",
+      "departement": "Computer Scince ",
+      "jobTitle": "SAQ41",
+      "jobDiscription": "BSC in software Engineering",
+      "relevantExperince": 3,
+      "alternativeExperince": 2,
+      "Experience":3,
+      "expectedResult":"Success!"
+    
+    },
+    {
+      "jobCode": "Sq2",
+      "departement": "Computer Scince ",
+      "jobTitle": "SAQ",
+      "jobDiscription": "BSC in software Engineering",
+      "relevantExperince": 3,
+      "alternativeExperince": 2,
+      "Experience":3,
+      "expectedResult":"Error!"
+    
+    },
+    {
+      "jobCode": "-11",
+      "departement": "Computer Scince ",
+      "jobTitle": "SAQ",
+      "jobDiscription": "BSC in software Engineering",
+      "relevantExperince": 3,
+      "alternativeExperince": 2,
+      "Experience":3,
+      "expectedResult":"Error!"
+    
+    }
+
+  ]
+}

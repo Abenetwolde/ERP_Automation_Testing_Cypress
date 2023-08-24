@@ -16,7 +16,7 @@
 // Import commands.js using ES2015 syntax:
 
 import '@shelex/cypress-allure-plugin';
-import '@cypress-audit/lighthouse/commands';
+// import '@cypress-audit/lighthouse/commands';
 import './commands'
 // ignore all console errors in app
 // eslint-disable-next-line no-unused-vars
