@@ -25,7 +25,7 @@ beforeEach(() => {
                 cy.loginCommand("https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml", 'hiwot', 1234);
                 //reusable login command
             }
-    
+     
         })
     });
   
