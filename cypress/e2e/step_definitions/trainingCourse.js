@@ -22,7 +22,7 @@ beforeEach(() => {
             // If the cookie is not present, log in
             if (!cookie) {
               cy.wait(2000)
-                cy.loginCommand("https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml", 'hiwot', 1234);
+                cy.loginCommand("https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/training/trainingCourse.xhtml", 'hiwot', 1234);
                 //reusable login command
             }
      
@@ -43,7 +43,7 @@ Given('I am on the trainingCourse page', () => {
    cy.wait(1000)
  });
  When('I click Course Category from the table', () => {
-  cy.get('table tbody tr').contains('td', 'IT Officer').click();
+  cy.get('table tbody tr').contains('td', 'Driver').click();
 
  });
  When('I update Course Name value', () => {
