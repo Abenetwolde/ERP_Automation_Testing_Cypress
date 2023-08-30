@@ -43,7 +43,7 @@ Given('I am on the trainingCourse page', () => {
    cy.wait(1000)
  });
  When('I click Course Category from the table', () => {
-  cy.get('table tbody tr').contains('td', 'Driver').click();
+  cy.get('table tbody tr').contains('td', 'IT Officer').click();
 
  });
  When('I update Course Name value', () => {
