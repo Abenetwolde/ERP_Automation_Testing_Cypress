@@ -65,7 +65,7 @@ import {
    });
    Then('I should see the seccessfuly Message on top', () => {
     cy.wait(1000)
-    cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")
+    cy.get('.ui-growl-message ').should('be.visible').invoke('text').should('contain', "Success!")
    });
 
   //  });
