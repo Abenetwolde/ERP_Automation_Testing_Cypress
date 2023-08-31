@@ -6,7 +6,7 @@
 Feature: Login
 
   Scenario Outline: Login with credentials from JSON file
-    Given I am on the login page
+    Given  I am on the login page
     When I enter credentials from the JSON file for user "<user>"
     And I click the login button
     Then I should see the result "<result>"
