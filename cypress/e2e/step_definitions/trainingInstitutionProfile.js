@@ -14,28 +14,28 @@ import {
   
   // } from "@badeball/cypress-cucumber-preprocessor";
   import "../../support/auth.js"
-  beforeEach(() => {
+  // beforeEach(() => {
   
-    cy.session("JSESSIONID", () => {
-          // Check if the "JSESSIONID" cookie is present
-          cy.getCookie("JSESSIONID1").then((cookie) => {
-              // If the cookie is not present, log in
-              if (!cookie) {
-                cy.wait(2000)
-                  cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/trainingInstitutionProfile.xhtml", 'hiwot', 1234);
-                  //reusable login command
-              }
+  //   cy.session("JSESSIONID", () => {
+  //         // Check if the "JSESSIONID" cookie is present
+  //         cy.getCookie("JSESSIONID1").then((cookie) => {
+  //             // If the cookie is not present, log in
+  //             if (!cookie) {
+  //               cy.wait(2000)
+  //                 cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/trainingInstitutionProfile.xhtml", 'hiwot', 1234);
+  //                 //reusable login command
+  //             }
        
-          })
-      });
+  //         })
+  //     });
     
-  });
+  // });
   
   
   Given('I am on the trainingInstitutionProfile page', () => {
     cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/trainingInstitutionProfile.xhtml");
    });
-   When('I select Institution Name ', () => {
+   When('I select Institution Name', () => {
     // cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/trainingCourse.xhtml");
     cy.get('[id="frmTrainer:srcInstName_label"]').click();
     cy.wait(1000)
@@ -48,21 +48,24 @@ import {
    });
    When('I update Tin Number value', () => {
     // Check if the form is valid before submitting it
-    cy.get('[id="frmTrainer:txtTinNumber"]').clear().type("1222");
+    cy.get('[id="frmTrainer:txtTinNumber"]').clear().type("122552");
    });
-   When('I Click the save Button', () => {
+   When('I Click the update Button', () => {
     // Check if the form is valid before submitting it
     cy.get('[id="frmTrainer:btnSave"]').click()
    });
-   Then('I should see the seccessfuly update pop up Message on top', () => {
-    cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")
+   When('I Click the Uupdate Button', () => {
+    // Check if the form is valid before submitting it
+    cy.get('[id="frmTrainer:btnSave"]').click()
    });
+ 
+ 
    Then('The error message visibl', () => {
     cy.get('.ui-growl-message').should('not.be.visible')
    });
-   //  Then('I should see the seccessfuly update pop up Message on top', () => {
-  //   cy.get('body').then(($body) => {
-  //     ($body.text().includes('hiwot'))
-  
-  // })
+   Then('I should see the seccessfuly Message on top', () => {
+    cy.wait(1000)
+    cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")
+   });
+
   //  });
