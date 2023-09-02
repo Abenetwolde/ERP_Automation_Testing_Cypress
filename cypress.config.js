@@ -36,6 +36,7 @@ module.exports = defineConfig({
     setupNodeEvents,
     specPattern: "cypress/e2e/**/*.{feature,cy.js,js}",
     baseUrl: "https://www.saucedemo.com",
+
     chromeWebSecurity: false,
     env: {
       allureReuseAfterSpec: true,
