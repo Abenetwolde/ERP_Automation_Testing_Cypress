@@ -6,22 +6,22 @@ import {
   } from "@badeball/cypress-cucumber-preprocessor";
 
   import "../../support/auth.js"
-  beforeEach(() => {
+  // beforeEach(() => {
   
-    cy.session("JSESSIONID", () => {
-          // Check if the "JSESSIONID" cookie is present
-          cy.getCookie("JSESSIONID").then((cookie) => {
-              // If the cookie is not present, log in
-              if (!cookie) {
-                cy.wait(2000)
-                  cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/annualTrainingRequest.xhtml", 'hiwot', 1234);
-                  //reusable login command
-              }
+  //   cy.session("JSESSIONID", () => {
+  //         // Check if the "JSESSIONID" cookie is present
+  //         cy.getCookie("JSESSIONID").then((cookie) => {
+  //             // If the cookie is not present, log in
+  //             if (!cookie) {
+  //               cy.wait(2000)
+  //                 cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/annualTrainingRequest.xhtml", 'hiwot', 1234);
+  //                 //reusable login command
+  //             }
        
-          })
-      });
+  //         })
+  //     });
     
-  });
+  // });
   
   
   Given('I am on the trainingInstitutionProfile page', () => {
@@ -38,7 +38,7 @@ import {
     cy.get('table tbody tr').contains('td', 'BIFTU').click();
   
    });
-   When('I select Course Category', () => {
+   When('I select Course Category:', () => {
     cy.get('[id="frmAnnualNeedRequest:drdCatagory_label"]').click()
     cy.wait(1000)
     cy.get('[data-label="Electrical"]').click();
@@ -49,14 +49,14 @@ import {
    When('I type Number of Days', () => {
     cy.get('[id="frmAnnualNeedRequest:txtnoOfDays"]').clear().type(5);
    });
-   When('I type Cost/Person', () => {
-    cy.get('[id="frmAnnualNeedRequest:txtcostPerPerson"]').clear().type("6");
+   When('I type Cost per Person', () => {
+    cy.get('[id="frmAnnualNeedRequest:txtcostPerPerson"]').clear().type(6);
    });
    When('I type Sponsered By', () => {
     cy.get('[id="frmAnnualNeedRequest:txtsponsoredBy"]').clear().type("sponser name");
    });
    When('I select Location', () => {
-    cy.get('spanui-radiobutton-icon.ui-icon.ui-icon-blank').click()
+    cy.get('[id="frmAnnualNeedRequest:txtlocationType:1"]').click({force:true})
    });
    When('I select Training Course', () => {
     cy.get('[id="frmAnnualNeedRequest:drdCourse_label"]').click()
@@ -81,13 +81,15 @@ import {
    When('I type Participant id', () => {
     cy.get('[id="frmAnnualNeedRequest:txtEmployeeID_input"]').clear().type("123");
     cy.wait(1000)
-    cy.get('table tbody tr').contains('td', '123').click()
+    cy.get('[data-item-value="123"]').click()
    });
    When('I click Add Training Participant Button', () => {
     cy.get('[id="frmAnnualNeedRequest:btnAddEmp"]').click()
    });
    Then('I should see the new data on Training Participant table', () => {
-    cy.get('table tbody tr').contains('td', '123').should('be.visible')
+    cy.get('table tbody tr td:nth-child(3)').should('contain', '123').and('be.visible');
+
+    // cy.get('table tbody tr').contains('td', '123').should('be.visible')
    });
    When('I type Comment Given', () => {
     cy.get('[id="frmAnnualNeedRequest:txtComment"]').clear().type("comment");
@@ -95,7 +97,7 @@ import {
    When('I Click Update Button', () => {
     cy.get('[id="frmAnnualNeedRequest:btnSave"]').click()
    });
-   Then('I should see the seccessfuly update pop up Message on top', () => {
+   Then('I should see the seccessfuly Message on top', () => {
     cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")
    });
    //  Then('I should see the seccessfuly update pop up Message on top', () => {
