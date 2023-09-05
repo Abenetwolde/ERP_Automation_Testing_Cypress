@@ -18,6 +18,8 @@
 import '@shelex/cypress-allure-plugin';
 // import '@cypress-audit/lighthouse/commands';
 import './commands'
+import 'cypress-mochawesome-reporter/register';
+
 // ignore all console errors in app
 // eslint-disable-next-line no-unused-vars
 // Cypress.on('uncaught:exception', (err, runnable) => false)

@@ -18,6 +18,7 @@
   "author": "cucumber",
   "license": "ISC",
   "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.3.0",
     "@badeball/cypress-cucumber-preprocessor": "^15.0.0",
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "@shelex/cypress-allure-plugin": "^2.34.0",

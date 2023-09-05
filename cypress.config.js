@@ -6,6 +6,8 @@ const allureWriter = require("@shelex/cypress-allure-plugin/writer");
 const xlsx=require("node-xlsx").default
 const fs = require('fs');
 async function setupNodeEvents(on, config) {
+
+  require('cypress-mochawesome-reporter/plugin')(on);
   on("task", { parseXlsx({filePath}){
     return new Promise((resolve, reject)=>{
         try {
@@ -34,6 +36,7 @@ async function setupNodeEvents(on, config) {
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents,
+            reporter: 'cypress-mochawesome-reporter',
     specPattern: "cypress/e2e/**/*.{feature,cy.js,js}",
     baseUrl: "https://www.saucedemo.com",
 
