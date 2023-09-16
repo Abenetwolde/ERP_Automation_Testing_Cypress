@@ -14,20 +14,6 @@ beforeEach(() => {
   },
   )})
   
-  // before( () => {
-  //   cy.fixture('cypress/fixtures/test-data.csv').then(neatCSV).then(data=>{
-  //   testData=data
-  //   }).then(console.table);
-  // })
-  // let testData = [];
-  // before(async () => {
-  //   const csvData = fs.readFileSync('cypress/fixtures/test-data.csv');
-  //   testData = await neatCsv(csvData);
-  // });
-  // console.log(testData);
-  // Iterate over test data
- 
-  //  testData.forEach((test) => {
     it("`should login with username: ${test.username} and password: ${test.password}`", () => {
       // Visit login page
       cy.parseXlsx('cypress/fixtures/ab.xlsx').then(jsonData=>{
