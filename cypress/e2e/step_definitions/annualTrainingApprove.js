@@ -6,10 +6,10 @@ import {
   } from "@badeball/cypress-cucumber-preprocessor";
 
   import "../../support/auth.js" 
-  Given('I am on the trainingInstitutionProfile page', () => {
+  Given('I am on the annualTrainingApprove page', () => {
     cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/annualTrainingApprove.xhtml");
    });
-   When('I select Load Request List Filter Criteria', () => {
+   When('I select annualTrainingApprove List Filter Criteria', () => {
     // cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/trainingCourse.xhtml");
     cy.get('[id="frmAnnualNeedRequest:txtSrchYear_label"]').click();
     cy.wait(1000)
@@ -20,21 +20,19 @@ import {
     cy.get('table tbody tr').contains('td', 'BIFTU').click();
   
    });
-   When('I select Course Category:', () => {
+   When('I Update Decision to Approve:', () => {
     cy.get('[id="frmAnnualNeedRequest:drdCatagory_label"]').click()
     cy.wait(1000)
     cy.get('[data-label="Electrical"]').click();
    });
-   When('I type Number of Nominee', () => {
+   When('I Given Comment', () => {
     cy.get('[id="frmAnnualNeedRequest:txtnoOfNominee"]').clear().type(10);
    });
-   When('I type Number of Days', () => {
+   When('I Click the save button', () => {
     cy.get('[id="frmAnnualNeedRequest:txtnoOfDays"]').clear().type(5);
    });
-   When('I type Cost per Person', () => {
-    cy.get('[id="frmAnnualNeedRequest:txtcostPerPerson"]').clear().type(6);
-   });
-   When('I type Sponsered By', () => {
+
+   When('it should show the new data on the table', () => {
     cy.get('[id="frmAnnualNeedRequest:txtsponsoredBy"]').clear().type("sponser name");
    });
    When('I select Location', () => {
