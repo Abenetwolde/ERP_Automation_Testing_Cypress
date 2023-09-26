@@ -12,7 +12,7 @@ describe('SeveranceLiability testing ', () => {
                 // If the cookie is not present, log in
                 if (!cookie) {
                     cy.loginCommand(testData.url, 'hiwot', 1234);
-                    //reusable login command
+               
                 }
 
             })

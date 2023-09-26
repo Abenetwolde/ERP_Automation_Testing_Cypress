@@ -9,7 +9,7 @@ describe('unplannedTrainingRequest testing ', () => {
             cy.getCookie("JSESSIONID").then((cookie) => {
                 // If the cookie is not present, log in
                 if (!cookie) {
-                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/unplannedTrainingRequest.xhtml", 'hiwot', 1234);
+                    cy.loginCommand(https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/training/trainingHistory.xhtml", 'hiwot', 1234);
                     //reusable login command
                 }
 
@@ -18,7 +18,7 @@ describe('unplannedTrainingRequest testing ', () => {
     })
     // testData.SeveranceLiability.forEach((data, i) => {
         it("` ${data.testName}`", () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/unplannedTrainingRequest.xhtml")
+            cy.visit("https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/training/trainingHistory.xhtml")
             cy.wait(500)
             //Filter Criteria
             cy.get('[id="frmUnplannedTrainingRequest:somFiliterByStatus_label"]').click()
