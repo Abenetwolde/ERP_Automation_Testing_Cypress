@@ -25,33 +25,27 @@ describe('TrainingPrograms testing ', () => {
         //clcik Inland Education Programs 
         cy.get('[data-label="Inland Trainings Programs"]').click({force:true})
 
-        cy.get('table[role="grid"] tbody tr').contains('td', 'Kebele 08').click();
+        cy.get('table[role="grid"] tbody tr').contains('td', 'Yeka').click();
         cy.wait(1000)
-        // cy.get('table tbody tr').contains('td', 'fcmsAppFirstName').click();
-        //type InstitutionName
-        cy.get('[id="frmInlandAndForiegnTraining:txtxInstitutionName"]', { timeout: 10000 }).type("awer");
+
+        cy.get('[id="frmInlandAndForiegnTraining:selectedEmp_input"]').type("a")
         cy.wait(1000)
-        // //type time 
-        // cy.get('[id="frmInlandAndForiegnTraining:txtStartTime"]').type("11:10 AM")
-        // cy.wait(1000)
-        // //type Search name 
-        // cy.get('[id="frmInlandAndForiegnTraining:selectedEmp_input"]').type("a")
-        // cy.wait(1000)
-        // cy.get('[data-item-value="Almaz"]').click()
-        // cy.wait(500)
-        // //type result
-        // cy.get('[id="frmInlandAndForiegnTraining:txtTotalResult"]').type(20)
-        // cy.wait(3000)
-        // //selecte status
-        // cy.get('[id="frmInlandAndForiegnTraining:txtstatus_label"]').click()
-        // //clcik Inland Education Programs 
-        // cy.get('[data-label="Completed"]').click()
-        // //Add button
-        // cy.get('[id="frmInlandAndForiegnTraining:btnadd"]').click()
-        // cy.wait(5000)
-        // cy.get('[id="frmInlandAndForiegnTraining:btnSave"]').click()
-        // cy.wait(1000)
+        cy.get('[data-item-value="Almaz"]').click()
+        cy.wait(500)
+        //type result
+        cy.get('[id="frmInlandAndForiegnTraining:txtTotalResult"]').type(20)
+        cy.wait(3000)
+        //selecte status
+        cy.get('[id="frmInlandAndForiegnTraining:txtstatus_label"]').click()
+        //clcik Inland Education Programs 
+        cy.get('[data-label="Completed"]').click()
+        //Add button
+        cy.get('[id="frmInlandAndForiegnTraining:btnadd"]').click()
+        cy.wait(5000)
         cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
+        cy.get('[id="frmInlandAndForiegnTraining:btnSave"]').click()
+        cy.wait(1000)
+        // cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
     })
 })
 
