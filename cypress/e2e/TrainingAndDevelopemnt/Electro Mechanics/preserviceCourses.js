@@ -23,7 +23,8 @@ describe('unplannedTrainingRequest testing ', () => {
         // select Course Type
         cy.get('[id="frmEmployee:txtsName_label"]').click()
         //clcik Load Request List
-        cy.get('[data-label="MainCourses"]').click()
+        cy.wait(1000)
+        cy.get('[data-label="MainCourses"]').eq(0).click();
         //clcik any row from the table
         cy.get('table[role="grid"] tbody tr').contains('td', 'computer scinece').click();
 
@@ -31,9 +32,9 @@ describe('unplannedTrainingRequest testing ', () => {
         //select Course Type: 
         cy.get('[id="frmEmployee:txtcname_label"]').click()
         
-        cy.get(`[data-label="MainCourses"]`).click({force: true})
+        cy.get(`[data-label="MainCourses"]`).eq(1).click();
         cy.wait(500)
-        cy.get('[id="frmEmployee:txtconame"]').type("update")
+        cy.get('[id="frmEmployee:txtconame"]').clear().type("update")
         cy.wait(500)
         //save button
         cy.get('[id="frmEmployee:btnSave"]').click()
@@ -46,7 +47,7 @@ describe('unplannedTrainingRequest testing ', () => {
         // select Course Type
         cy.get('[id="frmEmployee:txtsName_label"]').click()
         //clcik Load Request List
-        cy.get('[data-label="MainCourses"]').click()
+        cy.get('[data-label="MainCourses"]').eq(0).click()
         //clcik any row from the table
         cy.get('table[role="grid"] tbody tr').contains('td', 'update').click();
 
@@ -54,7 +55,7 @@ describe('unplannedTrainingRequest testing ', () => {
         //select Course Type: 
         cy.get('[id="frmEmployee:txtcname_label"]').click()
         
-        cy.get(`[data-label="MainCourses"]`).click({force: true})
+        cy.get(`[data-label="MainCourses"]`).eq(1).click()
         cy.wait(500)
         cy.get('[id="frmEmployee:txtconame"]').type("computer scinece")
         cy.wait(500)
