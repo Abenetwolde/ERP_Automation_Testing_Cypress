@@ -2,7 +2,7 @@
 // const testData = require('../../fixtures/IFRS/accuredleaveBalance.json');
 import "../../../support/auth.js"
 // console.log(testData.url)
-describe('unplannedTrainingRequest testing ', () => {
+describe('preserviceTrainees testing ', () => {
     beforeEach(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
@@ -17,7 +17,7 @@ describe('unplannedTrainingRequest testing ', () => {
         });
     })
     // testData.SeveranceLiability.forEach((data, i) => {
-    it("preserviceCourses Update testcase", () => {
+    it("preserviceTrainees Update testcase", () => {
         cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/preserviceTrainees.xhtml")
         cy.wait(500)
         // select year
