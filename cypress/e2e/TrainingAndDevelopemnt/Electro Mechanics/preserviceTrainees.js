@@ -9,16 +9,16 @@ describe('unplannedTrainingRequest testing ', () => {
             cy.getCookie("JSESSIONID").then((cookie) => {
                 // If the cookie is not present, log in
                 if (!cookie) {
-                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/preserviceCourses.xhtml", 'hiwot', 1234);
+                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/preserviceTrainees.xhtml", 'hiwot', 1234);
                     //reusable login command
                 }
-  
+
             })
         });
     })
     // testData.SeveranceLiability.forEach((data, i) => {
-    it("` ${data.testName}`", () => {
-        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/preserviceCourses.xhtml")
+    it("preserviceCourses Update testcase", () => {
+        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/preserviceTrainees.xhtml")
         cy.wait(500)
         // select year
         cy.get('[id="frmPreService:txtSrchYear_label"]').click()
@@ -26,43 +26,48 @@ describe('unplannedTrainingRequest testing ', () => {
         cy.wait(1000)
         cy.get('[data-label="2016"]').click();
         //clcik any row from the table
-        cy.get('table[role="grid"] tbody tr').contains('td', 'computer scinece').click();
-
+        cy.get('table[role="grid"] tbody tr').contains('td', '2016').click();
+        cy.wait(500)
         // cy.get('table tbody tr').contains('td', 'fcmsAppFirstName').click();
-        //select Course Type: 
-        cy.get('[id="frmEmployee:txtcname_label"]').click()
-        
-        cy.get(`[data-label="MainCourses"]`).eq(1).click();
+        //write firstname
+        cy.get('[id="frmPreService:txtFname"]').type("txtFname")
+        //write Middle Name:  
+        cy.get('[id="frmPreService:txtMname"]').type("txtMname")
         cy.wait(500)
-        cy.get('[id="frmEmployee:txtconame"]').clear().type("update")
+        //write Last Name:  : 
+        cy.get('[id="frmPreService:txtLname"]').type("txtLname")
+
+        //write firstname
+        cy.get('[id="frmPreService:txtFnameA"]').type("txtFnameA")
+
+        //write Middle Name:  
+        cy.get('[id="frmPreService:txtMnameA"]').type("txtMnameA")
+
+        //write Last Name:   
+        cy.get('[id="frmPreService:txtLnameA"]').type("txtLnameA")
+
+        //Trainees ID:  
+        cy.get('[id="frmPreService:txtTraineeNo"]').type("txtTraineeNo")
         cy.wait(500)
-        //save button
-        cy.get('[id="frmEmployee:btnSave"]').click()
+        //select Address:  
+        cy.get('[id="frmPreService:txtResidenceAddress"]').type("txtTraineeNo")
+        //select Address:  
+        cy.get('[id="frmPreService:menu"]').click()
+        cy.get('div.ui-selectcheckboxmenu-items-wrapper')
+            .contains('label', 'Education Qualification Certificate')
+            .prev('div.ui-chkbox')
+            .click();
         cy.wait(1000)
-        cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
+        // cy.get('a.ui-selectcheckboxmenu-close').click();
 
-
-        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/preserviceCourses.xhtml")
-        cy.wait(500)
-        // select Course Type
-        cy.get('[id="frmEmployee:txtsName_label"]').click()
-        //clcik Load Request List
-        cy.get('[data-label="MainCourses"]').eq(0).click()
-        //clcik any row from the table
-        cy.get('table[role="grid"] tbody tr').contains('td', 'update').click();
-
-        // cy.get('table tbody tr').contains('td', 'fcmsAppFirstName').click();
-        //select Course Type: 
-        cy.get('[id="frmEmployee:txtcname_label"]').click()
-        
-        cy.get(`[data-label="MainCourses"]`).eq(1).click()
-        cy.wait(500)
-        cy.get('[id="frmEmployee:txtconame"]').type("computer scinece")
-        cy.wait(500)
-        //save button
-        cy.get('[id="frmEmployee:btnSave"]').click()
+        //Add button
+        cy.get('[id="frmPreService:btnAdd"]').click()
         cy.wait(1000)
+        cy.get('[id="frmPreService:btnSave"]').click()
         cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
+        cy.wait(500)
+
+
     })
 })
 
