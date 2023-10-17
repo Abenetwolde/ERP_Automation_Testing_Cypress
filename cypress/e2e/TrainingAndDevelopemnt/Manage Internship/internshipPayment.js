@@ -20,7 +20,7 @@ describe('maintainUniversity testing ', () => {
     it("maintainUniversity Tests", () => {
         cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/internshipStudentDetails.xhtml")
         cy.wait(500)
-        //Reference Letter:
+        //Reference Letter: 
         cy.get('[id="frmUniversity:drdUniversity_label"]').click()
         //clcik Inland Education Programs 
         cy.get('[data-label="ref001q"]').click()
