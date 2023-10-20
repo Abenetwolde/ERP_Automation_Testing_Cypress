@@ -2,7 +2,7 @@
 // const testData = require('../../fixtures/IFRS/accuredleaveBalance.json');
 import "../../../support/auth.js"
 // console.log(testData.url)
-describe('maintainUniversity testing ', () => {
+describe('internshipPayment testing ', () => {
     beforeEach(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
@@ -17,7 +17,7 @@ describe('maintainUniversity testing ', () => {
         });
     })
     // testData.SeveranceLiability.forEach((data, i) => {
-    it("maintainUniversity Tests", () => {
+    it("internshipPayment Tests", () => {
         cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/internshipPayment.xhtml")
         cy.wait(500)
         //Reference Letter: 
