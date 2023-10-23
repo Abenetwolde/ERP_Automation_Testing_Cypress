@@ -21,11 +21,10 @@ describe('Maintain Successor testing ', () => {
         cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/succession/maintianCompetency.xhtml")
         cy.wait(500)
         //Search By:
-        cy.get('[id="frmRequest:drdCompetency_label"]').click()
-        //select Search By:
-        cy.get('[data-label="competency name"]').click()
+        cy.get('[id="frmRequest:drdCompetency_label"]').click("a")
+
         cy.wait(500)
-        cy.get('[id="frmRequest:autoCompetency_input"]').click("new")
+        cy.get('[id="frmRequest:btnSearch"]').click()
         cy.wait(500)
         cy.get('table[role="grid"] tbody tr').contains('td', 'new').click();
         cy.wait(2000)
