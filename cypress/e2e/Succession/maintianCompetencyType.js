@@ -2,7 +2,7 @@
 // const testData = require('../../fixtures/IFRS/accuredleaveBalance.json');
 import "../../support/auth.js"
 // console.log(testData.url)
-describe('Maintain Successor testing ', () => {
+describe('maintianCompetencyType testing ', () => {
     beforeEach(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
@@ -17,7 +17,7 @@ describe('Maintain Successor testing ', () => {
         });
     })
     // testData.SeveranceLiability.forEach((data, i) => {
-    it("Maintain Successor Tests", () => {
+    it("maintianCompetencyType Tests", () => {
         cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/succession/maintianCompetencyType.xhtml")
         cy.wait(500)
         //SrchCompetencyType
