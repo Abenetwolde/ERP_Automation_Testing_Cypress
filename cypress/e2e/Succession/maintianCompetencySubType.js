@@ -33,7 +33,7 @@ describe('Maintain Successor testing ', () => {
         cy.get('[id="frmRequest:txtCompname_label"]').click()
         
         cy.wait(1000)
-        cy.get('[data-lable="leadership skill"]').click()
+        cy.get('[data-label="leadership skill"]').click()
         cy.get('[id="frmRequest:btnSave"]').click()
         cy.wait(1000)
         cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
