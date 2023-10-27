@@ -2,14 +2,14 @@
 // const testData = require('../../fixtures/IFRS/accuredleaveBalance.json');
 import "../../../../support/auth.js"
 // console.log(testData.url)
-describe('probationCriteria testing ', () => {
+describe('probationResult testing ', () => {
     beforeEach(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
             cy.getCookie("JSESSIONID").then((cookie) => {
                 // If the cookie is not present, log in
                 if (!cookie) {
-                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/evaluation/probationCriteria.xhtml", 'hiwot', 1234);
+                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/evaluation/probationResult.xhtml", 'hiwot', 1234);
                     //reusable login command
                 }
 
@@ -17,8 +17,8 @@ describe('probationCriteria testing ', () => {
         });
     })
 
-    it("probationCriteria Fist test", () => {
-        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/evaluation/probationCriteria.xhtml")
+    it("probationResult First test", () => {
+        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/evaluation/probationResult.xhtml")
         cy.wait(500)
         //Criteria Name:
         cy.get('[id="frmProbationCriteria:srcCriteriaName_label"]').click()
