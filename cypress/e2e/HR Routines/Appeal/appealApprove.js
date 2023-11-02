@@ -1,14 +1,14 @@
 
 import "../../../support/auth.js"
 // console.log(testData.url)
-describe('appealRequest first testing ', () => {
+describe('appealApprove first testing ', () => {
     beforeEach(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
             cy.getCookie("JSESSIONID").then((cookie) => {
                 // If the cookie is not present, log in
                 if (!cookie) {
-                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/compliantHandling/appealRequest.xhtml", 'dagnachew', 1234);
+                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/compliantHandling/appealApprove.xhtml", 'dagnachew', 1234);
                     //reusable login command
                 }
 
@@ -16,11 +16,11 @@ describe('appealRequest first testing ', () => {
         });
     })
 
-    it("appealRequest first test", () => {
-        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/compliantHandling/appealRequest.xhtml")
+    it("appealApprove first test", () => {
+        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/compliantHandling/appealApprove.xhtml")
         cy.wait(500)
         //Filter Criteria:
-        cy.get('[id="frmSearch:somFiliterByStatus_label"]').click()
+        cy.get('[id="frmSearch:somFiliterByStatus"]').click()
         cy.wait(500)
         cy.get('[data-label="Load Approved List"]').click()
         cy.wait(500)
