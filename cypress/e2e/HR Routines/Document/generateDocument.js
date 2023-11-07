@@ -25,12 +25,10 @@ describe('appealApprove first testing ', () => {
         cy.get('[data-label="Load Request List"]').click()
         cy.wait(500)
         cy.get('table[role="grid"] tbody tr').contains('td', 'insa-1111').click();
-        cy.wait(3000)
         cy.wait(500)
         cy.get('[id="frmDocumentRequest:txtxreqdate"]').type("14/02/2016")
-        cy.wait(500)   
+        cy.wait(500)
         cy.get('[id="frmDocumentRequest:btnSave"]').click()
-
         cy.wait(1000)
         cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
     })
