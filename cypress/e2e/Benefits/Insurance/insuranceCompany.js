@@ -24,10 +24,10 @@ describe('appealApprove first testing ', () => {
         //FInsurance Name:
         cy.get('[id="frmRequest:Prov_label"]').click()
         cy.wait(500)
-        cy.get('[data-label="Ethiopian Insurance Corporation"]').click()
+        cy.get('[data-label="Ethiopian Insurance Corporation"]').click({force: true})
         cy.wait(500)
         //approve
-        cy.get('[id="frmRequest:Branch_label"]').click()
+        cy.get('[id="frmRequest:Branch_label"]').click({force: true})
         cy.wait(500)
         cy.get('[data-label="North"]').click()
         cy.wait(500)
@@ -45,23 +45,27 @@ describe('appealApprove first testing ', () => {
         cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
 
         cy.reload()
-        //rejecting 
-        // //Filter Criteria::
-        // cy.get('[id="frmRequest:somFiliterByStatus1_label"]').click()
-        // cy.wait(500)
-        // cy.get('[data-label="Load Approved List"]').click()
-        // cy.wait(500)
-        // //select a data from table
-        // cy.get('table[role="grid"] tbody tr').contains('td', '2014').click();
-        // //approve
-        // cy.get('[id="frmRequest:drddecision_label"]').click()
-        // cy.wait(500)
-        // cy.get('[data-label="Reject"]').click()
-        // cy.wait(500)
-        // //save button
-        // cy.get('[id="frmRequest:btnSave"]').click()
-        // cy.wait(500)
-        // cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
+     
+        //FInsurance Name:
+        cy.get('[id="frmRequest:somFiliterByStatus_label"]').click()
+        cy.wait(500)
+        cy.get('[data-label="Load Inactive List"]').click({force: true})
+        cy.wait(500)
+        cy.get('table[role="grid"] tbody tr').contains('td', 'North').click();
+        //approve
+        cy.get('[id="frmRequest:Branch_label"]').click()
+        cy.wait(500)
+        cy.get('[data-label="East"]').click({force: true})
+        cy.wait(500)
+
+        cy.get('[id="frmRequest:Telephone"]').type("+251967457689")
+        cy.wait(500)
+        cy.get('[id="frmRequest:Address1"]').type("111")
+        cy.wait(500)
+        cy.get('[id="frmRequest:btnSave"]').click()
+        cy.wait(500)
+
+        cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
 
 
     })
