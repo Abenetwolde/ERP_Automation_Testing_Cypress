@@ -19,18 +19,23 @@ describe('maintianInjuredEmployee first testing ', () => {
     it("maintianInjuredEmployee first test", () => {
         cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/insurance/DiagnosisResult.xhtml")
         cy.wait(500)
-        //NOtification
-        cy.get('[id="frmTop:cmdLinkNotf"]').click()
-        //Filter by NAme
-        cy.get('[id="frmTop:tblnotification:j_idt67:filter"]').type("Alm")
-        cy.wait(2000)
-        cy.get('tbody tr').contains('td', 'Almaz Sisay Bekele').click()
-
-        //Hospital Name: :
-        cy.get('[id="frmSuccessionplan:txtHospital"]').type("Hospital NAme")
+        //+ icon
+        cy.get('[id="frmSample:btnNew"]').click()
+        //click radio button
+        cy.get('[id="frmRequest:rdemployetype:0"]').type("Alm")
         cy.wait(500)
-        //Date::
-        cy.get('[id="frmSuccessionplan:txtDate"]').type("05/03/2016")
+        //Medical Expense: :
+        cy.get('[id="frmRequest:txtExpense"]').type(122)
+        cy.wait(500)
+        //Reciept Number:
+        cy.get('[id="frmRequest:txtExpense"]').type(11221)
+        cy.wait(500)
+        //Reciept Number:
+        cy.get('[id="frmRequest:txtExpense"]').type(11221)
+        cy.wait(500)
+        //Add button
+        cy.get('[id="frmRequest:btnAdd"]').click()
+        cy.wait(500)
         cy.get('td').contains('a', 'Hide').click();
         // cy.get('[id="frmSuccessionplan:txtDate"]').type("{enter}")
         cy.wait(500)
@@ -57,6 +62,4 @@ describe('maintianInjuredEmployee first testing ', () => {
     })
 })
 
-
-// })
 
