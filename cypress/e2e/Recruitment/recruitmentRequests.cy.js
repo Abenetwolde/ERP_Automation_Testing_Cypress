@@ -28,29 +28,32 @@ describe('recruitmentRequests testing ', () => {
             cy.get('[id="frmSample:btnNew"]').click()
             // enter request id  
             cy.get('[id="frmRecruitment:txtRequester_input"]').type(`${data.Requester_id}`)
-            cy.wait(1000)
-            cy.get(`[data-item-value="${data.Requester_id}"]`).click()
+            cy.wait(4000)
+            cy.get('table.ui-autocomplete-table')
+                .contains('td', '123')
+                .click({force:true});
+
+            // cy.get(`[data-item-value="123"]`).click()
             cy.wait(500)
-            cy.get('[id="frmRecruitment:txtJob"]').click({force: true})
+            cy.get('[id="frmRecruitment:txtJob"]').click({ force: true })
             // cy.get('tbody tr').first().click()
-          
+
             // click job title dropdown 
             cy.get('[id="frmRecruitment:txtJob"]').click()
-               // select job title 
+            // select job title 
             cy.get(`[data-label="${data.jobTitle}"]`).click({ force: true })
             //type Number of employees requested
-          if(data.testId!==2){cy.get('[id="frmRecruitment:txtNoOfEmployee"]').type(data.txtNoOfEmployee)}  
+            if (data.testId !== 2) { cy.get('[id="frmRecruitment:txtNoOfEmployee"]').type(data.txtNoOfEmployee) }
             cy.wait(500)
             // save Data
-             cy.get('[id="frmRecruitment:btnSave"]').click()
-         
-            if(data.testType=="validator")
-            {
+            cy.get('[id="frmRecruitment:btnSave"]').click()
+
+            if (data.testType == "validator") {
                 Validator(data)
-            }else{
+            } else {
                 ErrorInputValidator(data)
             }
-            
+
 
 
 

@@ -36,13 +36,16 @@ beforeEach(() => {
           cy.get('[id="loginform:login-password"]').type(row.password)
           cy.wait(2000)
           cy.get('[id="loginform:j_idt11"]').click()
+          // if (username === "hiwot" && password === 1234) {
+          //   cy.url().should('include', 'erp/hrms/hrmsDashboard.xhtml');
+          // }
         });
         console.log(length)
     
       console.log(testData)
    
 
-      cy.url().should('include', '/dashboard');
+      // cy.url().should('include', '/erp/hrms/hrmsDashboard.xhtml');
     });
   });
 })

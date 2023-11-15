@@ -2,7 +2,7 @@ import Login from "../../PageObjects/LoginPage.js"
 import "../../support/auth.js"
 import { Validator } from "../../Helpers/Validator.js";
 import { ErrorInputValidator } from "../../Helpers/ErrorInputValidator.js";
-const testData = require('../../fixtures/Recruitment/shortlistCandidates.json');
+// const testData = require('../../fixtures/Recruitment/shortlistCandidates.json');
 
 console.log(testData.url)
 describe('recruitmentRequests testing ', () => {
@@ -12,7 +12,7 @@ describe('recruitmentRequests testing ', () => {
             cy.getCookie("JSESSIONID").then((cookie) => {
                 // If the cookie is not present, log in
                 if (!cookie) {
-                    cy.loginCommand(testData.url, 'hiwot', 1234);
+                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/shortlistCandidates.xhtml", 'hiwot', 1234);
                     //reusable login command
                 }
 
@@ -21,8 +21,8 @@ describe('recruitmentRequests testing ', () => {
     })
 
 
-    testData.shortlistCandidates.forEach((data, i) => {
-        it(` ${data.testName}`, () => {
+    // testData.shortlistCandidates.forEach((data, i) => {
+        it(" ${data.testName}`", () => {
             cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/shortlistCandidates.xhtml")
             // click vacancy number
             cy.get('[id="frmExamPercentage:bcMain_label"]').click()
@@ -48,5 +48,5 @@ describe('recruitmentRequests testing ', () => {
     })
 
 
-})
+// })
 

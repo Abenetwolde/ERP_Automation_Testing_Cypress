@@ -32,6 +32,7 @@ describe('SeveranceLiability testing ', () => {
             // click job title dropdown 
             cy.get('[id="frmCandidate:somJobTypes"]').click()
             // select job title 
+            cy.wait(1000)
             cy.get('[data-label="Administrative Assistant I"]').click({ force: true })
             // type first name 
             cy.get('[id="frmCandidate:txtFirstName"]').type(data.firstName)

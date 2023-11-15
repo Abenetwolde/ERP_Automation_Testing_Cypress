@@ -31,19 +31,26 @@ describe('recruitmentRequests testing ', () => {
             cy.wait(500)
             //type Written Exam
             cy.get('[id="frmExamPercentage:txtWrittenPercentage"]').clear().type(data.WrittenExam)
+            cy.wait(500)
             // type InterviewPercentage 
             cy.get('[id="frmExamPercentage:txtInterviewPercentage"]').clear().type(data.InterviewPercentage)
+            cy.wait(500)
             // type CgpaPercentage
             cy.get('[id="frmExamPercentage:txtCgpaPercentage"]').clear().type(data.CgpaPercentage)
+            cy.wait(500)
             // type ExperiencePercentage
             cy.get('[id="frmExamPercentage:txtExperiencePercentage"]').clear().type(data.ExperiencePercentage)
+            cy.wait(500)
             // type PracticalPercentage
             cy.get('[id="frmExamPercentage:txtPracticalPercentage"]').clear().type(data.PracticalPercentage)
+            cy.wait(500)
             // type OtherPercentage
             cy.get('[id="frmExamPercentage:txtOtherPercentage"]').clear().type(data.OtherPercentage)
+            cy.wait(500)
             // type txtpreparedOn
 
             cy.get('[id="frmExamPercentage:txtpreparedOn"]').clear().type(data.txtpreparedOn)
+            cy.wait(500)
             cy.get('[id="frmExamPercentage:btnSave"]').click()
             if (data.testType == "validator") {
                 Validator(data)
