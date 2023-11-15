@@ -28,8 +28,9 @@ describe('maintianInjuredEmployee first testing ', () => {
         cy.get('[data-item-label="Almaz"]').click()
         cy.wait(500)
         cy.get('[id="frmRequest:Number"]').type(1233)
+        cy.wait(500)
         //Informed Date:
-        cy.get('[id="frmRequest:Informed"]').type("26/03/2016")
+        cy.get('[id="frmRequest:Informed"]').type("27/03/2015")
         cy.wait(500)
 
         //Insurance Provider:
@@ -42,7 +43,7 @@ describe('maintianInjuredEmployee first testing ', () => {
         cy.get('[data-label="On Duty"]').click()
         //Accident Place:
         //Accident Date:
-        cy.get('[id="frmRequest:Accident"]').type("26/02/2016")
+        cy.get('[id="frmRequest:Accident"]').type("26/03/2015")
         cy.get('[id="frmRequest:Place"]').type("addis")
         cy.wait(500)
         //Description of accident:
