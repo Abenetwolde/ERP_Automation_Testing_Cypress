@@ -17,6 +17,47 @@ describe('maintianInjuredEmployee first testing ', () => {
     })
 
     it("maintianInjuredEmployee first test", () => {
+
+        //First register the the EmployeeeName
+
+        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/insurance/maintianInjuredEmployee.xhtml")
+        cy.wait(500)
+        //Employee Name:
+        cy.get('[id="frmSample:btnNew"]').click()
+        //Employee Name:
+        cy.get('[id="frmRequest:fName_input"]').type("Alm")
+        cy.wait(2000)
+        //Notification Number:
+        cy.get('[data-item-label="Almaz"]').click()
+        cy.wait(500)
+        cy.get('[id="frmRequest:Number"]').type(1233)
+        cy.wait(500)
+        //Informed Date:
+        cy.get('[id="frmRequest:Informed"]').type("27/03/2015")
+        cy.wait(500)
+
+        //Insurance Provider:
+        cy.get('[id="frmRequest:Provider_label"]').click()
+        cy.wait(500)
+        cy.get('[data-label="AwashInsurance"]').eq(0).click( {force: true})
+        //Accident Happened:
+        cy.get('[id="frmRequest:drdhappened_label"]').click()
+        cy.wait(500)
+        cy.get('[data-label="On Duty"]').click()
+        //Accident Place:
+        //Accident Date:
+        cy.get('[id="frmRequest:Accident"]').type("26/03/2015")
+        cy.get('[id="frmRequest:Place"]').type("addis")
+        cy.wait(500)
+        //Description of accident:
+        cy.get('[id="frmRequest:Discription"]').type("Description")
+        cy.wait(500)
+        cy.get('[id="frmRequest:btnSave1"]').click()
+        cy.wait(500)
+        cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
+
+
+        cy.wait(2000)
         cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/insurance/DiagnosisResult.xhtml")
         cy.wait(500)
         //NOtification
