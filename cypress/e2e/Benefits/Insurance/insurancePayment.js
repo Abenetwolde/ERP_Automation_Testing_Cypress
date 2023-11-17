@@ -1,14 +1,14 @@
 
 import "../../../support/auth.js"
 // console.log(testData.url)
-describe('maintianInjuredEmployee first testing ', () => {
+describe('insurancePayment first testing ', () => {
     beforeEach(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
             cy.getCookie("JSESSIONID").then((cookie) => {
                 // If the cookie is not present, log in
                 if (!cookie) {
-                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/insurance/DiagnosisResult.xhtml", 'hiwot', 1234);
+                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/insurance/insurancePayment.xhtml", 'hiwot', 1234);
                     //reusable login command
                 }
 
@@ -16,47 +16,60 @@ describe('maintianInjuredEmployee first testing ', () => {
         });
     })
 
-    it("maintianInjuredEmployee first test", () => {
-        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/insurance/DiagnosisResult.xhtml")
+    it("insurancePayment first test", () => {
+        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/insurance/insurancePayment.xhtml")
         cy.wait(500)
         //+ icon
         cy.get('[id="frmSample:btnNew"]').click()
-        //click radio button
-        cy.get('[id="frmRequest:rdemployetype:0"]').type("Alm")
         cy.wait(500)
-        //Medical Expense: :
-        cy.get('[id="frmRequest:txtExpense"]').type(122)
+        cy.get('[for="frmRequest:rdemployetype:0"]').click()
+        //Medical Expense:
         cy.wait(500)
-        //Reciept Number:
-        cy.get('[id="frmRequest:txtExpense"]').type(11221)
+        cy.get('[id="frmRequest:txtExpense"]').type("12298724")
         cy.wait(500)
-        //Reciept Number:
-        cy.get('[id="frmRequest:txtExpense"]').type(11221)
-        cy.wait(500)
-        //Add button
+         //Medical Expense:
+         cy.get('[id="frmRequest:txtReciept"]').type("122131231323213")
+         cy.wait(500)
+        //Add
         cy.get('[id="frmRequest:btnAdd"]').click()
         cy.wait(500)
-        cy.get('td').contains('a', 'Hide').click();
-        // cy.get('[id="frmSuccessionplan:txtDate"]').type("{enter}")
+          //Add
+          cy.get('[id="frmRequest:btnAdd"]').click()
+          cy.wait(500)
+        //Insurance Company:
+        cy.get('[id="frmRequest:txtInsuranceCompany"]').type("testcompany")
         cy.wait(500)
-        //Name Of Injury/Disease: :
-        cy.get('[id="frmSuccessionplan:txtaInjury"]').type("Name Of Injury Disease")
+         //Insurance Company:
+         cy.get('[id="frmRequest:txtInsuranceBranch"]').type("branch")
+         cy.wait(500)
+        //Cheque Number:
+        cy.get('[id="frmRequest:txtChequeNumber"]').type(121)
         cy.wait(500)
-        //Physician Name: :
-        cy.get('[id="frmSuccessionplan:txtPhysician"]').type("Physician Name")
+        //Account title:
+        cy.get('[id="frmRequest:txtAccounttxttitle"]').type("testtitle")
         cy.wait(500)
-        //time:
-        cy.get('[id="frmSuccessionplan:txtTime_input"]').type("03:00:00")
+        //Recieved Date:
+        cy.get('[id="frmRequest:txtRecieved"]').type("06/03/2016")
         cy.wait(500)
-        cy.get('body').click();
-        //Sick Leave
-        cy.get('[id="frmSuccessionplan:txtSick"]').focus().type(12)
+        //BankBranch
+        cy.get('[id="frmRequest:txtBankBranch"]').type("branchname")
         cy.wait(500)
-        //Precentage Of Damage: 
-        cy.get('[id="frmSuccessionplan:txtPresent"]').type(45)
+        //Name Of Bank:
+        cy.get('[id="frmRequest:txtNameOfBank"]').type("TestBank")
         cy.wait(500)
-        cy.get('[id="frmSuccessionplan:btnSave"]').click()
+        //AccountNumber:
+        cy.get('[id="frmRequest:txtAccountNumber"]').type(1223)
         cy.wait(500)
+        //Commentw:
+        cy.get('[id="frmRequest:txtCommentw"]').type("comment")
+        cy.wait(500)
+        //Approved date:
+        cy.get('[id="frmRequest:txtApproved"]').type("05/03/2016")
+        cy.wait(500)
+
+        //Add button
+        cy.get('[id="frmRequest:btnSave"]').click()
+        cy.wait(1000)
         cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
 
     })
