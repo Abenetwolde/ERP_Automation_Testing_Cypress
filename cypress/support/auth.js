@@ -9,5 +9,5 @@ Cypress.Commands.add('loginCommand', (url ,username, password) => {
     loginObject.setPassword(password)
     cy.wait(1000)
     loginObject.clickLogin();
-    cy.visit(url)
+    // cy.visit(url)
 });

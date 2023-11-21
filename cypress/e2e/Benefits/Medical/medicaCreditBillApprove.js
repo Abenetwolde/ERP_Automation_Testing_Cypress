@@ -2,7 +2,7 @@
 import "../../../support/auth.js"
 // console.log(testData.url)
 describe('medicaCreditBillApprove first testing ', () => {
-    beforeEach(() => {
+    before(() => {
         cy.session("JSESSIONID", () => {
             // Check if the "JSESSIONID" cookie is present
             cy.getCookie("JSESSIONID").then((cookie) => {
@@ -31,9 +31,15 @@ describe('medicaCreditBillApprove first testing ', () => {
         cy.wait(500)
         cy.get('[data-label="Approve"]').click({ force: true })
         cy.wait(500)
+        cy.get('[id="frmMedicalBill:btnSave"]').click()
+        cy.wait(500)
         cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
 
-        cy.reload()
+        
+
+    })
+    it("medicaCreditBillApprove first test", () => {
+
         cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/medical/medicalCreditBill.xhtml", 'hiwot', 1234);
         cy.get('[id="frmToolBar:btnNew"]').click({ force: true })
         cy.wait(500)
