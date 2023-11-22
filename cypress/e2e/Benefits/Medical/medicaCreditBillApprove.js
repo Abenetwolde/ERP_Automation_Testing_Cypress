@@ -19,10 +19,7 @@ describe('medicaCreditBillApprove first testing ', () => {
     it("medicaCreditBillApprove first test", () => {
         cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/medical/medicaCreditBillApprove.xhtml")
         cy.wait(500)
-        // //Institution Name: 
-        // cy.get('[id="frmSearch:somFiliterByStatus_label"]').click({ force: true })
-        // cy.wait(500)
-        // cy.get('[data-label="Betezata Hospital"]').click({ force: true })
+
         cy.wait(500)
         cy.get('tbody tr').contains('td', '1221').click()
         cy.wait(500)
@@ -69,21 +66,7 @@ describe('medicaCreditBillApprove first testing ', () => {
         cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
 
         cy.reload()
-        // cy.wait(500)
-        // //Bank Selection:
-        // cy.get('[id="frmSearch:srcInstitutionName_label"]').click()
-        // cy.wait(500)
-        // cy.get('[data-label="Institution Name"]').eq(0).click()
-        // cy.wait(500)
-        // cy.get('tbody tr').contains('td', 'Institution Name').click()
-        // cy.wait(500)
-        // cy.get('[id="frmMedicalInstitution:txtInstitutionName"]').type("InstitutionUpdate")
-        // cy.get('[id="frmMedicalInstitution:btnSave"]').click()
-        // cy.wait(500)
-        // cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
-        // cy.wait(500)
-        // cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
-
+       
     })
 })
 
