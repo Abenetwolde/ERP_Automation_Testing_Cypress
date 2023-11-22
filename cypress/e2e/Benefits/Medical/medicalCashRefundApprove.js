@@ -36,7 +36,6 @@ describe('medicaCreditBillApprove first testing ', () => {
     it("medicalCashRefund request  first test", () => {
 
         cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/medical/medicalCashRefund.xhtml", 'hiwot', 1234);
-        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/medical/medicalCashRefund.xhtml")
         cy.wait(500)
         //Institution Name: 
         cy.get('[id="frmToolBar:btnNew"]').click({ force: true })
