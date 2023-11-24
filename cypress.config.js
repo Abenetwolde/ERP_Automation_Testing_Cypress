@@ -37,7 +37,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents,
             reporter: 'cypress-mochawesome-reporter',
-    specPattern: "cypress/e2e/**/*.{feature,cy.js,js}",
+    specPattern: "cypress/e2e/**/*.{feature,cy.js,js,ts}",
     baseUrl: "https://www.saucedemo.com",
 
     chromeWebSecurity: false,
