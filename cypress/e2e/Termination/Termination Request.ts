@@ -23,7 +23,7 @@ describe('medicaCreditBillApprove first testing ', () => {
         cy.get('[id="frmToolBar:btnNew"]').click()
         cy.wait(500)
         //
-        cy.get('[id="frmTermination:srcEmployeeId_input"]').type(123)
+        cy.get('[id="frmTermination:srcEmployeeId_input"]').type("123")
         cy.wait(2000)
         cy.get('[data-item-value="123"]').eq(0).click({force: true})
         cy.wait(500)
