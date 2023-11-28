@@ -20,20 +20,15 @@ describe('retirementApprove first testing ', () => {
         cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/termination/exitInterview.xhtml")
         cy.get('[id="frmExitInterview:srcEmpName"]').type("a")
         cy.wait(500)
-        cy.get('[id="frmExitInterview:srcEmpName"]').click()
+        cy.get('[id="frmExitInterview:btnSearch"]').click()
         cy.wait(500)
         cy.get('table[role="grid"] tbody tr').contains('td', 'Alemu Tadese Biru').click();
         cy.wait(500)
-        cy.get('[id="frmExitInterview:srcEmpName"]').type("a")
+        cy.get('[id="frmExitInterview:txtReasonforLeave_label"]').click()
         cy.wait(500)
-        cy.get('[data-label="Approve"]').click()
+        cy.get('[data-label="To begin own business"]').click()
         cy.wait(500)
-        //termination date
-        cy.get('[id="frmRetirement:txtProcessedDate"]').clear().type("05/03/2016")
-        cy.wait(500)
-        cy.get('a[style="cursor: hand;color:#FF82AB;padding:1px; text-align:right;"]').contains('Hide').click()
-
-        cy.get('[id="frmRetirement:btnSave"]').click()
+        cy.get('[id="frmExitInterview:btnSave"]').click()
         cy.wait(500)
         cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', "Success!")/* .should('contain', "The number 0f employee must equal with participant!") */
     })
