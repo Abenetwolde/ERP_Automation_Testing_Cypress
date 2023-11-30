@@ -1,10 +1,10 @@
 
 import { ErrorInputValidator } from "../../../Helpers/ErrorInputValidator.js";
 import { Validator } from "../../../Helpers/Validator.js";
-import "../../../support/auth.js"
+// import "../../../support/auth.js"
 const testData = require('../../../fixtures/OrganizationInformation/OrganizationStruacture/DepartmentProcess.json');
 import { generateRandomString } from "../../../Helpers/RandomString.js";
-
+import "../../../support/auth.d.ts"
 console.log(testData.url)
 describe('SeveranceLiability testing ', () => {
     beforeEach(() => {

@@ -1,5 +1,5 @@
 
-import "../../../support/auth.js"
+import "../../../support/auth.d.ts"
 
 
 describe('OrganizationStruacture Test', 
@@ -20,7 +20,8 @@ describe('OrganizationStruacture Test',
         })
        
         it('the Departement/process, Adress, Staff Plan should not be inactive if there is no selected project ', () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
+            // cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
+            cy.loginCommand("https://172.21.35.239:8181/ERP-war/Login.xhtml?continue=https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml", 'hiwot', 1234);
             cy.wait(1000)
             cy.get('li a[href="#tabWorkUnit"]')
                 .trigger('mouseover')

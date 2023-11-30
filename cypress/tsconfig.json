@@ -4,6 +4,6 @@
       "lib": ["ES6", "dom"],
       "types": ["cypress", "node"]
     },
-    "include": ["**/*.ts"]
+    "include": ["**/*.ts", "e2e/OrganizationInformation/OrganizationStruacture/OrganizationStruacture.cy.js"]
   }
   
