@@ -24,8 +24,7 @@ describe('SeveranceLiability testing ', () => {
 
     testData.DepartmentProcess.forEach((data, i) => {
         it(` ${data.testName}`, () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/OrganizationStruacture.xhtml")
-            // click Insa 
+            cy.loginCommand(testData.url, 'hiwot', 1234);
             cy.get('span.ui-treenode-label.ui-corner-all').contains('INSA=>1').click()
             cy.wait(1000)
             //click departement tab

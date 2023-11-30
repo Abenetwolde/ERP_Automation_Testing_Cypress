@@ -1,4 +1,5 @@
 import Login from "../../PageObjects/LoginPage.js"
+import "../../support/auth.d.ts"
 import jobRegistaration from "../../PageObjects/jobRegistration.js"
 describe('jobRegistaration Test', () => {
   context('jobRegistaration Test', () => {
@@ -7,9 +8,8 @@ describe('jobRegistaration Test', () => {
         if ($body.text().includes('hiwot')) {
           return;
         } else {
-          const JobUrl = Cypress.env('JobUrl')
+        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/organization/jobRegistration.xhtml")
           const loginObject = new Login()
-          cy.visit(`${JobUrl}`)
           loginObject.setUserName("hiwot")
           loginObject.setPassword(1234)
           loginObject.clickLogin();
@@ -68,36 +68,7 @@ describe('jobRegistaration Test', () => {
       })
 
     })
-    //    { cookie && it('Data driven jobRegistaration Test', () => {
-    //         const jobRegistarationObject= new jobRegistaration()
-    //         cy.fixture("jobRegistrationTestData").then((data)=>{
-    //             data.jobRegistrationTestData.forEach((jobdata)=>{
-    //                 cy.visit('https://172.21.35.248:8181/ERP-war/erp/hrms/organization/jobRegistration.xhtml')
-    //                 jobRegistarationObject.clickPluseIcon()
-    //                 jobRegistarationObject.setJobCode(jobdata.jobCode)
-    //                 jobRegistarationObject.setDepartment(jobdata.departement)
-    //                 jobRegistarationObject.setJobTitle(jobdata.jobTitle)
-    //                 jobRegistarationObject.setJobDiscription(jobdata.jobDiscription)
-    //                 jobRegistarationObject.setRelevantExp(jobdata.relevantExperince)
-    //                 jobRegistarationObject.setAltExp(jobdata.alternativeExperince)
-    //                 jobRegistarationObject.clickDropdownIconForJobGrade();
-    //                 jobRegistarationObject.selectJobGrade();
-    //                 jobRegistarationObject.clickDropdownIconForjobCatagoery();
-    //                 jobRegistarationObject.selectJobCatagoery();
-    //                 jobRegistarationObject.selectRadioButton();
-    //                 jobRegistarationObject.clickDropdownIconForEducationLevel();
-    //                 jobRegistarationObject.clickDropdownIconForQualification();
-    //                 jobRegistarationObject.setExperince(jobdata.Experience);
-    //                 jobRegistarationObject.clickAddButton();
-    //                 jobRegistarationObject.clickSubmitButton();
-    //                 jobRegistarationObject.verifyJobRigistration(jobdata.expectedResult);  
-
-    //             })
-    //         })
-
-    //     })}
-
-
+   
   })
 
 

@@ -47,7 +47,7 @@ class jobRegistaration {
         cy.get(this.dropdownIconForJobGrade).click()
     }
      selectJobGrades() {
-            cy.get('li[data-label="D2"]').contains('D2').click()
+            cy.get('li[data-label="D2"]').contains('D2').eq(0).click()
         }
     clickDropdownIconForjobCatagoery() {
         cy.get(this.dropdownIconForJobCatagory).click()

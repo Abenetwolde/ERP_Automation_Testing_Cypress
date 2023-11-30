@@ -1,7 +1,6 @@
 
 import "../../../support/auth.d.ts"
 
-
 describe('OrganizationStruacture Test', 
 () => {
     
