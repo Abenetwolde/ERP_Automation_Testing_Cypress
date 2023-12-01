@@ -1,6 +1,6 @@
 import { Validator } from "../../Helpers/Validator.js";
 import Login from "../../PageObjects/LoginPage.js"
-import "../../support/auth.js"
+import "../../support/auth.d.ts"
 const testData = require('../../fixtures/HrPlaining/annualRecruitmentAndPromotion.json');
 
 console.log(testData.url)
@@ -22,7 +22,7 @@ describe('PayGradeTest', () => {
    
     testData.annualRecruitmentAndPromotion.forEach((data, i) => {
         it(`test data ${data.testName}`, () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/planning/demandAndSupplyAnalysis.xhtml")
+            cy.loginCommand(testData.url, 'dagnachew', 1234);
             cy.wait(500)
             // click the Year dropdown
             cy.get('[id="frmNeedRequest:txtYear_label"]').click()

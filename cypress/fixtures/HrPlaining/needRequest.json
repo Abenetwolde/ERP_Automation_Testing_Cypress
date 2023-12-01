@@ -39,7 +39,7 @@
           "testId":3,
           "testName":"Test if number Position Requested shouldn't be Negative Number",
           "year": "2014/2015",
-          "NoofEmpNeeded": 6,
+          "NoofEmpNeeded": -6,
           "How_to_be_filled: ": 8000,
           "When_to_be_filled":"",
           "reasonforRequest:":"reasonforRequest",

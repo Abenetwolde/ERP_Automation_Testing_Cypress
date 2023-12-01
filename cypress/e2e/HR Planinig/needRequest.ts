@@ -1,29 +1,14 @@
 import { Validator } from "../../Helpers/Validator.js";
 import Login from "../../PageObjects/LoginPage.js"
-import "../../support/auth.js"
+import "../../support/auth.d.ts"
 const testData = require('../../fixtures/HrPlaining/needRequest.json');
 
 console.log(testData.url)
 describe('PayGradeTest', () => {
-  beforeEach(() => {
-    cy.session("JSESSIONID", () => {
-        // Check if the "JSESSIONID" cookie is present
-        cy.getCookie("JSESSIONID").then((cookie) => {
-            // If the cookie is not present, log in
-            if (!cookie) {
-                cy.loginCommand(testData.url, 'hiwot', 1234);
-                //reusable login command
-            }
-
-        })
-    });
-})
-
-
-
     testData.needRequest.forEach((data, i) => {
         it(`test data ${data.testName}`, () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/planning/needRequest.xhtml")
+            cy.loginCommand(testData.url, 'hiwot', 1234);
+            // cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/planning/needRequest.xhtml")
             cy.wait(500)
             cy.get('[id="frmSample:j_idt76"]').click()
             cy.wait(500)

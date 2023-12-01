@@ -23,34 +23,21 @@ describe('PayGradeTest', () => {
         it(`test datat ${data.testName}`, () => {
 
             cy.get('[id="formPayGrade:drdGrade_label"]').click()
-            cy.wait(500)
+            cy.wait(1000)
             cy.get(`li[data-label=${data.salaryGrade}]`).click();
-            cy.wait(500)
+            cy.wait(1000)
             cy.get('[id="formPayGrade:txtSalaryStep_label"]').click()
-            cy.wait(500)
+            cy.wait(1000)
             cy.get(`[data-label=${data.salaryStep}]`).click({force:true})
            
-            cy.wait(500)
+            cy.wait(1000)
             cy.get('[id="formPayGrade:txtSalary"]').type(data.salary)
-            cy.wait(500)
+            cy.wait(1000)
 
             cy.get('[id="formPayGrade:btnAdd"]').click()
+            cy.wait(1000)
             cy.get('[id="formPayGrade:btnSave"]').click()
-            // {
-            //     if (data.testName === "Successfuly Add Test") {
-            //         cy.get('tr').contains('2').parent().within(() => {
-            //             cy.contains('9000.0');
-            //           });
-
-            //     }
-            // }
-            // cy.wait(1000)
-            // //  cy.get('.ui-growl-message').should('be.visible').invoke('text').then((text) => {
-            // //     const error = text.split('\n')[0].trim()
-            // //     const message = text.split('\n')[1].trim()
-            // //     expect(error).to.equal('Error!')
-            // //     expect(message).to.equal('Duplicate entry salary step')
-            // //   })
+            cy.wait(1000)
            if(data.testId==2) cy.get('[id="formPayGrade:btnSave"]').click()
             cy.get('.ui-growl-message').should('be.visible').invoke('text').should('contain', data.expectedResult.mainText)
 
