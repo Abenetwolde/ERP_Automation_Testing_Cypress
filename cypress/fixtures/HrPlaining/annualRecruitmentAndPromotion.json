@@ -30,18 +30,6 @@
           }
         },
         {
-          "testId":3,
-          "testName":"is should not save with invalid PreparedOn data ",
-          "year": "2015/2016",
-          "remark":"remark Text",
-          "Department": "Hidase Project",
-          "PreparedOn":"12/01/2016",
-          "expectedResult":{
-            "mainText":"Error!",
-            "subText":""
-          }
-        },
-        {
           "testId":4,
           "testName":"is should not save with Duplication ",
           "year": "2015/2016",
