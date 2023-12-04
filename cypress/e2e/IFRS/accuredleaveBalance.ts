@@ -1,26 +1,27 @@
 import Login from "../../PageObjects/LoginPage.js"
 const testData = require('../../fixtures/IFRS/accuredleaveBalance.json');
-import "../../support/auth.js"
+import "../../support/auth.d.ts"
 console.log(testData.url)
 describe('accuredleaveBalance testing ', () => {
-    beforeEach(() => {
-        cy.session("JSESSIONID", () => {
-              // Check if the "JSESSIONID" cookie is present
-              cy.getCookie("JSESSIONID").then((cookie) => {
-                // If the cookie is not present, log in
-                if (!cookie) {
-                  cy.loginCommand(testData.url,'hiwot', 1234);
-                  //reusable login command
-                }
+    // beforeEach(() => {
+    //     cy.session("JSESSIONID", () => {
+    //           // Check if the "JSESSIONID" cookie is present
+    //           cy.getCookie("JSESSIONID").then((cookie) => {
+    //             // If the cookie is not present, log in
+    //             if (!cookie) {
+    //               cy.loginCommand(testData.url,'hiwot', 1234);
+    //               //reusable login command
+    //             }
                 
-              })
-            });
-      })
+    //           })
+    //         });
+    //   })
     
 
-    testData.SeveranceLiability.forEach((data, i) => {
+    testData.SeveranceLiability.forEach((data: { testName: any; employid: string; testId: number; }, i: any) => {
         it(` ${data.testName}`, () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/accrued_leave_balance.xhtml")
+          cy.loginCommand(testData.url,'hiwot', 1234);
+            // cy.visit("https://172.21.35.239:8181/ERP-war/erp/ifrs/hrms/accrued_leave_balance.xhtml")
             cy.get('[id="frmLeaveBalance:txtYear"]').click()
             cy.get('[data-label="2015-2016"]').click()
             cy.get('[id="frmLeaveBalance:tblAllBalance:j_idt77:filter"]').type(data.employid)
@@ -48,7 +49,7 @@ describe('accuredleaveBalance testing ', () => {
                     .find('td')
                     .first()
                     .should('have.text', '5');
-                // cy.get('tr[data-ri="4"] td').contains(5)
+                
             }
 
         })
