@@ -1,5 +1,6 @@
 import Login from "../../PageObjects/LoginPage.js"
-import "../../support/auth.js"
+// import "../../support/auth.js"
+import "../../support/auth.d.ts"
 import { Validator } from "../../Helpers/Validator.js";
 import { ErrorInputValidator } from "../../Helpers/ErrorInputValidator.js";
 const testData = require('../../fixtures/Recruitment/recruitmentRequests.json');
