@@ -1,32 +1,17 @@
 import Login from "../../PageObjects/LoginPage.js"
-import "../../support/auth.js"
+import "../../support/auth.d.ts"
 import { TableValidator, Validator } from "../../Helpers/Validator.js";
 import { ErrorInputValidator } from "../../Helpers/ErrorInputValidator.js";
 const testData = require('../../fixtures/Recruitment/maintainAdvertisement.json');
 
 console.log(testData.url)
 describe('recruitmentRequests testing ', () => {
-    beforeEach(() => {
-        cy.session("JSESSIONID", () => {
-            // Check if the "JSESSIONID" cookie is present
-            cy.getCookie("JSESSIONID").then((cookie) => {
-                // If the cookie is not present, log in
-                if (!cookie) {
-                    cy.loginCommand(testData.url, 'hiwot', 1234);
-                    //reusable login command
-                }
 
-            })
-        });
-    })
 
     testData.maintainAdvertisement.forEach((data, i) => {
         it(` ${data.testName}`, () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/maintainAdvertisement.xhtml")
-            // // click Filter Criteria 
-            // cy.get('[id="frmRecruitment:somFiliterByStatus_label"]').click()
-            // // enter Criteria
-            // cy.get(`[data-label="Load request list"]`).click()
+            cy.loginCommand(testData.url, 'hiwot', 1234);
+
             cy.wait(1000)
             // click the first row of maintainAdvertisement table
             cy.get('[id="frmAdvert:tblRequestList_data"] tr').first().click();
