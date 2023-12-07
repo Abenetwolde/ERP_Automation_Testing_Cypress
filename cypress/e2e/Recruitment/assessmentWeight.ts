@@ -1,56 +1,42 @@
 import Login from "../../PageObjects/LoginPage.js"
-import "../../support/auth.js"
+import "../../support/auth.d.ts"
 import { Validator } from "../../Helpers/Validator.js";
 import { ErrorInputValidator } from "../../Helpers/ErrorInputValidator.js";
 const testData = require('../../fixtures/Recruitment/assessmentWeight.json');
 
 console.log(testData.url)
 describe('recruitmentRequests testing ', () => {
-    beforeEach(() => {
-        cy.session("JSESSIONID", () => {
-            // Check if the "JSESSIONID" cookie is present
-            cy.getCookie("JSESSIONID").then((cookie) => {
-                // If the cookie is not present, log in
-                if (!cookie) {
-                    cy.loginCommand(testData.url, 'hiwot', 1234);
-                    //reusable login command
-                }
 
-            })
-        });
-    })
-
-
-    testData.assessmentWeight.forEach((data, i) => {
+    testData.assessmentWeight.forEach((data: { testName: any; WrittenExam: string; InterviewPercentage: string; CgpaPercentage: string; ExperiencePercentage: string; PracticalPercentage: string; OtherPercentage: string; txtpreparedOn: string; testType: string; }, i: any) => {
         it(` ${data.testName}`, () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/assessmentWeight.xhtml")
+            cy.loginCommand(testData.url, 'hiwot', 1234);
             // click vacancy number
             cy.get('[id="frmExamPercentage:bcMain_label"]').click()
             // enter request id  
             cy.get(`[data-label="vac-IT-0001"]`).click({ force: true })
-            cy.wait(500)
+            cy.wait(1000)
             //type Written Exam
             cy.get('[id="frmExamPercentage:txtWrittenPercentage"]').clear().type(data.WrittenExam)
-            cy.wait(500)
+            cy.wait(1000)
             // type InterviewPercentage 
             cy.get('[id="frmExamPercentage:txtInterviewPercentage"]').clear().type(data.InterviewPercentage)
-            cy.wait(500)
+            cy.wait(1000)
             // type CgpaPercentage
             cy.get('[id="frmExamPercentage:txtCgpaPercentage"]').clear().type(data.CgpaPercentage)
-            cy.wait(500)
+            cy.wait(1000)
             // type ExperiencePercentage
             cy.get('[id="frmExamPercentage:txtExperiencePercentage"]').clear().type(data.ExperiencePercentage)
-            cy.wait(500)
+            cy.wait(1000)
             // type PracticalPercentage
             cy.get('[id="frmExamPercentage:txtPracticalPercentage"]').clear().type(data.PracticalPercentage)
-            cy.wait(500)
+            cy.wait(1000)
             // type OtherPercentage
             cy.get('[id="frmExamPercentage:txtOtherPercentage"]').clear().type(data.OtherPercentage)
-            cy.wait(500)
+            cy.wait(1000)
             // type txtpreparedOn
 
             cy.get('[id="frmExamPercentage:txtpreparedOn"]').clear().type(data.txtpreparedOn)
-            cy.wait(500)
+            cy.wait(1000)
             cy.get('[id="frmExamPercentage:btnSave"]').click()
             if (data.testType == "validator") {
                 Validator(data)
