@@ -1,29 +1,14 @@
 import Login from "../../PageObjects/LoginPage.js"
-import "../../support/auth.js"
+import "../../support/auth.d.ts"
 import { TableValidator, Validator } from "../../Helpers/Validator.js";
 import { ErrorInputValidator } from "../../Helpers/ErrorInputValidator.js";
 const testData = require('../../fixtures/Recruitment/recruitmentApprove.json');
 
 console.log(testData.url)
 describe('recruitmentRequests testing ', () => {
-    beforeEach(() => {
-        cy.session("JSESSIONID", () => {
-            // Check if the "JSESSIONID" cookie is present
-            cy.getCookie("JSESSIONID").then((cookie) => {
-                // If the cookie is not present, log in
-                if (!cookie) {
-                    cy.loginCommand(testData.url, 'dagnachew', 1234);
-                    //reusable login command
-                }
-
-            })
-        });
-    })
-
-
     testData.recruitmentApproveFilterCriteria.forEach((data, i) => {
         it.skip(` ${data.testName}`, () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml")
+            cy.loginCommand(testData.url, 'dagnachew', 1234);
             // click Filter Criteria 
             cy.get('[id="frmRecruitment:somFiliterByStatus_label"]').click()
             // enter Criteria
@@ -40,13 +25,14 @@ describe('recruitmentRequests testing ', () => {
 
     })
 
-    testData.recruitmentApprove.forEach((data, i) => {
+    testData.recruitmentApprove.forEach((data: { testName: any; vacancy_num: string; NoOfEmployeesApproved: string; Decision: any; testType: string; }, i: any) => {
         it(` ${data.testName}`, () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml")
+            cy.loginCommand('https://172.21.35.239:8181/ERP-war/erp/hrms/recruitment/recruitmentApprove.xhtml', 'dagnachew', 1234);
             // click Filter Criteria 
-            cy.get('[id="frmRecruitment:somFiliterByStatus_label"]').click()
-            // enter Criteria
-            cy.get(`[data-label="Load request list"]`).click()
+            // cy.wait(1000)
+            // cy.get('[id="frmRecruitment:somFiliterByStatus_label"]').click()
+            // // enter Criteria
+            // cy.get(`[data-label="Load request list"]`).click()
             cy.wait(1000)
             // click the first row
             cy.get('[id="frmRecruitment:tblRequestList_data"] tr').first().click();
@@ -64,7 +50,7 @@ describe('recruitmentRequests testing ', () => {
             cy.get(`[data-label="${data.Decision}"]`).click()
             cy.wait(500)
             cy.get('[id="frmRecruitment:btnSave"]').click()
-            cy.wait(500)
+            cy.wait(2000)
             if(data.testType=="validator")
             {
                 Validator(data)

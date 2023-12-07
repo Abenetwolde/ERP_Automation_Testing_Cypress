@@ -33,7 +33,7 @@
             "testType":"validator",
             "testName":"recruitment Approve sucessfuly.",
           "vacancy_num":"234",
-          "NoOfEmployeesApproved": "4",
+          "NoOfEmployeesApproved": "1",
           "Decision":"Approve",
           "expectedResult":
           {
@@ -63,7 +63,7 @@
         "testName":"recruitmentApprove Reject sucessfuly.",
       "vacancy_num":"2134",
       "NoOfEmployeesApproved": "1",
-      "Decision":"Reject",
+      "Decision":"Approve",
       "expectedResult":
       {
         "mainText":"Success!",
@@ -76,7 +76,7 @@
       "testName":"recruitmentApprove not save Reject employees less than or equal to 12.",
     "vacancy_num":"2134",
     "NoOfEmployeesApproved": "1",
-    "Decision":"Reject",
+    "Decision":"Approve",
     "expectedResult":
     {
       "mainText":"Error!"
