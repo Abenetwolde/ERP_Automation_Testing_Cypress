@@ -36,9 +36,10 @@ describe('employee registration test', () => {
             cy.get(`li[data-label="Single"]`).eq(0).click();
             // ctxtDepartment
             cy.get('[id="frmEmployee:btnTree"]').click()
-            cy.wait(500)
-            cy.get('[id="frmEmployee:j_idt755:0"]').click({force: true})
-            cy.wait(500)
+            cy.wait(1000)
+            // cy.get('[id="frmEmployee:j_idt755:0"]').click({force: true})
+            cy.get('.ui-treenode-content.ui-tree-selectable').contains('1--INSA').click({force: true});
+            cy.wait(2000)
     
             cy.get('[id="frmEmployee:txtJob_label"]').click()
             cy.wait(500)
