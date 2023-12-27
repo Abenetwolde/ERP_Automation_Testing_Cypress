@@ -1,2 +1,3 @@
 cy.get('a[style="cursor: hand;color:#FF82AB;padding:1px; text-align:right;"]').contains('Hide').click()
  cy.get('table[role="grid"] tbody tr').contains('td', '1').click({force: true} )
+             cy.get('[data-item-label="8011"]').click()
