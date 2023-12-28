@@ -3,7 +3,7 @@ import "../../support/auth.d.ts"
 
 describe('leaveReturn test', () => {
 
-        it(`there should be a table test `, () => {
+        it(`there should visible be a table test `, () => {
             cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/leave/leaveBalance.xhtml", 'hiwot', 1234);
             cy.get('[id="frmLeaveBalance:txtYear_label"]').click()
             cy.wait(500)
