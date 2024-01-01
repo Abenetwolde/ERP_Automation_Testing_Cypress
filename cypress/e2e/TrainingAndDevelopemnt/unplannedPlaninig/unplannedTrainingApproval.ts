@@ -1,24 +1,13 @@
 // import Login from "../../PageObjects/LoginPage.js"
 // const testData = require('../../fixtures/IFRS/accuredleaveBalance.json');
-import "../../../support/auth.js"
+import "../../../support/auth.d.ts"
 // console.log(testData.url)
 describe('unplannedTrainingApproval testing ', () => {
-    beforeEach(() => {
-        cy.session("JSESSIONID", () => {
-            // Check if the "JSESSIONID" cookie is present
-            cy.getCookie("JSESSIONID").then((cookie) => {
-                // If the cookie is not present, log in
-                if (!cookie) {
-                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/unplannedTrainingApproval.xhtml", 'dagnachew', 1234);
-                    //reusable login command
-                }
 
-            })
-        });
-    })
     // testData.SeveranceLiability.forEach((data, i) => {
-        it("` ${data.testName}`", () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/unplannedTrainingApproval.xhtml")
+        it("unplannedTrainingApproval", () => {
+            cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/unplannedTrainingApproval.xhtml", 'dagnachew', 1234);
+            //reusable login command
             cy.wait(500)
             //Filter Criteria
             cy.get('[id="frmUnplannedTrainingRequest:somFiliterByStatus"]').click()

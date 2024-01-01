@@ -1,6 +1,6 @@
 // import Login from "../../PageObjects/LoginPage.js"
 // const testData = require('../../fixtures/IFRS/accuredleaveBalance.json');
-import "../../../support/auth.js"
+import "../../../support/auth.d.ts"
 // console.log(testData.url)
 describe('unplannedTrainingRequest testing ', () => {
     beforeEach(() => {
@@ -19,9 +19,8 @@ describe('unplannedTrainingRequest testing ', () => {
 
 
     // testData.SeveranceLiability.forEach((data, i) => {
-        it("` ${data.testName}`", () => {
-            cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/unplannedTrainingRequest.xhtml")
-            cy.wait(500)
+        it("unplannedTrainingRequest", () => {
+            cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/unplannedTrainingRequest.xhtml", 'hiwot', 1234);
             //Filter Criteria
             cy.get('[id="frmUnplannedTrainingRequest:somFiliterByStatus_label"]').click()
             //clcik Load Request List
@@ -29,7 +28,7 @@ describe('unplannedTrainingRequest testing ', () => {
             //clcik any row from the table
             cy.get('table tbody tr').contains('td', 'someDep').click();
             //
-            cy.get('[id="frmUnplannedTrainingRequest:txtParticipantId_input"]').type(123)
+            cy.get('[id="frmUnplannedTrainingRequest:txtParticipantId_input"]').type("123")
             cy.wait(5000)
             cy.get(`[data-item-value="123"]`).click()
             cy.wait(500)
