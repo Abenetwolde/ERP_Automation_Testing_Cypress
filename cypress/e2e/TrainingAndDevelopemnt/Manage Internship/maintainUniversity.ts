@@ -1,24 +1,10 @@
-// import Login from "../../PageObjects/LoginPage.js"
-// const testData = require('../../fixtures/IFRS/accuredleaveBalance.json');
-import "../../../support/auth.js"
+
+import "../../../support/auth.d.ts"
 // console.log(testData.url)
 describe('maintainUniversity testing ', () => {
-    beforeEach(() => {
-        cy.session("JSESSIONID", () => {
-            // Check if the "JSESSIONID" cookie is present
-            cy.getCookie("JSESSIONID").then((cookie) => {
-                // If the cookie is not present, log in
-                if (!cookie) {
-                    cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/maintainUniversity.xhtml", 'hiwot', 1234);
-                    //reusable login command
-                }
 
-            })
-        });
-    })
-    // testData.SeveranceLiability.forEach((data, i) => {
     it("maintainUniversity Tests", () => {
-        cy.visit("https://172.21.35.239:8181/ERP-war/erp/hrms/training/maintainUniversity.xhtml")
+        cy.loginCommand("https://172.21.35.239:8181/ERP-war/erp/hrms/training/maintainUniversity.xhtml", 'hiwot', 1234);
         cy.wait(500)
         //Unversity
         cy.get('[id="frmUniversity:drdUniversity_label"]').click()
